@@ -1,17 +1,15 @@
+html*{
+font-family: Arial, Helvetica, sans-serif;}
+
+
 .header {
-    background: #282c34;
+    background: #05386B;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     padding: 1%;
 }
 
-.nav-logo {
-    display:flex;
-    height: 50px;
-    width: 50px;
-    padding: 10%;
-}
 
 .nav-logo:hover {
 
@@ -19,20 +17,77 @@
 
 .nav-items {
     display:flex;
-    margin-left: auto;
+    margin-left: 20px;
     margin-right: 5%;
     align-items: center;
+justify-content: center;
+margin-left: 200px;
+
 }
 
 .nav-link {
-    background-color: #09d3ac;
-    color: black;
+    /* background-color: #09d3ac; */
+    color:#EDF5E1;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 
 .nav-link:hover {
     background-color: #08bd9a;
 }
 
+.nav-logo {
+    display:flex;
+    height: 70px;
+    width: 70px;
+    padding-left: 10%;
+    padding-right: 0%;
+    /* padding-top: 10%; */
+    display: inline;
+   
+}
+.site-name{
+    display: inline;
+    text-align: center;
+    position: relative;
+    bottom: 12px;
+    padding: 14px 25px;
+    color:#EDF5E1;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+    
+}
+.nav-title{
+    width: 400px;
+    /* margin-right: auto; */
+    height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    
+}
+
+
+.login{
+    display:flex;
+    margin-left: 20px;
+    margin-right: 5%;
+    align-items: center;
+justify-content: center;
+margin-left: 200px;
+}
+
+.login-link{
+    color:#EDF5E1;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.login-link:hover {
+    background-color: #08bd9a;
+}
