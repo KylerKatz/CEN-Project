@@ -1,0 +1,95 @@
+body {
+	margin: 0;
+}
+
+.background {
+	background: #344d65;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* font-size: calc(10px + 2vmin); */
+	/* color: white;  */
+}
+
+.Signup-background {
+	width: 635px;
+	height: 750px;
+	left: 642px;
+	top: 200px;
+
+	background: #332f2f;
+	box-shadow: 0px 4px 5px #000000;
+	border-radius: 43px;
+}
+
+.login-text {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 43px;
+	color: #ffffff;
+	top: 1%;
+	margin-bottom: 1%;
+	text-align-last: center;
+	text-shadow: 2px 2px black;
+}
+
+.forms {
+	text-align: -webkit-center;
+}
+
+.forms input[type='submit'] {
+	text-align: -webkit-center;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+	width: 434px;
+	height: 82px;
+
+	background: #c4c4c4;
+	border-radius: 37px;
+	font-size: large;
+	margin: 20px;
+	text-align-last: center;
+
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-family: 'Montserrat', sans-serif;
+}
+
+input[type='submit'] {
+	width: 168px;
+	height: 54px;
+
+	background: #2db4de;
+	border-radius: 32px;
+
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+input[type='submit'] :hover {
+	font-size: 150%;
+}
+
+input[type='radio'] {
+	color: green;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+body,
+input,
+select,
+button {
+	font-family: 'Montserrat', sans-serif;
+	font-size: large;
+	color: white;
+}

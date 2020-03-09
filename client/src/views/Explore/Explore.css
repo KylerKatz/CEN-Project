@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+}
+
+.background {
+	background: #344d65;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* font-size: calc(10px + 2vmin); */
+	/* color: white;  */
+}
+
+.center-background-1 {
+	width: 1025px;
+	height: 800px;
+	left: 448px;
+	top: 313px;
+
+	background: #332f2f;
+	box-shadow: 0px 4px 5px #000000;
+	border-radius: 43px;
+}
+
+.textbox-1 {
+	height: 10%;
+	width: 100%;
+	/* background-color: aquamarine; */
+}
+
+.textbox-2 {
+	margin-bottom: 5%;
+	height: 5%;
+	width: 100%;
+	border-bottom: 2px solid grey;
+	/* background-color: aquamarine; */
+}
+
+.text1 {
+	margin-left: 50px;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	font-size: 55px;
+}
+
+.text2 {
+	margin-left: 50px;
+	font-family: 'Montserrat', sans-serif;
+	color: #459cd1;
+	font-size: 30px;
+}
+
+.career-box {
+	width: 95%;
+	height: 80%;
+	/* background-color: aquamarine; */
+	margin: 0 auto;
+	overflow: hidden;
+}
+.row1 {
+	width: 100%;
+	/* background-color: blue; */
+	margin: auto;
+}
+
+.row2 {
+	width: 100%;
+	/* background-color: green; */
+	margin: auto;
+}
+.row3 {
+	width: 100%;
+	/* background-color: pink; */
+	margin: auto;
+}
+
+.career-card {
+	display: inline-block;
+	position: relative;
+	width: 205px;
+	height: 107px;
+	left: 2%;
+	top: 5%;
+	background: #c4c4c4;
+	border-radius: 18px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	margin-left: 2.5%;
+	margin-bottom: 2%;
+}
