@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navitem from './Navitem.js'
+import NavItem from './NavItem.js';
 import './NavBar.css';
 
 class NavBar extends React.Component {
@@ -68,15 +68,15 @@ class NavBar extends React.Component {
 				<div className="nav-items">
 
 					<span onClick={() => this.highlightNav('Explore')}>
-						<Navitem name={'Explore'}  clicked={this.state.Explore} />
+						<NavItem name={'Explore'}  clicked={this.state.Explore} />
 					</span>
 					
 					<span onClick={() => this.highlightNav('Login')}>
-					<Navitem name ={'Login'} clicked={this.state.Login} />
+					<NavItem name ={'Login'} clicked={this.state.Login} />
 					</span>
 
 					<span onClick={() => this.highlightNav('Signup')}>
-					<Navitem name={'Signup'} clicked={this.state.Signup} />
+					<NavItem name={'Signup'} clicked={this.state.Signup} />
 					</span>
 				</div>
 			</div>

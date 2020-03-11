@@ -1,10 +1,9 @@
-import React from "react"
+import React from "react";
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 
-class Navitem extends React.Component {
+class NavItem extends React.Component {
     
-  
     render () {
         return (
             <Link className={this.props.clicked ? "nav-link-clicked" : "nav-link"}  to={"/" + this.props.name}>
@@ -14,4 +13,4 @@ class Navitem extends React.Component {
     }
 }
 
-export default Navitem
+export default NavItem

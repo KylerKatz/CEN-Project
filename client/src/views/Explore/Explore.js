@@ -1,5 +1,6 @@
 import React from 'react';
 import './Explore.css';
+import CareerCard from "./components/CareerCard.js";
 
 function Explore() {
 	return (
@@ -14,54 +15,23 @@ function Explore() {
 
 				<div className="career-box">
 					<div className="row1">
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
-						<div className="career-card">
-							<link></link>
-						</div>
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
+						<CareerCard />
 					</div>
 				</div>
 			</div>
