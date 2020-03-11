@@ -18,8 +18,8 @@ body {
 	position: absolute;
 	width: 1050px;
 	height: 563px;
-	left: 404px;
-	top: 252px;
+
+	top: 200px;
 
 	background: #332f2f;
 	box-shadow: 0px 4px 5px #000000;
@@ -31,7 +31,7 @@ body {
 	position: relative;
 	align-self: center;
 
-	right: 30%;
+	left: 5%;
 	/* right: 60%; */
 	height: 85%;
 	width: 50%;
@@ -41,7 +41,7 @@ body {
 .test-container {
 	position: relative;
 	align-self: center;
-	left: 60%;
+	left: 10%;
 	/* background: red; */
 	height: 85%;
 	width: 35%;
@@ -71,4 +71,100 @@ body {
 
 .App-link {
 	color: #09d3ac;
+}
+
+@media screen and (max-width: 1250px) {
+	.center-background {
+		display: flex;
+		position: absolute;
+		width: 735px;
+		height: 650px;
+		/* left: 404px; */
+		top: 252px;
+
+		background: #332f2f;
+		box-shadow: 0px 4px 5px #000000;
+		border-radius: 43px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.center-background {
+		/* display: flex; */
+		position: absolute;
+		width: 480px;
+		height: 1000px;
+
+		top: 200px;
+
+		background: #332f2f;
+		box-shadow: 0px 4px 5px #000000;
+		border-radius: 43px;
+	}
+
+	.chatbot-container {
+		background: green;
+		/* position: absolute; */
+		/* align-self: center; */
+		/* top: 5%; */
+		bottom: 200px;
+		height: 45%;
+		width: 85%;
+		border-right: 0;
+		left: 40px;
+
+		border-bottom: 5px solid #c4c4c4;
+	}
+
+	.test-container {
+		top: 60%;
+		position: absolute;
+		align-self: center;
+		/* left: 60%; */
+		/* background: red; */
+		height: 45%;
+		width: 85%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.center-background {
+		/* display: flex; */
+		position: absolute;
+		width: 380px;
+		height: 1000px;
+
+		top: 200px;
+
+		background: #332f2f;
+		box-shadow: 0px 4px 5px #000000;
+		border-radius: 43px;
+	}
+
+	.chatbot-container {
+		background: green;
+		/* position: absolute; */
+		/* align-self: center; */
+		/* top: 5%; */
+		bottom: 200px;
+		height: 45%;
+		width: 85%;
+		border-right: 0;
+		left: 30px;
+
+		border-bottom: 5px solid #c4c4c4;
+	}
+
+	.test-container {
+		top: 55%;
+		position: absolute;
+		align-self: center;
+		/* left: 60%; */
+		/* background: red; */
+		height: 45%;
+		width: 85%;
+	}
+}
+
+@media screen and (max-width: 380px) {
 }

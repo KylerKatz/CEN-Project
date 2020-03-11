@@ -14,10 +14,14 @@ body {
 }
 
 .center-background-1 {
+	/* display: flex;
+	flex-direction: column; */
+
+	position: absolute;
 	width: 1025px;
 	height: 800px;
-	left: 448px;
-	top: 313px;
+
+	top: 200px;
 
 	background: #332f2f;
 	box-shadow: 0px 4px 5px #000000;
@@ -57,22 +61,11 @@ body {
 	height: 80%;
 	/* background-color: aquamarine; */
 	margin: 0 auto;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 .row1 {
 	width: 100%;
 	/* background-color: blue; */
-	margin: auto;
-}
-
-.row2 {
-	width: 100%;
-	/* background-color: green; */
-	margin: auto;
-}
-.row3 {
-	width: 100%;
-	/* background-color: pink; */
 	margin: auto;
 }
 
@@ -90,4 +83,56 @@ body {
 	border: 0px;
 	margin-left: 2.5%;
 	margin-bottom: 2%;
+}
+
+.career-card:hover {
+	box-shadow: 0px 10px 10px #000000;
+}
+
+@media screen and (max-width: 1450px) {
+	.center-background-1 {
+		position: absolute;
+		width: 800px;
+		height: 1050px;
+	}
+
+	.career-card {
+		left: 35px;
+	}
+
+	.background {
+		height: 150vh;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.center-background-1 {
+		position: absolute;
+		width: 550px;
+		height: 1300px;
+	}
+
+	.career-card {
+		left: 35px;
+	}
+
+	.background {
+		height: 200vh;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.center-background-1 {
+		position: absolute;
+		width: 360px;
+		height: 2500px;
+	}
+
+	.career-card {
+		left: 60px;
+	}
+
+	.background {
+		height: 280vh;
+	}
 }

@@ -26,8 +26,6 @@ function Explore() {
 						<div className="career-card">
 							<link></link>
 						</div>
-					</div>
-					<div className="row2">
 						<div className="career-card">
 							<link></link>
 						</div>
@@ -40,9 +38,6 @@ function Explore() {
 						<div className="career-card">
 							<link></link>
 						</div>
-					</div>
-
-					<div className="row3">
 						<div className="career-card">
 							<link></link>
 						</div>
@@ -55,9 +50,6 @@ function Explore() {
 						<div className="career-card">
 							<link></link>
 						</div>
-					</div>
-
-					<div className="row4">
 						<div className="career-card">
 							<link></link>
 						</div>

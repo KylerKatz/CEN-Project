@@ -5,6 +5,8 @@ function Home() {
 	return (
 		<div className="background">
 			<div className="center-background">
+				<div className="chatbot-container"></div>
+
 				<div className="test-container">
 					<p className="intro-text">
 						{' '}
@@ -19,8 +21,6 @@ function Home() {
 						PageMaker including versions of Lorem Ipsum.
 					</p>
 				</div>
-
-				<div className="chatbot-container"></div>
 			</div>
 		</div>
 	);

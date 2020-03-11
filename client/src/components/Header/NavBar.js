@@ -2,44 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
-
-
-
-
-
-
-
 const NavBar = () => {
-    return (
-        
-        <div className = "header">
-            {/* Logo */}
+	return (
+		<div className="header">
+			{/* Logo */}
 
+			<Link className="nav-title" to="/">
+				<img className="nav-logo" src={'/goal.png'} alt="Website logo" />
 
-            <Link className = "nav-title" to="/">
-                
-                    <img className = "nav-logo" src={ "/goal.png" } alt="Website logo" />
-                
-                <span>
-                     <h1  className = "site-name">Career Find</h1> 
-                </span>
-            </Link>
+				<span>
+					<h1 className="site-name">Career Find</h1>
+				</span>
+			</Link>
 
-            
-            {/* Page Links */}
-            <div className = "nav-items">
-                <Link className = "nav-link" to='/Explore'>Explore</Link>
-                
-                <Link className = "nav-link" to='/Login'>Login</Link>
+			{/* Page Links */}
+			<div className="nav-items">
+				<Link className="nav-link" to="/Explore">
+					Explore
+				</Link>
 
-                <Link className = "nav-link" to='/Signup'>Sign up</Link>
+				<Link className="nav-link" to="/Login">
+					Login
+				</Link>
 
-            </div>
-
-
-
-        </div>
-    )
+				<Link className="nav-link" to="/Signup">
+					Sign-up
+				</Link>
+			</div>
+		</div>
+	);
 };
 
 export default NavBar;

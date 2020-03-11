@@ -9,7 +9,7 @@ html* {
 	background: #459cd1;
 	border-bottom: 3px solid #000000;
 	position: relative;
-
+	/* width: 100%; */
 	/* position: absolute;
 width: 1927.34px;
 height: 160px;
@@ -22,27 +22,30 @@ top: 308px; */
 
 .nav-items {
 	position: absolute;
-	left: 68.36%;
-	right: 5.51%;
+	/* left: 68.36vw; */
+	right: 5.51vw;
 	top: 34.44%;
-	bottom: 60.79%;
 	width: 30%;
+	height: 70px;
+	/* background-color: red; */
+
+	/* font-size: calc(15px + 2vmin); */
 }
 
 .nav-link {
 	/* background-color: #09d3ac; */
 	color: white;
-	padding: 14px 25px;
+	padding: 14px 2%;
 	text-align: center;
 	text-decoration: none;
 	font-family: 'Bangers', cursive;
-	font-size: 35px;
+	/* font-size: 200%; */
 	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
 		3px 3px 0 #000;
 	letter-spacing: 3px;
 	border-radius: 50px 20px;
 
-	/* font-size: calc(10px + 2vmin); */
+	font-size: calc(15px + 2vmin);
 }
 
 .nav-link:hover {
@@ -83,4 +86,130 @@ top: 308px; */
 	/* margin-right: auto; */
 	height: 100px;
 	text-decoration: none;
+}
+/* Low end desktop */
+@media screen and (max-width: 1449px) {
+	.nav-items {
+		position: absolute;
+		left: 50.36vw;
+		right: 5.51vw;
+		top: 34.44%;
+		width: 500px;
+		height: 70px;
+		/* background-color: red; */
+	}
+}
+/* Tablet */
+@media screen and (max-width: 800px) {
+	.nav-title {
+		width: 85%;
+		height: 100px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.nav-items {
+		left: 0vw;
+		top: 60.44%;
+		width: 95%;
+		height: 70px;
+		text-align-last: center;
+	}
+
+	.header {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		padding: 1%;
+		background: #459cd1;
+		border-bottom: 3px solid #000000;
+		position: relative;
+		height: 150px;
+	}
+}
+/* Newer Phones */
+@media screen and (max-width: 480px) {
+	.nav-title {
+		width: 85%;
+		height: 70px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.nav-logo {
+		display: flex;
+		height: 50px;
+		width: 50px;
+		padding-left: 10%;
+		padding-right: 0%;
+		/* padding-top: 10%; */
+		display: inline;
+	}
+	.site-name {
+		display: inline;
+		text-align: center;
+		position: relative;
+		bottom: 12px;
+		padding: 14px 25px;
+		color: white;
+		font-family: 'Bangers', cursive;
+		text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+			3px 3px 0 #000;
+		letter-spacing: 5px;
+
+		font-size: 30px;
+	}
+
+	.nav-items {
+		left: 0vw;
+		top: 60.44%;
+		width: 95%;
+		height: 70px;
+		text-align-last: center;
+	}
+
+	.header {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		padding: 1%;
+		background: #459cd1;
+		border-bottom: 3px solid #000000;
+		position: relative;
+		height: 100px;
+	}
+}
+
+/* Newer Phones */
+@media screen and (max-width: 380px) {
+	.nav-title {
+		width: 85%;
+		height: 70px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.nav-logo {
+		display: flex;
+		height: 50px;
+		width: 50px;
+		padding-left: 10%;
+		padding-right: 0%;
+		/* padding-top: 10%; */
+		display: inline;
+	}
+	.site-name {
+		display: inline;
+		text-align: center;
+		position: relative;
+		bottom: 12px;
+		padding: 14px 25px;
+		color: white;
+		font-family: 'Bangers', cursive;
+		text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+			3px 3px 0 #000;
+		letter-spacing: 5px;
+
+		font-size: 20px;
+	}
 }
