@@ -1,36 +1,87 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navitem from './Navitem.js'
 import './NavBar.css';
 
-const NavBar = () => {
-	return (
-		<div className="header">
-			{/* Logo */}
+class NavBar extends React.Component {
+	
+	constructor(props) {
+        super(props)
+        this.state = {
+			Explore: false,
+			Login: false,
+			Signup: false
+		}
+		
+		this.highlightNav = this.highlightNav.bind(this)
 
-			<Link className="nav-title" to="/">
-				<img className="nav-logo" src={'/goal.png'} alt="Website logo" />
+    }
+	
+	highlightNav(item) {
 
-				<span>
-					<h1 className="site-name">Career Find</h1>
-				</span>
-			</Link>
+		if (item == 'Explore'){	
+			this.setState({
+				Explore: true,
+				Login: false,
+				Signup: false
+			})
+		}
+		else if (item == 'Login'){
+			this.setState({
+				Explore: false,
+				Login: true,
+				Signup: false
+			})
+		}
+		else if (item == 'Signup'){
+			this.setState({
+				Explore: false,
+				Login: false,
+				Signup: true
+			})
+		}
+		else {
+			this.setState({
+				Explore: false,
+				Login: false,
+				Signup: false
+			})
+		}
 
-			{/* Page Links */}
-			<div className="nav-items">
-				<Link className="nav-link" to="/Explore">
-					Explore
+	}
+	
+	
+	render () {
+		return (
+			<div className="header">
+				{/* Logo */}
+
+				<Link onClick={() => this.highlightNav('Home')} className="nav-title" to="/">
+					<img className="nav-logo" src={'/goal.png'} alt="Website logo" />
+
+					<span>
+						<h1 className="site-name">Career Find</h1>
+					</span>
 				</Link>
 
-				<Link className="nav-link" to="/Login">
-					Login
-				</Link>
+				{/* Page Links */}
+				<div className="nav-items">
 
-				<Link className="nav-link" to="/Signup">
-					Sign-up
-				</Link>
+					<span onClick={() => this.highlightNav('Explore')}>
+						<Navitem name={'Explore'}  clicked={this.state.Explore} />
+					</span>
+					
+					<span onClick={() => this.highlightNav('Login')}>
+					<Navitem name ={'Login'} clicked={this.state.Login} />
+					</span>
+
+					<span onClick={() => this.highlightNav('Signup')}>
+					<Navitem name={'Signup'} clicked={this.state.Signup} />
+					</span>
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 };
 
 export default NavBar;
