@@ -2,7 +2,7 @@ body {
 	margin: 0;
 }
 
-.background {
+.background-explorepage {
 	background: #344d65;
 	min-height: 100vh;
 	display: flex;
@@ -19,7 +19,7 @@ body {
 
 	position: absolute;
 	width: 1025px;
-	height: 800px;
+	min-height: 800px;
 
 	top: 200px;
 
@@ -67,6 +67,7 @@ body {
 	width: 100%;
 	/* background-color: blue; */
 	margin: auto;
+	padding-bottom: 20px;
 }
 
 .career-card {
@@ -93,14 +94,14 @@ body {
 	.center-background-1 {
 		position: absolute;
 		width: 800px;
-		height: 1050px;
+		/* height: 1050px; */
 	}
 
 	.career-card {
 		left: 35px;
 	}
 
-	.background {
+	.background-explorepage {
 		height: 150vh;
 	}
 }
@@ -109,14 +110,14 @@ body {
 	.center-background-1 {
 		position: absolute;
 		width: 550px;
-		height: 1300px;
+		/* height: 1300px; */
 	}
 
 	.career-card {
 		left: 35px;
 	}
 
-	.background {
+	.background-explorepage {
 		height: 200vh;
 	}
 }
@@ -125,14 +126,14 @@ body {
 	.center-background-1 {
 		position: absolute;
 		width: 360px;
-		height: 2500px;
+		/* height: 2500px; */
 	}
 
 	.career-card {
 		left: 60px;
 	}
 
-	.background {
-		height: 280vh;
+	.background-explorepage {
+		height: 300vh;
 	}
 }

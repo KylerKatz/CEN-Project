@@ -6,6 +6,7 @@ import NavBar from './components/Header/NavBar';
 import Explore from './views/Explore/Explore';
 import Login from './views/Login/Login';
 import Signup from './views/Signup/Signup';
+import CareerPage from './views/Career-Pages/CareerPage';
 
 const App = () => {
 	return (
@@ -16,6 +17,7 @@ const App = () => {
 				<Route exact path="/Explore" component={Explore} />
 				<Route exact path="/Login" component={Login} />
 				<Route exact path="/Signup" component={Signup} />
+				<Route exact path="/CareerPage" component={CareerPage} />
 
 				<Route exact path="/">
 					<Redirect to="/Home" />

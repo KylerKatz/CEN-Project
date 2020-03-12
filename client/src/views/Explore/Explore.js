@@ -1,10 +1,10 @@
 import React from 'react';
 import './Explore.css';
-import CareerCard from "./components/CareerCard.js";
+import CareerCard from './components/CareerCard.js';
 
 function Explore() {
 	return (
-		<div className="background">
+		<div className="background-explorepage">
 			<div className="center-background-1">
 				<div className="textbox-1">
 					<h1 className="text1">Explore These Careers</h1>

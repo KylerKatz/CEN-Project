@@ -50,7 +50,7 @@ top: 308px; */
 
 .nav-link-clicked {
 	/* background-color: #09d3ac; */
-	color: orange;
+	color: rgb(182, 174, 174);
 	padding: 14px 2%;
 	text-align: center;
 	text-decoration: none;
