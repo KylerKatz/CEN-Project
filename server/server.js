@@ -1,7 +1,19 @@
-const express = require('./config/express.js')
- 
-// Use env port or default
-const port = process.env.PORT || 5000;
+import config from './config/config.js';
+const express = require('./config/express.js');
+var mongoose = require('mongoose'); 
+mongoose.connect(config.db.uri);
 
-const app = express.init()
-app.listen(port, () => console.log(`Server now running on port ${port}!`));
+// Use env port or default
+//onst port = process.env.PORT || 5000;
+
+const app = express();
+
+app.use(morgan('dev'));
+
+//body parsing middleware
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.listen(config.port, () => console.log(`App now listening on port ${config.port}`));
+

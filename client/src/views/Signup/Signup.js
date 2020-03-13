@@ -1,59 +1,124 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Signup.css';
 
-function Signup() {
-	return (
-		<div className="background">
-			<div className="Signup-background">
-				<p className="login-text">Sign Up For A New Account</p>
+function Signup(props) {
 
-				<div className="forms">
-					<form className="name-input">
-						<input type="text" name="email" placeholder="Your Name"></input>
-					</form>
 
-					<form className="email-input">
-						<input type="email" name="email" placeholder="Email"></input>
-					</form>
+	//change <form> to one
+	//make input individual 
+	//create own change function
+	//should i make it all in 1 component? have to move state to apps? compare w/ bootcamp4 
+	//what to do with confirm password?
+	//encrpytion
+	const[form, setForm] = useState({
+		name:'',
+		email:'',
+		password: '',
+		conpassword: '',  //probably shouldnt need this with auth0
+		isAdmin:''
 
-					<form className="password-input">
-						<input
-							type="password"
-							name="password"
-							placeholder="Password"
-						></input>
-					</form>
+	});
+	
+	 const onChange = e => {
 
-					<form className="password-input-confirm">
-						<input
-							type="password"
-							name="password"
-							placeholder="Confirm Password"
-						></input>
-					</form>
+			setForm({
+				[e.target.name]:e.target.value
+			});
 
-					<form className="user-type">
-						Student:
-						<input
-							type="radio"
-							name="account type"
-							placeholder="Confirm Password"
-						></input>
-						Teacher:{' '}
-						<input
-							type="radio"
-							name="account type"
-							placeholder="Confirm Password"
-						></input>
-					</form>
+	}
+	
+	const onSubmit = (e) =>{
 
-					<form className="submit-button">
-						<input type="submit" name="submit"></input>
-					</form>
+		//make sure passwords match, if not give error
+		//put into model and save to database? 
+		//put in another file and include function here
+		e.preventDefault();
+	
+		
+		setForm({
+			name:'',
+			email:'',
+			password: '',
+			conpassword: '',
+			isAdmin:''
+
+		})
+
+	}
+
+		return (
+			<div className="background">
+				<div className="Signup-background">
+					<p className="login-text">Sign Up For A New Account</p>
+	
+					<form  action = '/Signup' method ="POST">
+	
+						<div className="forms">
+								<input 
+								type="text" 
+								name="name" 
+								value = {form.name}
+								placeholder="Your Name"
+								onChange ={onChange}>
+							
+								</input>
+	
+								<input 
+								type="email" 
+								name="email" 
+								value ={form.email} 
+								placeholder="Email"
+								onChange ={onChange}>
+								</input>
+	
+								<input
+									type="password"
+									name="password"
+									value ={form.password} 
+									placeholder="Password"
+									onChange ={onChange}>
+								</input>
+	
+								<input
+									type="password"
+									name="password"
+									value ={form.conpassword} 
+									placeholder="Confirm Password"
+									onChange ={onChange}>
+								</input>
+	
+								<text> <br></br>Student:</text>							
+								<input
+									type="radio"
+									name="account type"
+									value = "false"
+									checked ={form.isAdmin}
+									onChange ={onChange}
+								></input>
+	
+								<text> <br></br>Teacher:</text>
+								<input
+									type="radio"
+									name="account type"
+									value ="true"
+									value={form.isAdmin}
+									onChange ={onChange}
+								></input>
+								<br></br>
+
+								<button>
+
+								<input type="submit" name="submit"></input>
+								</button>
+								
+	
+						</div>
+					</form> 
+	
 				</div>
 			</div>
-		</div>
-	);
+		);
 }
+
 
 export default Signup;

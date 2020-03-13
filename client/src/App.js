@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React, {Component} from 'react';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import Home from './views/Home/Home';
 import NotFound from './views/NotFound';
 import NavBar from './components/Header/NavBar';
@@ -9,6 +9,8 @@ import Signup from './views/Signup/Signup';
 import CareerPage from './views/Career-Pages/CareerPage';
 
 const App = () => {
+
+	//create states here 
 	return (
 		<div>
 			<NavBar />
