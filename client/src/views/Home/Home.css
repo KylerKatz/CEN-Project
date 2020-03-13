@@ -2,9 +2,9 @@ body {
 	margin: 0;
 }
 
-.background {
+.home-background {
 	background: #344d65;
-	min-height: 100vh;
+	min-height: 150vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -13,11 +13,12 @@ body {
 	/* color: white;  */
 }
 
-.center-background {
+.center-background-home {
 	display: flex;
 	position: absolute;
 	width: 1050px;
-	height: 563px;
+	height: 1000px;
+	/* min-height: 1000px; */
 
 	top: 200px;
 
@@ -26,34 +27,80 @@ body {
 	border-radius: 43px;
 }
 
+.top-div {
+	position: absolute;
+	width: 100%;
+	/* background-color: red; */
+	height: 50%;
+	min-height: 50%;
+	/* display: inline-block; */
+
+	border-bottom: 5px solid #c4c4c4;
+}
+.bottom-div {
+	position: relative;
+	width: 100%;
+	/* background-color: blue; */
+	height: 50%;
+	top: 50%;
+	min-height: 50%;
+	display: block;
+	clear: both;
+}
+
 .chatbot-container {
 	background: green;
-	position: relative;
-	align-self: center;
-
-	left: 5%;
-	/* right: 60%; */
+	position: absolute;
+	/* align-self: center; */
+	width: 50%;
 	height: 85%;
+
+	right: 25%;
+	top: 10%;
+	border-radius: 43px;
+}
+
+.career-img-container {
+	/* background: green; */
+	position: relative;
+	/* align-self: center; */
+	top: 10%;
+	left: 2%;
+	/* right: 60%; */
+	height: 80%;
 	width: 50%;
 	border-right: 5px solid #c4c4c4;
+
+	padding-right: 10px;
+
+	float: left;
+}
+.career-img {
+	width: 100%;
+	height: 110%;
 }
 
 .test-container {
-	position: relative;
-	align-self: center;
+	position: absolute;
+	/* align-self: center; */
 	left: 10%;
+	top: 8%;
+	margin-left: 50%;
+
 	/* background: red; */
-	height: 85%;
+	height: 80%;
 	width: 35%;
+	padding-top: 40px;
 }
 
 .intro-text {
-	position: relative;
+	position: absolute;
 	font-family: 'Montserrat', sans-serif;
 	text-align: -webkit-center;
 
 	color: #ffffff;
 }
+
 .App-logo {
 	height: 40vmin;
 }
@@ -74,28 +121,12 @@ body {
 }
 
 @media screen and (max-width: 1250px) {
-	.center-background {
+	.center-background-home {
 		display: flex;
 		position: absolute;
 		width: 735px;
 		height: 650px;
-		/* left: 404px; */
-		top: 252px;
-
-		background: #332f2f;
-		box-shadow: 0px 4px 5px #000000;
-		border-radius: 43px;
-	}
-}
-
-@media screen and (max-width: 800px) {
-	.center-background {
-		/* display: flex; */
-		position: absolute;
-		width: 480px;
-		height: 1000px;
-
-		top: 200px;
+		/* /* top: 252px; */
 
 		background: #332f2f;
 		box-shadow: 0px 4px 5px #000000;
@@ -104,35 +135,96 @@ body {
 
 	.chatbot-container {
 		background: green;
-		/* position: absolute; */
+		position: absolute;
 		/* align-self: center; */
-		/* top: 5%; */
-		bottom: 200px;
+		width: 50%;
+		height: 85%;
+
+		right: 45%;
+		top: 10%;
+		border-radius: 43px;
+	}
+
+	.top-div {
+		border-bottom: 0;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.center-background-home {
+		display: flex;
+		/* /* position: absolute; */
+		width: 480px;
+		height: 1250px;
+
+		top: 200px;
+
+		background: #332f2f;
+		box-shadow: 0px 4px 5px #000000;
+		border-radius: 43px;
+	}
+
+	.career-img-container {
+		position: absolute;
+		align-self: center;
+		top: 5%;
 		height: 45%;
 		width: 85%;
 		border-right: 0;
 		left: 40px;
 
 		border-bottom: 5px solid #c4c4c4;
+		clear: both;
 	}
 
 	.test-container {
-		top: 60%;
 		position: absolute;
-		align-self: center;
-		/* left: 60%; */
+
+		top: 55%;
+
 		/* background: red; */
-		height: 45%;
-		width: 85%;
+		height: 60%;
+		width: 80%;
+
+		clear: both;
+		padding: 0;
+		margin: 0;
+		border-bottom: 5px solid #c4c4c4;
+	}
+	.intro-text {
+		position: absolute;
+		font-family: 'Montserrat', sans-serif;
+		/* text-align: -webkit-center; */
+
+		color: #ffffff;
+	}
+
+	.top-div {
+		position: absolute;
+		width: 100%;
+		/* background-color: red; */
+		height: 20%;
+	}
+
+	.chatbot-container {
+		background: green;
+		position: absolute;
+		/* align-self: center; */
+		width: 95%;
+		height: 400px;
+
+		right: 3%;
+		top: 20%;
+		border-radius: 43px;
 	}
 }
 
-@media screen and (max-width: 480px) {
-	.center-background {
-		/* display: flex; */
-		position: absolute;
-		width: 380px;
-		height: 1000px;
+@media screen and (max-width: 660px) {
+	.center-background-home {
+		display: flex;
+		/* /* position: absolute; */
+		width: 360px;
+		height: 1450px;
 
 		top: 200px;
 
@@ -141,30 +233,131 @@ body {
 		border-radius: 43px;
 	}
 
-	.chatbot-container {
-		background: green;
-		/* position: absolute; */
-		/* align-self: center; */
-		/* top: 5%; */
-		bottom: 200px;
+	.career-img-container {
+		position: absolute;
+		align-self: center;
+		top: 5%;
 		height: 45%;
 		width: 85%;
 		border-right: 0;
-		left: 30px;
+		left: 40px;
 
 		border-bottom: 5px solid #c4c4c4;
+		clear: both;
 	}
 
 	.test-container {
-		top: 55%;
 		position: absolute;
-		align-self: center;
-		/* left: 60%; */
+
+		top: 55%;
+
 		/* background: red; */
-		height: 45%;
-		width: 85%;
+		height: 70%;
+		width: 80%;
+
+		clear: both;
+		padding: 0;
+		margin: 0;
+		border-bottom: 5px solid #c4c4c4;
+	}
+	.intro-text {
+		position: absolute;
+		font-family: 'Montserrat', sans-serif;
+		/* text-align: -webkit-center; */
+
+		color: #ffffff;
+	}
+
+	.top-div {
+		position: absolute;
+		width: 100%;
+		/* background-color: red; */
+		height: 20%;
+	}
+
+	.chatbot-container {
+		background: green;
+		position: absolute;
+		/* align-self: center; */
+		width: 95%;
+		height: 400px;
+
+		right: 3%;
+		top: 35%;
+		border-radius: 43px;
 	}
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 660px) {
+	.center-background-home {
+		display: flex;
+		/* /* position: absolute; */
+		width: 360px;
+		height: 1450px;
+
+		top: 200px;
+
+		background: #332f2f;
+		box-shadow: 0px 4px 5px #000000;
+		border-radius: 43px;
+	}
+
+	.career-img-container {
+		position: absolute;
+		align-self: center;
+		top: 5%;
+		height: 45%;
+		width: 85%;
+		border-right: 0;
+		left: 40px;
+
+		border-bottom: 5px solid #c4c4c4;
+		clear: both;
+	}
+
+	.test-container {
+		position: absolute;
+
+		top: 55%;
+
+		/* background: red; */
+		height: 70%;
+		width: 80%;
+
+		clear: both;
+		padding: 0;
+		margin: 0;
+		border-bottom: 5px solid #c4c4c4;
+	}
+	.intro-text {
+		position: absolute;
+		font-family: 'Montserrat', sans-serif;
+		/* text-align: -webkit-center; */
+
+		color: #ffffff;
+	}
+
+	.top-div {
+		position: absolute;
+		width: 100%;
+		/* background-color: red; */
+		height: 20%;
+	}
+
+	.chatbot-container {
+		background: green;
+		position: absolute;
+		/* align-self: center; */
+		width: 95%;
+		height: 400px;
+
+		right: 3%;
+		top: 35%;
+		border-radius: 43px;
+	}
+
+	.home-background {
+		background: #344d65;
+		min-height: 200vh;
+	}
 }
