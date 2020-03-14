@@ -3,13 +3,17 @@ import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import cors from "cors";
 import path from 'path';
+import clustersRouter from './routes/clustersRouter.js'
 //const express = require('./config/express.js')
 
 // Use env port or default
 const port = process.env.PORT || 5000;
 
 const app = express();
+
+app.use(cors());
 
 app.use(morgan('dev'));
 
@@ -20,9 +24,14 @@ app.use(
 	})
 );
 
+
+
 app.use(bodyParser.json());
 
 app.use('/', express.static('./client/build'));
+
+app.use('/api/clusters/',  clustersRouter);
+
 
 
 
