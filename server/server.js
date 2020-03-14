@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 //const express = require('./config/express.js')
  
 // Use env port or default
-//onst port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.listen(config.port, () => console.log(`App now listening on port ${config.port}`));
+app.listen(port, () => console.log(`App now listening on port ${port}`));
 
 mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(() => {
     console.log(`Successfully connected to mongoose database.`)
