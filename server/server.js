@@ -3,6 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import path from 'path';
 //const express = require('./config/express.js')
 
 // Use env port or default
