@@ -1,5 +1,8 @@
 import config from './config/config.js';
-import * as express from './config/express.js';
+import express from 'express';
+import morgan from 'morgan';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 //const express = require('./config/express.js')
 
 // Use env port or default
