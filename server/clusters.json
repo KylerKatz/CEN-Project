@@ -1,0 +1,228 @@
+{
+	"Clusters": [{
+			"name": "Agriculture, food, and natural resources",
+			"id": 0,
+			"jobnum": "1.4 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Crop, nursery,and greenhouse farmworkers and laborers",
+				"salary": "$18,710"
+			}, {
+				"id": 1,
+				"name": "Natural science managers",
+				"salary": "$116,840"
+			}]
+
+		},
+		{
+			"name": "Architecture and construction",
+			"id": 1,
+			"jobnum": "7.8 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Landscaping and groundskeeping workers",
+				"salary": "$23,940"
+			}, {
+				"id": 1,
+				"name": "Construction managers",
+				"salary": "$84,410"
+			}]
+		},
+		{
+			"name": "Arts, audio/video technology, and communications",
+			"id": 2,
+			"jobnum": "1.8 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Floral designers",
+				"salary": "$24,220"
+			}, {
+				"id": 1,
+				"name": "Art directors",
+				"salary": "$83,000"
+			}]
+		},
+		{
+			"name": "Business management and administration",
+			"id": 3,
+			"jobnum": "23.3 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Stock clerks and orderfillers",
+				"salary": "$22,480"
+			}, {
+				"id": 1,
+				"name": "Chief executives",
+				"salary": "$171,610"
+			}]
+		},
+		{
+			"name": "Education and training",
+			"id": 4,
+			"jobnum": "8.7 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Teacher assistants",
+				"salary": "$24,000"
+			}, {
+				"id": 1,
+				"name": "Postsecondary law teachers",
+				"salary": "$105,080"
+			}]
+		},
+		{
+			"name": "Finance",
+			"id": 5,
+			"jobnum": "5.3 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Tellers",
+				"salary": "$25,390"
+			}, {
+				"id": 1,
+				"name": "Financial managers",
+				"salary": "$112,700"
+			}]
+		},
+		{
+			"name": "Government and public administration",
+			"id": 6,
+			"jobnum": "1 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Legislators",
+				"salary": "$20,620"
+			}, {
+				"id": 1,
+				"name": "Financial examiners",
+				"salary": "$76,890"
+			}]
+		},
+		{
+			"name": "Health sciences",
+			"id": 7,
+			"jobnum": "12.2 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Home health aides",
+				"salary": "$21,020"
+			}, {
+				"id": 1,
+				"name": "Surgeons",
+				"salary": "$187,200"
+			}]
+		},
+		{
+			"name": "Hospitality and tourism",
+			"id": 8,
+			"jobnum": "17 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Combined food preparation and serving workers",
+				"salary": "$18,330"
+			}, {
+				"id": 1,
+				"name": "Gaming managers",
+				"salary": "$66,200"
+			}]
+		},
+		{
+			"name": "Human services",
+			"id": 9,
+			"jobnum": "5 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Shampooers",
+				"salary": "$18,510"
+			}, {
+				"id": 1,
+				"name": "Industrial-organizational psychologists",
+				"salary": "$80,330"
+			}]
+		},
+		{
+			"name": "Information technology",
+			"id": 10,
+			"jobnum": "3.5 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Computer user support specialists",
+				"salary": "$46,620"
+			}, {
+				"id": 1,
+				"name": "Systems software developers",
+				"salary": "$101,410"
+			}]
+		},
+		{
+			"name": "Law, public safety, corrections, and security",
+			"id": 11,
+			"jobnum": "4.9 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Lifeguards, ski patrol, and other recreational protective service workers",
+				"salary": "$19,040"
+			}, {
+				"id": 1,
+				"name": "Judges, magistrate judges, and magistrates.",
+				"salary": "$118,150"
+			}]
+		},
+		{
+			"name": "Manufacturing",
+			"id": 12,
+			"jobnum": "11.8 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Sewing machine operators",
+				"salary": "$21,490"
+			}, {
+				"id": 1,
+				"name": "Nuclear power reactor operators",
+				"salary": "$78,350"
+			}]
+		},
+		{
+			"name": "Marketing",
+			"id": 13,
+			"jobnum": "15.3 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Cashiers",
+				"salary": "$18,960"
+			}, {
+				"id": 1,
+				"name": "Marketing managers",
+				"salary": "$123,220"
+			}]
+		},
+		{
+			"name": "Science, technology, engineering, and mathematics",
+			"id": 14,
+			"jobnum": "2 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Social science research assistants",
+				"salary": "$38,310"
+			}, {
+				"id": 1,
+				"name": "Petroleum engineers",
+				"salary": "$132,320"
+			}]
+		},
+		{
+			"name": "Transportation, distribution, and logistics",
+			"id": 15,
+			"jobnum": "10.7 Million",
+			"careers": [{
+				"id": 0,
+				"name": "Parking Lot Attendant",
+				"salary": "$19,500"
+			}, {
+				"id": 1,
+				"name": "Air Traffic Controller",
+				"salary": "$121,280"
+			}]
+		}
+	]
+}
