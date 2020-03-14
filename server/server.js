@@ -22,7 +22,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.use('/', express.static('./client/public'));
+app.use('/', express.static('./client/build'));
 
 
 
@@ -40,8 +40,8 @@ mongoose
 //app.listen(port, () => console.log(`Server now running on port ${port}!`));
 app.get('*', (req, res) => {
 	console.log("path: ");
-	console.log(path.join(path.resolve(), './client/public/index.html'));
-	res.sendFile(path.join(path.resolve(), './client/public/index.html'));
+	console.log(path.join(path.resolve(), './client/build/index.html'));
+	res.sendFile(path.join(path.resolve(), './client/build/index.html'));
 });
 
 app.listen(port, () => console.log(`App now listening on port ${port}`));
