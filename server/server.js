@@ -19,5 +19,5 @@ mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true
     console.log(`Successfully connected to mongoose database.`)
 });
 
-const app = express.init()
-app.listen(port, () => console.log(`Server now running on port ${port}!`));
+//const app = express.init()
+//app.listen(port, () => console.log(`Server now running on port ${port}!`));
