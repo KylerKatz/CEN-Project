@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cluster from './models/ClusterModel.js';
 import config from './config/config.js';
 
-let db;
+let db, eclus;
 db= mongoose.connect(config.db.uri, {useNewUrlParser: true});
 mongoose.set('useFindAndModify', true);
 mongoose.set('useCreateIndex', true);
@@ -13,7 +13,7 @@ const retrieveAllClusters = () => {
  
     cluster.find({}, function (err, clusters) {
 		if(err) throw err;
-		
+		eclus=clusters;
 		var iloveiterators=clusters.length;
 		for(var i = 0; i < iloveiterators; i++){
 			console.log(clusters[i]);
@@ -24,3 +24,5 @@ const retrieveAllClusters = () => {
 };
 
 retrieveAllClusters();
+
+export default eclus;
