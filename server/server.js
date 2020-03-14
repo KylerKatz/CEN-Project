@@ -20,7 +20,11 @@ app.use(
 	})
 );
 
-app.listen(port, () => console.log(`App now listening on port ${port}`));
+app.use(bodyParser.json());
+
+app.use('/', express.static('./../../client'));
+
+
 
 mongoose
 	.connect(config.db.uri, {
@@ -46,3 +50,5 @@ app.all('/*', (req, res) => {
 	//well, i learned about redirect bashing at least
 	res.sendFile(path.resolve('./client/public/index.html'));
 });
+
+app.listen(port, () => console.log(`App now listening on port ${port}`));
