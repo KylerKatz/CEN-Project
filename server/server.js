@@ -1,5 +1,6 @@
 import config from './config/config.js';
-const express = require('./config/express.js');
+import * as express from './config/express.js';
+//const express = require('./config/express.js')
 
 // Use env port or default
 //onst port = process.env.PORT || 5000;
@@ -29,5 +30,5 @@ mongoose
 		console.log(`Successfully connected to mongoose database.`);
 	});
 
-const app = express.init();
-app.listen(port, () => console.log(`Server now running on port ${port}!`));
+//const app = express.init()
+//app.listen(port, () => console.log(`Server now running on port ${port}!`));
