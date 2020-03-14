@@ -22,7 +22,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.use('/', express.static('./../../client'));
+app.use('/', express.static('./client/public'));
 
 
 
@@ -38,17 +38,10 @@ mongoose
 
 //const app = express.init()
 //app.listen(port, () => console.log(`Server now running on port ${port}!`));
-app.all('/*', (req, res) => {
-
-    /*Add YOUR CODE HERE
-       see https://expressjs.com/en/api.html#res.sendFile
-       see https://nodejs.org/api/path.html
-       The path.resolve() method returns a string and resolves a sequence of paths or path segments into an absolute path.
-       If no path segments are passed, path.resolve() will return the absolute path of the current working directory.
-    */
-    //res.sendFile(path.resolve(...));
-	//well, i learned about redirect bashing at least
-	res.sendFile(path.resolve('./client/public/index.html'));
+app.get('*', (req, res) => {
+	console.log("path: ");
+	console.log(path.join(path.resolve(), './client/public/index.html'));
+	res.sendFile(path.join(path.resolve(), './client/public/index.html'));
 });
 
 app.listen(port, () => console.log(`App now listening on port ${port}`));

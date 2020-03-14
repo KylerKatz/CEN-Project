@@ -6,7 +6,7 @@
 	},
 	"type": "module",
 	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-	"main": "./server/server.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "mocha server/tests",
 		"install-all": "concurrently \"npm install\" \"cd client && npm install\"",
