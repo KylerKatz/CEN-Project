@@ -4,7 +4,7 @@ body {
 
 .background-explorepage {
 	background: #344d65;
-	min-height: 100vh;
+	min-height: 150vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -84,6 +84,7 @@ body {
 	border: 0px;
 	margin-left: 2.5%;
 	margin-bottom: 2%;
+	text-align: center;
 }
 
 .career-card:hover {
