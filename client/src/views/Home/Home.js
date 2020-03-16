@@ -33,7 +33,14 @@ function Home() {
 
 				<div className="bottom-div">
 					<div className="chatbot-container">
-						<p> The Chatbot will be here </p>
+						<p>
+							{' '}
+							This is demonstrating that we have an API working to get the
+							career clusters from the data base{' '}
+						</p>
+						<div className="cluster-container">
+							<p> Put the data in here</p>
+						</div>
 					</div>
 				</div>
 			</div>

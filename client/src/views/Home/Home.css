@@ -101,6 +101,13 @@ body {
 	color: #ffffff;
 }
 
+.cluster-container {
+	height: 80%;
+	width: 100%;
+	border-radius: 2px solid black;
+	background-color: black;
+}
+
 .App-logo {
 	height: 40vmin;
 }

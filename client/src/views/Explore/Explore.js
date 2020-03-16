@@ -1,15 +1,13 @@
 import React from 'react';
 import './Explore.css';
 import CareerCard from './components/CareerCard.js';
+import CareerPage from '..//Career-Pages/CareerPage';
 
 class Explore extends React.Component {
-
 	render() {
-
 		const clusters = this.props.clusters.map(cluster => {
-			return <CareerCard cluster={cluster} key ={cluster.id}/>
-		})
-
+			return <CareerCard cluster={cluster} key={cluster.id} />;
+		});
 
 		return (
 			<div className="background-explorepage">
@@ -22,13 +20,11 @@ class Explore extends React.Component {
 					</div>
 
 					<div className="career-box">
-						<div className="row1">
-							{clusters}
-						</div>
+						<div className="row1">{clusters}</div>
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }
 
