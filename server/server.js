@@ -33,7 +33,7 @@ app.use('/', express.static('./client/build'));
 
 app.use('/api/clusters/',  clustersRouter);
  
-app.use('/Signup/', userRouter);
+app.use('/Signup', userRouter);
 
 
 mongoose
