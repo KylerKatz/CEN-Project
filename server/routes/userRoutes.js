@@ -3,6 +3,6 @@ import express from 'express';
 const userRouter = express.Router();
 
 //var userController 
-userRouter.post("/Signup", userController.post);
+userRouter.post("/SignupComplete", userController.post);
 
 export default userRouter; 
