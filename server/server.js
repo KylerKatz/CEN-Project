@@ -1,13 +1,4 @@
 import config from './config/config.js';
-<<<<<<< Updated upstream
-const express = require('./config/express.js')
- 
-// Use env port or default
-const port = process.env.PORT || 5000;
-
-mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(() => {
-    console.log(`Successfully connected to mongoose database.`)
-=======
 import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
@@ -61,8 +52,6 @@ app.get('*', (req, res) => {
 	console.log("path: ");
 	console.log(path.join(path.resolve(), './client/build/index.html'));
 	res.sendFile(path.join(path.resolve(), './client/build/index.html'));
->>>>>>> Stashed changes
 });
 
-const app = express.init()
-app.listen(port, () => console.log(`Server now running on port ${port}!`));
+app.listen(port, () => console.log(`App now listening on port ${port}`));
