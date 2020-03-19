@@ -1,6 +1,5 @@
 import User from '../models/UserSchema.js'; 
 import mongoose from 'mongoose';
-//add user 
 
 export const post = function(req, res){
 
