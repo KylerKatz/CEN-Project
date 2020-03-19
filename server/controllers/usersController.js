@@ -1,7 +1,7 @@
 import User from '../models/UserSchema.js'; 
 import mongoose from 'mongoose';
 
-export const post = function(req, res){
+export const create = function(req, res){
 
     //validate fields 
 

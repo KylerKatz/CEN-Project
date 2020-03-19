@@ -108,7 +108,7 @@ function Signup(props) {
 
 								<button>
 
-								<input type="submit" name="submit"></input>
+								<input type="submit" name="submit"></input> onClick={(e) => onSubmit(e)}
 								</button>
 								
 	
