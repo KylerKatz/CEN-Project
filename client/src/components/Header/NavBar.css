@@ -9,12 +9,6 @@ html* {
 	background: #459cd1;
 	border-bottom: 3px solid #000000;
 	position: relative;
-	/* width: 100%; */
-	/* position: absolute;
-width: 1927.34px;
-height: 160px;
-left: calc(50% - 1927.34px/2 + 3.67px);
-top: 308px; */
 }
 
 .nav-logo:hover {

@@ -1,0 +1,160 @@
+body {
+	margin: 0;
+}
+
+.background-explorepage-admin-home {
+	background: #344d65;
+	min-height: 150vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* font-size: calc(10px + 2vmin); */
+	/* color: white;  */
+}
+
+.center-background-admin-home {
+	/* display: flex;
+	flex-direction: column; */
+
+	position: absolute;
+	width: 1025px;
+	min-height: 800px;
+
+	top: 200px;
+
+	background: #332f2f;
+	box-shadow: 0px 4px 5px #000000;
+	border-radius: 43px;
+}
+
+.textbox-1-admin-home {
+	text-align: center;
+}
+
+.textbox-2-admin-home {
+	margin-bottom: 5%;
+	height: 5%;
+	width: 100%;
+	border-bottom: 2px solid grey;
+	/* background-color: aquamarine; */
+	position: relative;
+	margin-top: 10%;
+	text-align: center;
+}
+.edit-button {
+	position: relative;
+	width: 168px;
+	height: 54px;
+	margin-left: 20%;
+
+	background: #2db4de;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 32px;
+	text-align: center;
+}
+
+.add-button {
+	position: relative;
+	width: 168px;
+	height: 54px;
+	margin: auto;
+	margin-top: 10px;
+
+	background: #2db4de;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 32px;
+	text-align: center;
+	text-decoration: none;
+}
+.add-button:hover {
+	background-color: #2494b6;
+}
+
+.add-button h3 {
+	position: relative;
+	bottom: 10px;
+	text-decoration: none;
+}
+.career-box-admin-home {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width: 80%;
+	min-height: 400px;
+	/* background-color: #344d65; */
+	border-radius: 32px;
+	margin-bottom: 50px;
+	/* border: 1px solid black; */
+	/* overflow-y: auto; */
+}
+.career-bar-right {
+	position: absolute;
+	width: 12%;
+	left: 80%;
+}
+.career-bar-admin {
+	width: 85%;
+	min-height: 40px;
+	background-color: grey;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 32px;
+	margin-top: 10px;
+}
+.career-name-admin {
+	position: relative;
+	color: black;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 20px;
+	float: left;
+	padding-top: 7px;
+}
+
+.edit-icon {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	right: 0%;
+}
+
+.edit-icon:hover {
+	filter: invert(100%);
+}
+
+.trashcan-icon {
+	position: relative;
+	width: 35px;
+	height: 35px;
+	right: 20px;
+	bottom: 2px;
+	right: 0%;
+}
+.trashcan-icon:hover {
+	filter: invert(100%);
+}
+
+.career-card {
+	display: inline-block;
+	position: relative;
+	width: 205px;
+	height: 107px;
+	left: 2%;
+	top: 5%;
+	background: #c4c4c4;
+	border-radius: 18px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	margin-left: 2.5%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.career-card:hover {
+	box-shadow: 0px 10px 10px #000000;
+}

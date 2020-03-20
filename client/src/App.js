@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { Route, Switch, Redirect} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from './views/Home/Home';
 import NotFound from './views/NotFound';
 import NavBar from './components/Header/NavBar';
@@ -7,10 +7,12 @@ import Explore from './views/Explore/Explore';
 import Login from './views/Login/Login';
 import Signup from './views/Signup/Signup';
 import CareerPage from './views/Career-Pages/CareerPage';
+import AdminDashboard from './views/Admin-Dashboard/Admin-Dashboard';
+import EditPage from './views/Admin-Dashboard/EditPage';
+import AddPage from './views/Admin-Dashboard/AddPage';
 
 class App extends React.Component {
-
-	//create states here 
+	//create states here
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -20,18 +22,16 @@ class App extends React.Component {
 	}
 
 	async componentDidMount() {
-		const URL = "http://localhost:5000/api/clusters";
+		const URL = 'http://localhost:5000/api/clusters';
 		const response = await fetch(URL);
 		const data = await response.json();
 		this.setState({
 			loaded: true,
 			clusters: data
-		})
+		});
 
 		console.log(this.state.clusters);
 	}
-
-
 
 	render() {
 		return (
@@ -40,22 +40,36 @@ class App extends React.Component {
 					<div>
 						<NavBar />
 						<Switch>
-							<Route exact path="/Home" component={(props) => <Home clusters={this.state.clusters}/>} />
-							<Route exact path="/Explore" component={(props) => <Explore clusters={this.state.clusters}/>}/>
+							<Route
+								exact
+								path="/Home"
+								component={props => <Home clusters={this.state.clusters} />}
+							/>
+							<Route
+								exact
+								path="/Explore"
+								component={props => <Explore clusters={this.state.clusters} />}
+							/>
 							<Route exact path="/Login" component={Login} />
 							<Route exact path="/Signup" component={Signup} />
 							<Route exact path="/CareerPage" component={CareerPage} />
+							<Route exact path="/Admin-Dashboard" component={AdminDashboard} />
+							<Route exact path="/EditPage" component={EditPage} />
+							<Route exact path="/AddPage" component={AddPage} />
+
 							<Route exact path="/">
 								<Redirect to="/Home" />
 							</Route>
 
 							<Route component={NotFound} />
 						</Switch>
-					</div>) : 
-					(<div>Loading.....</div>)}
+					</div>
+				) : (
+					<div>Loading.....</div>
+				)}
 			</div>
 		);
 	}
-};
+}
 
 export default App;

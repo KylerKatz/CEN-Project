@@ -42,8 +42,8 @@ body {
 	text-align: -webkit-center;
 }
 
-input[type='email'],
-input[type='password'] {
+input[type='email'].forms,
+input[type='password'].forms {
 	width: 434px;
 	height: 82px;
 

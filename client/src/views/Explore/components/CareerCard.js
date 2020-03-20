@@ -1,12 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Explore from '../Explore';
 
 class CareerCard extends React.Component {
 	render() {
-		return <div className="career-card">
-			{this.props.cluster.name}
-			{this.props.cluster.jobnum}
-		</div>;
+		return (
+			<NavLink to="/CareerPage">
+				<div className="career-card">
+					{this.props.cluster.name}
+					{this.props.cluster.jobnum}
+				</div>
+			</NavLink>
+		);
 	}
 }
 
