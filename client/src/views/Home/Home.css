@@ -3,7 +3,7 @@ body {
 }
 
 .home-background {
-	background: #344d65;
+	/* background: #344d65; */
 	min-height: 150vh;
 	display: flex;
 	flex-direction: column;
@@ -11,6 +11,8 @@ body {
 	justify-content: center;
 	/* font-size: calc(10px + 2vmin); */
 	/* color: white;  */
+	background-image: url('./Backgroundv1.png');
+	background-size: 50%;
 }
 
 .center-background-home {
@@ -357,7 +359,6 @@ body {
 	}
 
 	.home-background {
-		background: #344d65;
-		min-height: 200vh;
+		min-height: 210vh;
 	}
 }

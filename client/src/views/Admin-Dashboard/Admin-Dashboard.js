@@ -4,6 +4,7 @@ import './Admin-Dashboard.css';
 import CareerCard from './../../views/Explore/components/CareerCard';
 import CareerPage from '..//Career-Pages/CareerPage';
 import CareerBar from './CareerBar';
+import ClusterBar from './ClusterBar';
 
 class AdminDashboard extends React.Component {
 	render() {
@@ -31,29 +32,15 @@ class AdminDashboard extends React.Component {
 					<div className="career-box-admin-home">
 						{/* I added a bunch of CareerBars just so you understand what it will look like, but you should be able to loop through a map of the clusters like last time */}
 
-						<NavLink to="/AddPage">
-							<div className="add-button">
-								<h3>Add</h3>
-							</div>
-						</NavLink>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
-						<CareerBar></CareerBar>
+						<div className="add-button-admin">
+							<NavLink to="/AddPage">
+								<h3>Create New Cluster</h3>
+							</NavLink>
+						</div>
+						<ClusterBar></ClusterBar>
+						<ClusterBar></ClusterBar>
+						<ClusterBar></ClusterBar>
+						<ClusterBar></ClusterBar>
 					</div>
 				</div>
 			</div>
