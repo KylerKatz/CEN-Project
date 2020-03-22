@@ -6,10 +6,15 @@ class CareerBar extends React.Component {
 	render() {
 		return (
 			<div className="career-bar-admin">
-				<h3 className="career-name-admin">Career Name (Get from clusters) </h3>
+				<h3 className="career-name-admin">{this.props.career.name}</h3>
 
 				<div className="career-bar-right">
-					<NavLink to="/EditPage">
+					<NavLink to={{
+						pathname: "/EditPage",
+						state: {
+							career: this.props.career
+						}
+						}}>
 						<img
 							className="edit-icon"
 							src={'./edit-icon1.png'}

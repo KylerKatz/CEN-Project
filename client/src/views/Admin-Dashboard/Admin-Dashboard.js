@@ -7,10 +7,33 @@ import CareerBar from './CareerBar';
 import ClusterBar from './ClusterBar';
 
 class AdminDashboard extends React.Component {
+	
+	constructor(props) {
+		super(props);
+		this.state = {
+			loaded: false,
+			clusters: []
+		};
+	}
+
+	async componentDidMount() {
+		const URL = 'http://localhost:5000/api/clusters';
+		const response = await fetch(URL);
+		const data = await response.json();
+		this.setState({
+			loaded: true,
+			clusters: data
+		});
+
+		console.log(this.state.clusters);
+	}
+
+	
+	
 	render() {
-		// const clusters = this.props.clusters.map(cluster => {
-		// 	return <CareerCard cluster={cluster} key={cluster.id} />;
-		// });
+		const clusters = this.state.clusters.map(cluster => {
+		return <ClusterBar cluster={cluster} key={cluster.id} />
+		});
 
 		return (
 			<div className="background-explorepage-admin-home">
@@ -37,10 +60,7 @@ class AdminDashboard extends React.Component {
 								<h3>Create New Cluster</h3>
 							</NavLink>
 						</div>
-						<ClusterBar></ClusterBar>
-						<ClusterBar></ClusterBar>
-						<ClusterBar></ClusterBar>
-						<ClusterBar></ClusterBar>
+						{clusters}
 					</div>
 				</div>
 			</div>

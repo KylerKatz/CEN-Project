@@ -10,7 +10,7 @@ import async from 'async';
 export const clearAndRefill = () => {
     mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
     console.log(`established connection to db at uri: ${config.db.uri}!`);
-	/*
+	
     cluster.deleteMany({}, (err) => {
         if (err){
 			console.log("error", err);
@@ -18,7 +18,7 @@ export const clearAndRefill = () => {
 		}
     });
 	console.log("cleaning");
-	*/
+	
     fs.readFile('clusters.json', 'utf8', (err, data) => {
         if (err) throw err;
         let clusterData = JSON.parse(data);

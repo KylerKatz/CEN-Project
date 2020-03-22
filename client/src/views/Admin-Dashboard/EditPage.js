@@ -5,10 +5,15 @@ import CareerPage from '..//Career-Pages/CareerPage';
 import CareerBar from './CareerBar';
 
 class EditPage extends React.Component {
+	
+	constructor(props) {
+		super(props);
+		this.state = {
+			career: this.props.location.state.career
+		};
+	}
+	
 	render() {
-		// const clusters = this.props.clusters.map(cluster => {
-		// 	return <CareerCard cluster={cluster} key={cluster.id} />;
-		// });
 
 		function alertSubmit() {
 			alert('Your Changes Have Been Saved!');
@@ -30,7 +35,7 @@ class EditPage extends React.Component {
 				<div className="center-background-edit-page">
 					<div className="career-name-div">
 						<h1 className="career-name" contentEditable="true">
-							Career Name
+							{this.state.career.name}
 						</h1>
 					</div>
 

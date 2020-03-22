@@ -6,11 +6,15 @@
 			"careers": [{
 				"id": 0,
 				"name": "Crop, nursery,and greenhouse farmworkers and laborers",
-				"salary": "$18,710"
+				"salary": "$18,710",
+				"description": "Drive and control farm equipment to till soil and to plant, cultivate, and harvest crops. May perform tasks, such as crop baling or hay bucking. May operate stationary equipment to perform post-harvest tasks, such as husking, shelling, threshing, and ginning.",
+				"videolink": "https://www.youtube.com/watch?v=uSZVN7JaJmQ"
 			}, {
 				"id": 1,
 				"name": "Natural science managers",
-				"salary": "$116,840"
+				"salary": "$116,840",
+				"description": "Plan, direct, or coordinate activities in such fields as life sciences, physical sciences, mathematics, statistics, and research and development in these fields.",
+				"videolink": "https://www.youtube.com/watch?v=faXbaiNn2HM"
 			}]
 
 		},
