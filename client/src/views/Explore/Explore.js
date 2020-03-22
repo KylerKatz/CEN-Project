@@ -13,7 +13,7 @@ class Explore extends React.Component {
 			<div className="background-explorepage">
 				<div className="center-background-1">
 					<div className="textbox-1">
-						<h1 className="text1">Explore These Careers</h1>
+						<h1 className="text1">Explore These Career Fields</h1>
 					</div>
 					<div className="textbox-2">
 						<h1 className="text2">Click On A Career To Learn More</h1>

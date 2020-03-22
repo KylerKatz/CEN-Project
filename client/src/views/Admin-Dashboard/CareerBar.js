@@ -7,6 +7,7 @@ class CareerBar extends React.Component {
 		return (
 			<div className="career-bar-admin">
 				<h3 className="career-name-admin">Career Name (Get from clusters) </h3>
+
 				<div className="career-bar-right">
 					<NavLink to="/EditPage">
 						<img
