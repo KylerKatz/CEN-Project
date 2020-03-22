@@ -40,11 +40,7 @@ class App extends React.Component {
 					<div>
 						<NavBar />
 						<Switch>
-							<Route
-								exact
-								path="/Home"
-								component={props => <Home clusters={this.state.clusters} />}
-							/>
+							<Route exact path="/Home" component={Home}/>
 							<Route
 								exact
 								path="/Explore"

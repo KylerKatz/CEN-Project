@@ -1,7 +1,7 @@
 import React from 'react';
 import './Explore.css';
 import CareerCard from './components/CareerCard.js';
-import CareerPage from '..//Career-Pages/CareerPage';
+
 
 class Explore extends React.Component {
 	render() {
