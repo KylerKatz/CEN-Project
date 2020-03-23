@@ -21,11 +21,49 @@ body {
 	width: 1025px;
 	min-height: 55%;
 
+	top: 450px;
+	margin-top: 20px;
+	background: #332f2f;
+	box-shadow: 0px 4px 5px #000000;
+	border-radius: 43px;
+}
+.career-selection-div {
+	position: absolute;
+	width: 1025px;
+	min-height: 100px;
 	top: 200px;
 
 	background: #332f2f;
 	box-shadow: 0px 4px 5px #000000;
 	border-radius: 43px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.career-bubble {
+	display: inline-block;
+	position: relative;
+	min-width: 168px;
+
+	height: 54px;
+	margin: auto;
+	margin-top: 10px;
+
+	background: #2db4de;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 32px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.career-bubble:hover {
+	background-color: #2494b6;
+}
+
+.career-bubble h3 {
+	position: relative;
+	bottom: 10px;
 }
 
 .career-name-div {

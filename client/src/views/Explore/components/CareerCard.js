@@ -5,15 +5,16 @@ import Explore from '../Explore';
 class CareerCard extends React.Component {
 	render() {
 		return (
-			<NavLink to={{
-				pathname: '/CareerPage',
-				state: {
-					cluster: this.props.cluster
-				}
-			}}>
-				<div className="career-card">
-					{this.props.cluster.name}
-				</div>
+			<NavLink
+				onClick={() => window.scrollTo(0, 0)}
+				to={{
+					pathname: '/CareerPage',
+					state: {
+						cluster: this.props.cluster
+					}
+				}}
+			>
+				<div className="career-card">{this.props.cluster.name}</div>
 			</NavLink>
 		);
 	}

@@ -7,7 +7,6 @@ import CareerBar from './CareerBar';
 import ClusterBar from './ClusterBar';
 
 class AdminDashboard extends React.Component {
-	
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -28,11 +27,9 @@ class AdminDashboard extends React.Component {
 		console.log(this.state.clusters);
 	}
 
-	
-	
 	render() {
 		const clusters = this.state.clusters.map(cluster => {
-		return <ClusterBar cluster={cluster} key={cluster.id} />
+			return <ClusterBar cluster={cluster} key={cluster.id} />;
 		});
 
 		return (
@@ -48,15 +45,11 @@ class AdminDashboard extends React.Component {
 						</h1>
 					</div>
 
-					{/* <div className="edit-button">
-						<h3>Edit</h3>
-					</div> */}
-
 					<div className="career-box-admin-home">
 						{/* I added a bunch of CareerBars just so you understand what it will look like, but you should be able to loop through a map of the clusters like last time */}
 
 						<div className="add-button-admin">
-							<NavLink to="/AddPage">
+							<NavLink onClick={() => window.scrollTo(0, 0)} to="/AddPage">
 								<h3>Create New Cluster</h3>
 							</NavLink>
 						</div>

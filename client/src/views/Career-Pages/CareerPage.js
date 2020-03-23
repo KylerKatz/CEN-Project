@@ -1,8 +1,8 @@
 import React from 'react';
 import './CareerPage.css';
+import CareerBubble from './CareerBubble';
 
 class CareerPage extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -13,9 +13,13 @@ class CareerPage extends React.Component {
 	render() {
 		return (
 			<div className="background-careerpage">
+				<div className="career-selection-div">
+					<CareerBubble></CareerBubble>
+					<CareerBubble></CareerBubble>
+				</div>
 				<div className="center-background-2">
 					<div className="career-name-div">
-						<h1 className="career-name"></h1>
+						<h1 className="career-name">Career Name</h1>
 					</div>
 
 					<div className="career-box-1">
@@ -27,9 +31,9 @@ class CareerPage extends React.Component {
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industry's
 										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but
-										also the leap into electronic typesetting, remaining
+										printer took a galley of type and scrambled it to make a
+										type specimen book. It has survived not only five centuries,
+										but also the leap into electronic typesetting, remaining
 										essentially unchanged. It was popularised in the 1960s with
 										the release of Letraset sheets containing
 									</p>
@@ -42,9 +46,9 @@ class CareerPage extends React.Component {
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industry's
 										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but
-										also the leap into electronic typesetting, remaining
+										printer took a galley of type and scrambled it to make a
+										type specimen book. It has survived not only five centuries,
+										but also the leap into electronic typesetting, remaining
 										essentially unchanged. It was popularised in the 1960s with
 										the release of Letraset sheets containing
 									</p>{' '}
@@ -59,9 +63,9 @@ class CareerPage extends React.Component {
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industry's
 										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but
-										also the leap into electronic typesetting, remaining
+										printer took a galley of type and scrambled it to make a
+										type specimen book. It has survived not only five centuries,
+										but also the leap into electronic typesetting, remaining
 										essentially unchanged. It was popularised in the 1960s with
 										the release of Letraset sheets containing
 									</p>
@@ -75,9 +79,9 @@ class CareerPage extends React.Component {
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industry's
 										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but
-										also the leap into electronic typesetting, remaining
+										printer took a galley of type and scrambled it to make a
+										type specimen book. It has survived not only five centuries,
+										but also the leap into electronic typesetting, remaining
 										essentially unchanged. It was popularised in the 1960s with
 										the release of Letraset sheets containing
 									</p>{' '}
@@ -91,9 +95,9 @@ class CareerPage extends React.Component {
 										Lorem Ipsum is simply dummy text of the printing and
 										typesetting industry. Lorem Ipsum has been the industry's
 										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but
-										also the leap into electronic typesetting, remaining
+										printer took a galley of type and scrambled it to make a
+										type specimen book. It has survived not only five centuries,
+										but also the leap into electronic typesetting, remaining
 										essentially unchanged. It was popularised in the 1960s with
 										the release of Letraset sheets containing
 									</p>{' '}

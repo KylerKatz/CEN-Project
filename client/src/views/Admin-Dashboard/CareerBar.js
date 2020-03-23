@@ -9,12 +9,15 @@ class CareerBar extends React.Component {
 				<h3 className="career-name-admin">{this.props.career.name}</h3>
 
 				<div className="career-bar-right">
-					<NavLink to={{
-						pathname: "/EditPage",
-						state: {
-							career: this.props.career
-						}
-						}}>
+					<NavLink
+						onClick={() => window.scrollTo(0, 0)}
+						to={{
+							pathname: '/EditPage',
+							state: {
+								career: this.props.career
+							}
+						}}
+					>
 						<img
 							className="edit-icon"
 							src={'./edit-icon1.png'}
