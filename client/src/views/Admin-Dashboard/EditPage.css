@@ -250,6 +250,7 @@ body {
 	width: 100%;
 	min-height: 20%;
 	/* background-color: red; */
+	white-space: pre-wrap;
 }
 
 .classes-text-edit {
@@ -259,4 +260,5 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-top: 10px;
+	white-space: pre-wrap;
 }

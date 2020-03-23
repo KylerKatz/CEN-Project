@@ -15,8 +15,36 @@ class EditPage extends React.Component {
 	}
 
 	render() {
+		function updateDataBase() {
+			const careerName = document.getElementsByClassName('career-name-edit')[0]
+				.innerText;
+			console.log(careerName);
+
+			const description = document.getElementsByClassName(
+				'description-text-edit'
+			)[0].innerText;
+			console.log(description);
+
+			const aDayInTheLife = document.getElementsByClassName('day-text-edit')[0]
+				.innerText;
+			console.log(aDayInTheLife);
+
+			const salary = document.getElementsByClassName('salary-text-edit')[0]
+				.innerText;
+			console.log(salary);
+
+			const celebrities = document.getElementsByClassName(
+				'celebrities-text-edit'
+			)[0].innerText;
+			console.log(celebrities);
+
+			const classes = document.getElementsByClassName('classes-text-edit')[0]
+				.innerText;
+			console.log(classes);
+		}
 		function handleSubmit() {
 			// Update DB
+			updateDataBase();
 			// Alert User
 			alert('Your Changes Have Been Saved!');
 			// Redirect back to dashboard
