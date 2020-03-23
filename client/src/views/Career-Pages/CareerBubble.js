@@ -8,10 +8,7 @@ class CareerBubble extends React.Component {
 			<NavLink className="nav" to="/">
 				<div className="career-bubble">
 					<span>
-						<h3>
-							{' '}
-							Career Name of if you want just the index number (up to you){' '}
-						</h3>
+						<h3> 1 </h3>
 					</span>
 				</div>
 			</NavLink>
