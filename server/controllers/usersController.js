@@ -8,7 +8,7 @@ export const create = function(req, res){
     //instantiate a User 
 
     console.log("made it here");
-    var addUser = User({
+    var addUser = new User({
         name: req.body.name, 
         email: req.body.email,
         password: req.body.password, 

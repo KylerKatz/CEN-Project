@@ -51,7 +51,7 @@ function Signup(props) {
 				<div className="Signup-background">
 					<p className="login-text">Sign Up For A New Account</p>
 	
-					<form  action = '/SignupComplete' method ="POST">
+					<form  action = 'http://localhost:5000/api//Signup' method ="POST">
 	
 						<div className="forms">
 								<input 
