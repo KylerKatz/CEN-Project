@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Admin-Dashboard.css';
-import CareerCard from './../../views/Explore/components/CareerCard';
+import ClusterCard from './../../views/Explore/components/ClusterCard';
 import CareerPage from '..//Career-Pages/CareerPage';
 import CareerBar from './CareerBar';
 import ClusterBar from './ClusterBar';

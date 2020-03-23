@@ -1,12 +1,12 @@
 import React from 'react';
 import './Explore.css';
-import CareerCard from './components/CareerCard.js';
+import ClusterCard from './components/ClusterCard.js';
 
 
 class Explore extends React.Component {
 	render() {
 		const clusters = this.props.clusters.map(cluster => {
-			return <CareerCard cluster={cluster} key={cluster.id} />;
+			return <ClusterCard cluster={cluster} key={cluster.id} />;
 		});
 
 		return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Explore from '../Explore';
 
-class CareerCard extends React.Component {
+class ClusterCard extends React.Component {
 	render() {
 		return (
 			<NavLink
@@ -20,4 +20,4 @@ class CareerCard extends React.Component {
 	}
 }
 
-export default CareerCard;
+export default ClusterCard
