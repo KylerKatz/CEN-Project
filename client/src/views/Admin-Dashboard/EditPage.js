@@ -7,6 +7,7 @@ import AdminDashboard from './Admin-Dashboard';
 import { NavLink } from 'react-router-dom';
 
 class EditPage extends React.Component {
+	
 	constructor(props) {
 		super(props);
 		this.state = {
