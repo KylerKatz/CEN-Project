@@ -1,6 +1,6 @@
 import React from 'react';
 import './EditPage.css';
-import CareerCard from './../../views/Explore/components/CareerCard';
+import ClusterCard from './../../views/Explore/components/ClusterCard';
 import CareerPage from '..//Career-Pages/CareerPage';
 import CareerBar from './CareerBar';
 import AdminDashboard from './Admin-Dashboard';
