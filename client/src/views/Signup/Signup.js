@@ -27,12 +27,22 @@ function Signup(props) {
 
 	}
 	
-	const onSubmit = (e) =>{
+	const handleSubmit = (e) =>{
 
 		//make sure passwords match, if not give error
 		//put into model and save to database? 
 		//put in another file and include function here
-		e.preventDefault();
+		/*fetch("http://localhost:5000/api/Signup",{
+			method: "post",
+			body: JSON.stringify(form),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		}).then(function(response) {
+			console.log(response)
+			return response.json();
+		  });*/
+		  
 	
 		
 		setForm({
@@ -42,16 +52,15 @@ function Signup(props) {
 			conpassword: '',
 			isAdmin:''
 
-		})
-
+		});
 	}
 
 		return (
-			<div className="background">
-				<div className="Signup-background">
-					<p className="login-text">Sign Up For A New Account</p>
+			//<div className="background">
+				//<div className="Signup-background">
+					//<p className="login-text">Sign Up For A New Account</p>
 	
-					<form  action = 'http://localhost:5000/api//Signup' method ="POST">
+					<form action="http://localhost:5000/api/Signup" method="post" >
 	
 						<div className="forms">
 								<input 
@@ -81,7 +90,7 @@ function Signup(props) {
 	
 								<input
 									type="password"
-									name="password"
+									name="conpassword"
 									value ={form.conpassword} 
 									placeholder="Confirm Password"
 									onChange ={onChange}>
@@ -106,17 +115,16 @@ function Signup(props) {
 								></input>
 								<br></br>
 
-								<button>
-
-								<input type="submit" name="submit"></input> onClick={(e) => onSubmit(e)}
+								<button >
+									<input type="submit" name="submit" ></input>
 								</button>
 								
 	
 						</div>
 					</form> 
 	
-				</div>
-			</div>
+				//</div>
+			//</div>
 		);
 }
 

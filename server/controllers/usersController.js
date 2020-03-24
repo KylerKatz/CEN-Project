@@ -1,14 +1,15 @@
 import User from '../models/UserSchema.js'; 
 import mongoose from 'mongoose';
 
-export const create = function(req, res){
+const create = function(req, res){
 
     //validate fields 
 
     //instantiate a User 
 
     console.log("made it here");
-    var addUser = new User({
+    var addUser = new 
+    User({
         name: req.body.name, 
         email: req.body.email,
         password: req.body.password, 
@@ -20,8 +21,10 @@ export const create = function(req, res){
     addUser.save(function(err, data){
         if (err) throw err; 
         console.log("user created");
-        res.status(200).send(data);
+        res.send(data);
     }); 
 
 
 };
+
+export default create;
