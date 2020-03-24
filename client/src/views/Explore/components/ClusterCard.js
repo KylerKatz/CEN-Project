@@ -1,16 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import CareerPage from '../../Career-Pages/CareerPage';
 import Explore from '../Explore';
 
 class ClusterCard extends React.Component {
+	
 	render() {
 		return (
 			<NavLink
 				onClick={() => window.scrollTo(0, 0)}
 				to={{
-					pathname: '/CareerPage',
+					pathname: '/CareerPage/',
+					//component: CareerPage,
 					state: {
-						cluster: this.props.cluster
+						career: this.props.cluster.careers
 					}
 				}}
 			>

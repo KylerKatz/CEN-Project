@@ -6,20 +6,37 @@ class CareerPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			cluster: this.props.location.state.cluster
+			cluster: this.props.location.state.cluster,
+			career: 0
 		};
 	}
 
+	changeCareer(id) {
+		this.setState({
+			cluster: this.state.cluster,
+			career: id
+		})
+	}
+
 	render() {
+
+		const str = this.props.location.state.career[this.state.career].videolink
+		const str2 = str.substr(str.length - 11)
+		const str3 = 'https://www.youtube.com/embed/' + str2
+
+		const careers = this.props.location.state.career.map(career => {
+			return <CareerBubble  key={career.id} id={career.id} respond={this.changeCareer.bind(this)}/>;
+		});
+		
+
 		return (
 			<div className="background-careerpage">
 				<div className="career-selection-div">
-					<CareerBubble></CareerBubble>
-					<CareerBubble></CareerBubble>
+					{careers}
 				</div>
 				<div className="center-background-2">
 					<div className="career-name-div">
-						<h1 className="career-name">Career Name</h1>
+		<h1 className="career-name">{this.props.location.state.career[this.state.career].name}</h1>
 					</div>
 
 					<div className="career-box-1">
@@ -28,14 +45,7 @@ class CareerPage extends React.Component {
 								<h1 className="description-title">Description</h1>
 								<div className="description-text-div">
 									<p className="description-text">
-										Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a
-										type specimen book. It has survived not only five centuries,
-										but also the leap into electronic typesetting, remaining
-										essentially unchanged. It was popularised in the 1960s with
-										the release of Letraset sheets containing
+										{this.props.location.state.career[this.state.career].description}
 									</p>
 								</div>
 							</div>
@@ -43,14 +53,12 @@ class CareerPage extends React.Component {
 								<h1 className="day-title">A Day In The Life</h1>
 								<div className="day-text-div">
 									<p className="day-text">
-										Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a
-										type specimen book. It has survived not only five centuries,
-										but also the leap into electronic typesetting, remaining
-										essentially unchanged. It was popularised in the 1960s with
-										the release of Letraset sheets containing
+									<iframe
+										className="video-edit"
+										width="420"
+										height="315"
+										src= {str3}
+									></iframe>
 									</p>{' '}
 								</div>
 							</div>
@@ -60,14 +68,7 @@ class CareerPage extends React.Component {
 								<h1 className="salary-title">Average Salary</h1>
 								<div className="salary-text-div">
 									<p className="salary-text">
-										Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a
-										type specimen book. It has survived not only five centuries,
-										but also the leap into electronic typesetting, remaining
-										essentially unchanged. It was popularised in the 1960s with
-										the release of Letraset sheets containing
+										{this.props.location.state.career[this.state.career].salary}
 									</p>
 								</div>
 							</div>
@@ -76,14 +77,7 @@ class CareerPage extends React.Component {
 								<h1 className="celebrities-title">Celebrities</h1>
 								<div className="celebrities-text-div">
 									<p className="celebrities-text">
-										Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a
-										type specimen book. It has survived not only five centuries,
-										but also the leap into electronic typesetting, remaining
-										essentially unchanged. It was popularised in the 1960s with
-										the release of Letraset sheets containing
+									{this.props.location.state.career[this.state.career].celebrities}
 									</p>{' '}
 								</div>
 							</div>
@@ -92,14 +86,7 @@ class CareerPage extends React.Component {
 								<h1 className="classes-title">Relevant Classes</h1>
 								<div className="classes-text-div">
 									<p className="classes-text">
-										Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a
-										type specimen book. It has survived not only five centuries,
-										but also the leap into electronic typesetting, remaining
-										essentially unchanged. It was popularised in the 1960s with
-										the release of Letraset sheets containing
+										{this.props.location.state.career[this.state.career].classes}
 									</p>{' '}
 								</div>
 							</div>
