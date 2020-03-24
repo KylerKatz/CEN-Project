@@ -2,9 +2,9 @@ body {
 	margin: 0;
 }
 
-.background {
+.background-signup {
 	background: #344d65;
-	min-height: 100vh;
+	min-height: 150vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -138,4 +138,9 @@ button {
 	.background {
 		height: 150vh;
 	}
+}
+
+button {
+	background-color: #332f2f;
+	border: none;
 }

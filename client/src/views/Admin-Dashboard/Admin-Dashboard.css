@@ -4,7 +4,7 @@ body {
 
 .background-explorepage-admin-home {
 	background: #344d65;
-	min-height: 380vh;
+	min-height: 600vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -27,6 +27,16 @@ body {
 
 .textbox-1-admin-home {
 	text-align: center;
+	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+		-1px -1px 0 #000;
+}
+
+.text1-admin {
+	margin-left: 50px;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	font-size: 55px;
+	font-weight: bold;
 }
 
 .textbox-2-admin-home {
@@ -38,31 +48,11 @@ body {
 	position: relative;
 	margin-top: 10%;
 	text-align: center;
+	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+		-1px -1px 0 #000;
+	font-weight: bold;
 }
 
-.add-button-admin {
-	position: relative;
-	width: 220px;
-	height: 54px;
-	margin: auto;
-	margin-top: 10px;
-
-	background: #2db4de;
-	border: 1px solid #000000;
-	box-sizing: border-box;
-	border-radius: 32px;
-	text-align: center;
-	text-decoration: none;
-}
-.add-button-admin:hover {
-	background-color: #2494b6;
-}
-
-.add-button-admin h3 {
-	position: relative;
-	bottom: 10px;
-	text-decoration: none;
-}
 .career-box-admin-home {
 	position: relative;
 	margin-left: auto;
@@ -79,12 +69,13 @@ body {
 .career-bar-admin {
 	width: 100%;
 	min-height: 40px;
-	background-color: grey;
+	background-color: #bccacf;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 32px;
 	margin-top: 5px;
 	overflow: hidden;
+	box-shadow: 0px 4px 5px #000000;
 }
 .career-name-admin {
 	position: relative;
@@ -128,10 +119,14 @@ body {
 	text-align: center;
 	margin-top: 0px;
 	border-radius: 32px;
+	box-shadow: 0px 4px 5px #000000;
+	margin-bottom: 10px;
 }
 .cluster-name-div h1 {
 	margin-top: 0px;
 	margin-bottom: 0px;
+	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+		-1px -1px 0 #000;
 }
 
 .edit-icon {
@@ -156,16 +151,7 @@ body {
 .trashcan-icon:hover {
 	filter: invert(100%);
 }
-.plus-sign-icon {
-	position: relative;
-	width: 35px;
-	height: 35px;
-	right: 20px;
-	bottom: 2px;
 
-	position: absolute;
-	left: 89%;
-}
 .plus-sign-icon:hover {
 	filter: invert(100%);
 }
@@ -189,4 +175,133 @@ body {
 
 .career-card:hover {
 	box-shadow: 0px 10px 10px #000000;
+}
+
+.add-cluster-div {
+	width: 100%;
+	min-height: 20px;
+
+	white-space: nowrap;
+
+	border-bottom: 2px solid grey;
+	padding-bottom: 40px;
+}
+.add-cluster-form {
+	margin-left: 15%;
+	font-size: 20px;
+	white-space: pre;
+	word-break: break-word;
+}
+.add-button-admin {
+	width: 220px;
+	height: 54px;
+	margin-right: 70px;
+	margin-top: 40px;
+	background: #2db4de;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 32px;
+	text-align: center;
+	font-weight: bolder;
+	margin: auto;
+}
+.add-button-admin:hover {
+	background-color: #2494b6;
+}
+
+.add-button-admin h3 {
+	position: relative;
+	bottom: 10px;
+	text-decoration: none;
+	color: white;
+	/* text-shadow: 0px 2px 5px black; */
+	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+		-1px -1px 0 #000;
+}
+
+.image-preview {
+	width: 205px;
+	height: 107px;
+	left: 2%;
+	top: 5%;
+	background: #c4c4c4;
+	border-radius: 18px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+
+	margin-bottom: 2%;
+	text-align: center;
+
+	position: relative;
+	margin-left: 35%;
+}
+.image-preview__image {
+	display: none;
+	width: 100%;
+	height: 100%;
+	border-radius: 18px;
+}
+.middle-div {
+	display: flex;
+
+	width: 100%;
+	min-height: 100px;
+
+	display: none;
+	align-content: center;
+	text-align: center;
+
+	border-bottom: 2px solid grey;
+	/* border-top: 2px solid grey; */
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+.middle-div span {
+	margin-top: 50px;
+	margin-left: 50px;
+	font-weight: bold;
+}
+.cluster-add-bottom {
+	display: block;
+	width: 100%;
+	min-height: 10px;
+	align-content: center;
+	align-items: center;
+}
+
+.cluster-bar-right {
+	position: relative;
+	width: 12%;
+	margin-left: 80%;
+
+	/* background-color: green; */
+}
+.trashcan-icon-cluster {
+	position: relative;
+	width: 35px;
+	height: 35px;
+	right: 20px;
+	bottom: 2px;
+	right: 0%;
+}
+.trashcan-icon-cluster:hover {
+	filter: invert(100%);
+}
+
+.plus-sign-icon {
+	position: relative;
+	width: 35px;
+	height: 35px;
+	right: 0px;
+	bottom: 2px;
+	padding-bottom: 5px;
+
+	position: absolute;
+	left: 89%;
+}
+.add-cluster-top {
+	margin: 0;
+	position: relative;
+	text-align: center;
 }
