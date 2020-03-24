@@ -26,9 +26,9 @@ class EditPage extends React.Component {
 			)[0].innerText;
 			console.log(description);
 
-			const aDayInTheLife = document.getElementsByClassName('day-text-edit')[0]
-				.innerText;
-			console.log(aDayInTheLife);
+			// const aDayInTheLife = document.getElementsByClassName('day-text-edit')[0]
+			// 	.innerText;
+			// console.log(aDayInTheLife);
 
 			const salary = document.getElementsByClassName('salary-text-edit')[0]
 				.innerText;
@@ -42,6 +42,12 @@ class EditPage extends React.Component {
 			const classes = document.getElementsByClassName('classes-text-edit')[0]
 				.innerText;
 			console.log(classes);
+
+			const str = 'https://www.youtube.com/watch?v=hx9REVOv7Hc';
+			const str2 = str.substr(str.length - 11);
+			const str3 = 'https://www.youtube.com/embed/' + str2;
+
+			console.log(str3);
 		}
 		function handleSubmit() {
 			// Update DB
@@ -96,11 +102,16 @@ class EditPage extends React.Component {
 							<div className="day-div-edit">
 								<h1 className="day-title-edit">A Day In The Life</h1>
 								<div className="day-text-div-edit">
-									<p className="day-text-edit" contentEditable="true">
-										This text is editable now we have to see how to get all the
-										text in this div, and then send it back to the DB once the
-										submit button is clicked
+									<p className="day-text-edit">
+										Input the video URL below to change the video
 									</p>{' '}
+									<p className="day-text-URL-edit" contentEditable="true"></p>{' '}
+									<iframe
+										className="video-edit"
+										width="420"
+										height="315"
+										src="https://www.youtube.com/embed/hx9REVOv7Hc"
+									></iframe>
 								</div>
 							</div>
 						</div>
