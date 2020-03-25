@@ -14,36 +14,36 @@ function Signup(props) {
 		name:'',
 		email:'',
 		password: '',
-		conpassword: '',  //probably shouldnt need this with auth0
-		isAdmin:false
+		isAdmin: false
 
 	});
 	
 	 const onChange = e => {
+		setForm({
+			[e.target.name]:e.target.value
+		});
+			
+	}
 
+	const onClick = e => {
+
+		if(e.target.checked){
 			setForm({
 				[e.target.name]:e.target.value
 			});
 			//console.log(e.target.name);
 			//console.log(e.target.value);
 
-	}
-	
+		}
+
+}
+
 	const handleSubmit = (e) =>{
 
 		//make sure passwords match, if not give error
 		//put into model and save to database? 
 		//put in another file and include function here
-		/*fetch("http://localhost:5000/api/Signup",{
-			method: "post",
-			body: JSON.stringify(form),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}).then(function(response) {
-			console.log(response)
-			return response.json();
-		  });*/
+
 		  
 	
 		
@@ -58,7 +58,7 @@ function Signup(props) {
 	}
 
 		return (
-		/* onInput ={passVal}>*/
+
 			<div className="background">
 				<div className="Signup-background">
 					<p className="login-text">Sign Up For A New Account</p>
@@ -105,7 +105,6 @@ function Signup(props) {
 									type="radio"
 									name="isAdmin"
 									value = {false}
-									checked ={form.isAdmin}
 									onChange ={onChange}
 								></input>
 	
@@ -114,7 +113,6 @@ function Signup(props) {
 									type="radio"
 									name="isAdmin"
 									value = {true}
-									checked ={form.isAdmin}
 									onChange ={onChange}
 								></input>
 								<br></br>
