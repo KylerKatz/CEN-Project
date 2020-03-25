@@ -8,12 +8,13 @@ const create = function(req, res){
     //instantiate a User 
 
     console.log("made it here");
+    console.log(req.body.isAdmin);
     var addUser = new 
     User({
         name: req.body.name, 
         email: req.body.email,
         password: req.body.password, 
-        conpassword: req.body.conpassword, 
+       // conpassword: req.body.conpassword, 
         isAdmin: req.body.isAdmin
     });
 

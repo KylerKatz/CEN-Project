@@ -14,34 +14,36 @@ function Signup(props) {
 		name:'',
 		email:'',
 		password: '',
-		conpassword: '',  //probably shouldnt need this with auth0
-		isAdmin:''
+		//conpassword: '',  //probably shouldnt need this with auth0
+		isAdmin: false
 
 	});
 	
 	 const onChange = e => {
+		 console.log(e.target.value)
+		setForm({
+			[e.target.name]:e.target.value
+		});
+			
+	}
 
+	const onClick = e => {
+
+		if(e.target.checked){
 			setForm({
 				[e.target.name]:e.target.value
 			});
 
-	}
-	
+		}
+
+}
+
 	const handleSubmit = (e) =>{
 
 		//make sure passwords match, if not give error
 		//put into model and save to database? 
 		//put in another file and include function here
-		/*fetch("http://localhost:5000/api/Signup",{
-			method: "post",
-			body: JSON.stringify(form),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}).then(function(response) {
-			console.log(response)
-			return response.json();
-		  });*/
+
 		  
 	
 		
@@ -56,9 +58,9 @@ function Signup(props) {
 	}
 
 		return (
-			//<div className="background">
-				//<div className="Signup-background">
-					//<p className="login-text">Sign Up For A New Account</p>
+			<div className="background">
+				<div className="Signup-background">
+					<p className="login-text">Sign Up For A New Account</p>
 	
 					<form action="http://localhost:5000/api/Signup" method="post" >
 	
@@ -99,19 +101,19 @@ function Signup(props) {
 								<text> <br></br>Student:</text>							
 								<input
 									type="radio"
-									name="account type"
-									value = "false"
-									checked ={form.isAdmin}
-									onChange ={onChange}
+									name="isAdmin"
+									value = {false}
+									//checked ={form.isAdmin === false}
+									onChange ={onClick}
 								></input>
 	
 								<text> <br></br>Teacher:</text>
 								<input
 									type="radio"
-									name="account type"
-									value ="true"
-									value={form.isAdmin}
-									onChange ={onChange}
+									name="isAdmin"
+									value = {true}
+									//checked ={form.isAdmin === true}
+									onChange ={onClick}
 								></input>
 								<br></br>
 
@@ -123,8 +125,8 @@ function Signup(props) {
 						</div>
 					</form> 
 	
-				//</div>
-			//</div>
+				</div>
+			</div>
 		);
 }
 
