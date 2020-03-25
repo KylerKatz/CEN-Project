@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import './AddPage.css';
 import ClusterCard from './../../views/Explore/components/ClusterCard';
 import CareerPage from '..//Career-Pages/CareerPage';
@@ -7,56 +8,66 @@ import AdminDashboard from './Admin-Dashboard';
 import { NavLink } from 'react-router-dom';
 
 class AddPage extends React.Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		career: this.props.location.state.career
-	// 	};
-	// }
+	
+	constructor(props) {
+		super(props);
+		this.state = {
+			id: this.props.location.state.careercount,
+			name: '',
+			salary: '',
+			description: '',
+			videolink: '',
+			celebrities: '',
+			classes: ''
+		};
+
+		this.changeState = this.changeState.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
+
+	}
+
+	async changeState() {
+		this.setState({
+			id: this.state.id,
+			name: document.getElementsByClassName('career-name-add')[0].innerText,
+			salary: document.getElementsByClassName('salary-text-add')[0].innerText,
+			description: document.getElementsByClassName('description-text-add')[0].innerText,
+			videolink: document.getElementsByClassName('day-text-URL-add')[0].innerText,
+			celebrities: document.getElementsByClassName('celebrities-text-add ')[0].innerText,
+			classes: document.getElementsByClassName('classes-text-add')[0].innerText
+		})
+	}
+
+
+	async handleSubmit() {
+
+		await this.changeState()
+
+		const newCareer = {
+			career_id: this.state.id,
+			career_name: this.state.name,
+			career_salary: this.state.salary,
+			career_description: this.state.description,
+			career_videolink: this.state.videlink,
+			career_celebrities: this.state.celebrities,
+			career_classes: this.state.classes
+		}
+
+		axios.post('http://localhost:5000/api/clusters/addCareer/'.concat(this.props.location.state.clusterid),
+		 newCareer)
+		.then(res => console.log(res.data));
+
+		// Alert User
+		alert('Your Changes Have Been Saved!');
+
+		// Redirect back to dashboard
+		// This is not correct, I have to look into this more
+		//return <NavLink to="/Admin-Dashboard"></NavLink>;
+	}
+
 
 	render() {
-		function updateDataBase() {
-			const careerName = document.getElementsByClassName('career-name-add')[0]
-				.innerText;
-			console.log(careerName);
 
-			const description = document.getElementsByClassName(
-				'description-text-add'
-			)[0].innerText;
-			console.log(description);
-
-			// const aDayInTheLife = document.getElementsByClassName('day-text-edit')[0]
-			// 	.innerText;
-			// console.log(aDayInTheLife);
-
-			const salary = document.getElementsByClassName('salary-text-add')[0]
-				.innerText;
-			console.log(salary);
-
-			const celebrities = document.getElementsByClassName(
-				'celebrities-text-add '
-			)[0].innerText;
-			console.log(celebrities);
-
-			const classes = document.getElementsByClassName('classes-text-add')[0]
-				.innerText;
-			console.log(classes);
-
-			const str = 'https://www.youtube.com/watch?v=hx9REVOv7Hc';
-			const str2 = str.substr(str.length - 11);
-			const str3 = 'https://www.youtube.com/embed/' + str2;
-
-			console.log(str3);
-		}
-		function handleSubmit() {
-			// Update DB
-			updateDataBase();
-			// Alert User
-			alert('Your Changes Have Been Saved!');
-			// Redirect back to dashboard
-			// This is not correct, I have to look into this more
-			return <NavLink to="/Admin-Dashboard"></NavLink>;
-		}
 
 		return (
 			<div className="background-add-page">
@@ -70,9 +81,7 @@ class AddPage extends React.Component {
 
 					<div
 						className="submit-button-add"
-						onClick={() => {
-							handleSubmit();
-						}}
+						onClick={this.handleSubmit}
 					>
 						<h3>Submit</h3>
 					</div>

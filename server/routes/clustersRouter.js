@@ -1,7 +1,10 @@
 import express from 'express';
-import list from '../controllers/clustersController.js';
+import * as clusterControl from '../controllers/clustersController.js';
+
 const clustersRouter = express.Router();
 
-clustersRouter.get('/', list);
+clustersRouter.get('/', clusterControl.list);
+
+clustersRouter.post('/addCareer/:clusterid', clusterControl.addCareer)
 
 export default clustersRouter;

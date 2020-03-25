@@ -32,11 +32,6 @@ app.use('/', express.static('./client/build'));
 
 app.use('/api/clusters/',  clustersRouter);
 
-
-
-
-
-
 mongoose
 	.connect(config.db.uri, {
 		useNewUrlParser: true,

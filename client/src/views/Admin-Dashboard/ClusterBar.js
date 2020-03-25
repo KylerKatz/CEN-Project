@@ -10,23 +10,35 @@ class ClusterBar extends React.Component {
 	});
 
 	render() {
+
 		function deleteCluster() {
 			console.log('Test');
 		}
+
+		
 		return (
 			<div className="cluster-div-admin">
 				<div className="cluster-name-div">
 					<h1>{this.props.cluster.name}</h1>
 
 					<div className="cluster-bar-right">
-						<NavLink to="/AddPage" onClick={() => window.scrollTo(0, 0)}>
+						<NavLink onClick={() => window.scrollTo(0, 0)}
+							to={{
+								pathname: "/AddPage",
+								state: {
+									careercount: this.props.cluster.careers.length,
+									clusterid: this.props.cluster.id
+								}
+
+							}}>
 							<img
 								className="plus-sign-icon"
 								src={'./plus-sign.png'}
-								alt="remove"
+								alt="add"
 								title="Add To Cluster"
 							/>
 						</NavLink>
+
 						<img
 							onClick={() => {
 								deleteCluster();

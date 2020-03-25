@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import axios from 'axios';
 import Home from './views/Home/Home';
 import NotFound from './views/NotFound';
 import NavBar from './components/Header/NavBar';
@@ -16,29 +17,25 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loaded: false,
 			clusters: []
 		};
 	}
 
 	async componentDidMount() {
-		const URL = 'http://localhost:5000/api/clusters';
-		const response = await fetch(URL);
-		const data = await response.json();
-		this.setState({
-			loaded: true,
-			clusters: data
-		});
-
-		console.log(this.state.clusters);
+		axios.get('http://localhost:5000/api/clusters')
+            .then(response => {
+                this.setState({ clusters: response.data})
+            })
+            .catch(function (error){
+                console.log(error);
+			})			
 	}
 
 	render() {
 		return (
 			<div>
-				{this.state.loaded ? (
-					<div>
-						<NavBar />
+				<div>
+					<NavBar />
 						<Switch>
 							<Route exact path="/Home" component={Home}/>
 							<Route
@@ -60,8 +57,6 @@ class App extends React.Component {
 							<Route component={NotFound} />
 						</Switch>
 					</div>
-				) : (
-					<div>Loading.....</div>
 				)}
 			</div>
 		);

@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import './Admin-Dashboard.css';
 import ClusterCard from './../../views/Explore/components/ClusterCard';
@@ -10,27 +11,25 @@ class AdminDashboard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loaded: false,
 			clusters: []
 		};
 	}
 
 	async componentDidMount() {
-		const URL = 'http://localhost:5000/api/clusters';
-		const response = await fetch(URL);
-		const data = await response.json();
-		this.setState({
-			loaded: true,
-			clusters: data
-		});
-
-		console.log(this.state.clusters);
+		axios.get('http://localhost:5000/api/clusters')
+            .then(response => {
+                this.setState({ clusters: response.data})
+            })
+            .catch(function (error){
+                console.log(error);
+			})			
 	}
 
 	render() {
 		const clusters = this.state.clusters.map(cluster => {
 			return <ClusterBar cluster={cluster} key={cluster.id} />;
 		});
+		
 		function createCluster() {
 			let image = document.getElementsByClassName('add-image')[0].files[0];
 
