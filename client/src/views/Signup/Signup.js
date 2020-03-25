@@ -15,7 +15,7 @@ function Signup(props) {
 		email:'',
 		password: '',
 		conpassword: '',  //probably shouldnt need this with auth0
-		isAdmin:''
+		isAdmin:false
 
 	});
 	
@@ -86,6 +86,7 @@ function Signup(props) {
 									value ={form.password} 
 									placeholder="Password"
 									onChange ={onChange}>
+									//onInput ={passVal}>
 								</input>
 	
 								<input

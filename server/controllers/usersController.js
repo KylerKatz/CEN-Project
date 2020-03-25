@@ -13,7 +13,7 @@ const create = function(req, res){
         name: req.body.name, 
         email: req.body.email,
         password: req.body.password, 
-        conpassword: req.body.conpassword, 
+        //conpassword: req.body.conpassword, 
         isAdmin: req.body.isAdmin
     });
 
@@ -26,5 +26,7 @@ const create = function(req, res){
 
 
 };
+
+//const check = 
 
 export default create;
