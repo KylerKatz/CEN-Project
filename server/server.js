@@ -5,7 +5,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from "cors";
 import path from 'path';
-import clustersRouter from './routes/clustersRouter.js'
+import clustersRouter from './routes/clustersRouter.js';
+import userRouter from './routes/userRouter.js';
 //const express = require('./config/express.js')
 
 // Use env port or default
@@ -31,7 +32,8 @@ app.use(bodyParser.json());
 app.use('/', express.static('./client/build'));
 
 app.use('/api/clusters/',  clustersRouter);
-
+ 
+app.use('/api/Signup/', userRouter);
 
 
 

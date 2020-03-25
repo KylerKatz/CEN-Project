@@ -1,27 +1,28 @@
 import User from '../models/UserSchema.js'; 
-//add user 
+import mongoose from 'mongoose';
 
-export const post = function(req, res){
+const create = function(req, res){
 
     //validate fields 
 
-    //instantiate a User 
-
-    console.log("made it here");
-    var addUser = User({
+    var addUser = new 
+    User({
         name: req.body.name, 
         email: req.body.email,
         password: req.body.password, 
-        conpassword: req.body.conpassword, 
         isAdmin: req.body.isAdmin
     });
 
     //save to database
     addUser.save(function(err, data){
         if (err) throw err; 
-        console.log("user created");
-        res.status(200).send(data);
+        //console.log("user created");
+        res.send(data);
     }); 
 
 
 };
+
+//const check = 
+
+export default create;
