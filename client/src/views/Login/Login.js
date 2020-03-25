@@ -20,7 +20,8 @@ function Login() {
 		});
 	}
 			
-	
+	//window.location.replace('/Admin-DashBoard');
+
 
 	return (
 		<div className="background">
