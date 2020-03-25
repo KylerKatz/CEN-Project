@@ -24,6 +24,8 @@ function Signup(props) {
 			setForm({
 				[e.target.name]:e.target.value
 			});
+			//console.log(e.target.name);
+			//console.log(e.target.value);
 
 	}
 	
@@ -56,9 +58,10 @@ function Signup(props) {
 	}
 
 		return (
-			//<div className="background">
-				//<div className="Signup-background">
-					//<p className="login-text">Sign Up For A New Account</p>
+		/* onInput ={passVal}>*/
+			<div className="background">
+				<div className="Signup-background">
+					<p className="login-text">Sign Up For A New Account</p>
 	
 					<form action="http://localhost:5000/api/Signup" method="post" >
 	
@@ -86,7 +89,7 @@ function Signup(props) {
 									value ={form.password} 
 									placeholder="Password"
 									onChange ={onChange}>
-									//onInput ={passVal}>
+									
 								</input>
 	
 								<input
@@ -100,8 +103,8 @@ function Signup(props) {
 								<text> <br></br>Student:</text>							
 								<input
 									type="radio"
-									name="account type"
-									value = "false"
+									name="isAdmin"
+									value = {false}
 									checked ={form.isAdmin}
 									onChange ={onChange}
 								></input>
@@ -109,9 +112,9 @@ function Signup(props) {
 								<text> <br></br>Teacher:</text>
 								<input
 									type="radio"
-									name="account type"
-									value ="true"
-									value={form.isAdmin}
+									name="isAdmin"
+									value = {true}
+									checked ={form.isAdmin}
 									onChange ={onChange}
 								></input>
 								<br></br>
@@ -124,8 +127,8 @@ function Signup(props) {
 						</div>
 					</form> 
 	
-				//</div>
-			//</div>
+				</div>
+			</div>
 		);
 }
 

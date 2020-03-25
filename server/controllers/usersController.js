@@ -7,7 +7,9 @@ const create = function(req, res){
 
     //instantiate a User 
 
-    console.log("made it here");
+    //console.log("made it here");
+    //console.log(req.body);
+    //console.log(req.body.isAdmin);
     var addUser = new 
     User({
         name: req.body.name, 
@@ -20,7 +22,7 @@ const create = function(req, res){
     //save to database
     addUser.save(function(err, data){
         if (err) throw err; 
-        console.log("user created");
+        //console.log("user created");
         res.send(data);
     }); 
 
