@@ -11,7 +11,7 @@ class CareerBubble extends React.Component {
 			// This needs some way to get the the career page with the correct information such as passing id in the URL
 				<div className="career-bubble" onClick={this.handleClick.bind(this)}>
 					<span>
-						<h3> {this.props.id} </h3>
+						<h3> {this.props.name} </h3>
 					</span>
 				</div>
 

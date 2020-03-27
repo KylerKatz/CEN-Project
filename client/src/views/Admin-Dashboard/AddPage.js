@@ -12,7 +12,7 @@ class AddPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: this.props.location.state.careercount,
+			id: this.props.location.state.careerid,
 			name: '',
 			salary: '',
 			description: '',
@@ -53,16 +53,16 @@ class AddPage extends React.Component {
 			career_classes: this.state.classes
 		}
 
-		axios.post('http://localhost:5000/api/clusters/addCareer/'.concat(this.props.location.state.clusterid),
+		axios.put('http://localhost:5000/api/clusters/addCareer/'.concat(this.props.location.state.clusterid),
 		 newCareer)
-		.then(res => console.log(res.data));
+		.then(res => {
+			console.log(res.data)
+			window.location = res.data.redirect
+		});
 
 		// Alert User
 		alert('Your Changes Have Been Saved!');
 
-		// Redirect back to dashboard
-		// This is not correct, I have to look into this more
-		//return <NavLink to="/Admin-Dashboard"></NavLink>;
 	}
 
 
