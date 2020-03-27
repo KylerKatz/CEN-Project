@@ -48,10 +48,11 @@ class AddPage extends React.Component {
 			career_name: this.state.name,
 			career_salary: this.state.salary,
 			career_description: this.state.description,
-			career_videolink: this.state.videlink,
+			career_videolink: this.state.videolink,
 			career_celebrities: this.state.celebrities,
 			career_classes: this.state.classes
 		}
+
 
 		axios.put('http://localhost:5000/api/clusters/addCareer/'.concat(this.props.location.state.clusterid),
 		 newCareer)

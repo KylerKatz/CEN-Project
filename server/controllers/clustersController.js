@@ -20,7 +20,7 @@ export const addCareer = (req, res, next) => {
     "name": req.body.career_name,
     "salary": req.body.career_salary,
     "description": req.body.career_description,
-    "videolink": "https://www.youtube.com/watch?v=M68ndaZSKa8",
+    "videolink": req.body.career_videolink,
     "celebrities": req.body.career_celebrities,
     "classes": req.body.career_classes
   };
