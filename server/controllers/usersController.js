@@ -35,12 +35,6 @@ export const redir = function(req, res){
     console.log(req.body);
     var t=req.body.isAdmin;
     //User.find({email})
-    if(t==='false'){
-     console.log('student');
-	}
-    else{
-     console.log('teacher');
-	}
 
     if(t==='false'){
          res.redirect('/Explore');
