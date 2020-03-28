@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import EditPage from './EditPage';
 import AddPage from './AddPage';
@@ -11,6 +12,44 @@ class ClusterBar extends React.Component {
 		this.state = {
 			cluster: this.props.cluster
 		};
+
+		this.deleteCluster = this.deleteCluster.bind(this)
+	}
+
+	async deleteCluster() {
+		
+		const clusterid = this.props.cluster.id
+
+		await axios.delete('http://localhost:5000/api/clusters/deleteCluster/'.concat(clusterid))
+		.then(res => {
+			console.log(res.data)
+			//window.location = res.data.redirect
+		});
+
+		var correctId = 0
+
+		for (var i = 0; i < this.props.clusterslength; i++){
+			
+			if (i != clusterid){
+				
+				const id = {
+					new_id: correctId
+				}
+
+				await axios.put('http://localhost:5000/api/clusters/updateClusterId/'.concat(i), id)
+				.then(res => {
+				console.log(res.data)
+				});
+
+				correctId = correctId + 1;
+			}
+			
+			if (i == this.props.clusterslength - 1) {
+				window.location = "/Admin-Dashboard"
+			}
+		}
+
+
 	}
 	
 	
@@ -50,7 +89,7 @@ class ClusterBar extends React.Component {
 
 						<img
 							onClick={() => {
-								deleteCluster();
+								this.deleteCluster();
 							}}
 							className="trashcan-icon-cluster"
 							src={'./trashcan.png'}

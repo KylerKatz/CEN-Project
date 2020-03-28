@@ -13,6 +13,8 @@ class AdminDashboard extends React.Component {
 		this.state = {
 			clusters: []
 		};
+
+		this.createCluster = this.createCluster.bind(this)
 	}
 
 	async componentDidMount() {
@@ -25,36 +27,53 @@ class AdminDashboard extends React.Component {
 			})			
 	}
 
+
+	async createCluster() {
+		//let image = document.getElementsByClassName('add-image')[0].files[0];
+		//console.log(image);
+
+		// If the image is not provided then we need to use the default image (Still need to do)
+		/*
+		if (!image) {
+			image = 'Place holder for now';
+			console.log(image);
+		}
+		*/
+
+		const clusterName = document.getElementsByClassName('add-cluster-form')[0].value;
+		const clusterJobNum = "2 million(default static value)"
+		const clusterId = this.state.clusters.length
+		const careersLastId = 0
+
+		if (clusterName) {
+			
+			const newCluster = {
+				cluster_name: clusterName,
+				cluster_jobnum: clusterJobNum,
+				cluster_id: clusterId,
+				cluster_careersLastId: careersLastId
+			}
+
+			axios.post('http://localhost:5000/api/clusters/addCluster', newCluster)
+			.then(res => {
+				console.log(res.data)
+				window.location = res.data.redirect
+			});
+
+
+			alert('Cluster Created');
+			window.location.replace('/Admin-DashBoard')
+
+		} else {
+			alert('Please Enter A Cluster Name')
+		}
+	}
+
 	render() {
 		const clusters = this.state.clusters.map(cluster => {
-			return <ClusterBar cluster={cluster} key={cluster.id} />;
+			return <ClusterBar cluster={cluster} key={cluster.id} clusterslength={this.state.clusters.length} />;
 		});
 		
-		function createCluster() {
-			let image = document.getElementsByClassName('add-image')[0].files[0];
-
-			console.log(image);
-
-			// If the image is not provided then we need to use the default image (Still need to do)
-			if (!image) {
-				image = 'Place holder for now';
-				console.log(image);
-			}
-
-			const clusterName = document.getElementsByClassName('add-cluster-form')[0]
-				.value;
-
-			if (clusterName) {
-				// Now, create a new cluster in the DB using clusterName
-				// Alert
-				alert('Cluster Created');
-				// Redirect user back to Admin-Dashboard again
-				window.location.replace('/Admin-DashBoard');
-			} else {
-				alert('Please Enter A Cluster Name');
-			}
-		}
-
 		function imagePreview() {
 			const image = document.getElementsByClassName('add-image')[0].files[0];
 			const previewContainer = document.getElementsByClassName('image-preview');
@@ -128,7 +147,7 @@ class AdminDashboard extends React.Component {
 							<div
 								className="add-button-admin"
 								onClick={() => {
-									createCluster();
+									this.createCluster();
 								}}
 							>
 								<h3>Create New Cluster</h3>
