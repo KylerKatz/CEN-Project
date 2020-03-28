@@ -13,7 +13,7 @@ class ClusterCard extends React.Component {
 					pathname: '/CareerPage/',
 					//component: CareerPage,
 					state: {
-						career: this.props.cluster.careers
+						careers: this.props.cluster.careers
 					}
 				}}
 			>

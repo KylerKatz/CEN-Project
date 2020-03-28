@@ -1,12 +1,37 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 import EditPage from './EditPage';
 
 class CareerBar extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			career: this.props.career
+		};
+
+		this.handleDelete = this.handleDelete.bind(this)
+	}
+
+	async handleDelete() {
+		
+		const identifier = {
+			career_id: this.props.career.id
+		}
+
+		await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.cluster.id)),
+		 identifier)
+		.then(res => {
+			console.log(res.data)
+			window.location = res.data.redirect
+		});
+	}
+
 	render() {
 		return (
 			<div className="career-bar-admin">
-				<h3 className="career-name-admin">{this.props.career.name}</h3>
+				<h3 className="career-name-admin">{this.state.career.name}</h3>
 
 				<div className="career-bar-right">
 					<NavLink
@@ -14,7 +39,7 @@ class CareerBar extends React.Component {
 						to={{
 							pathname: '/EditPage',
 							state: {
-								career: this.props.career
+								career: this.state.career
 							}
 						}}
 					>
@@ -30,6 +55,7 @@ class CareerBar extends React.Component {
 						src={'./trashcan.png'}
 						alt="remove"
 						title="Delete"
+						onClick={this.handleDelete}
 					/>
 				</div>
 			</div>

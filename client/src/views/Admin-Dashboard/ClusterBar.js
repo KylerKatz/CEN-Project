@@ -5,28 +5,49 @@ import AddPage from './AddPage';
 import CareerBar from './CareerBar';
 
 class ClusterBar extends React.Component {
+	
+	constructor(props) {
+		super(props);
+		this.state = {
+			cluster: this.props.cluster
+		};
+	}
+	
+	
 	clusterCareer = this.props.cluster.careers.map(career => {
-		return <CareerBar career={career} key={career.id} />;
+		return <CareerBar career={career} cluster={this.props.cluster} key={career.id} />;
 	});
 
 	render() {
+
 		function deleteCluster() {
 			console.log('Test');
 		}
+
+		
 		return (
 			<div className="cluster-div-admin">
 				<div className="cluster-name-div">
-					<h1>{this.props.cluster.name}</h1>
+					<h1>{this.state.cluster.name}</h1>
 
 					<div className="cluster-bar-right">
-						<NavLink to="/AddPage" onClick={() => window.scrollTo(0, 0)}>
+						<NavLink onClick={() => window.scrollTo(0, 0)}
+							to={{
+								pathname: "/AddPage",
+								state: {
+									careerid: this.state.cluster.careersLastId + 1,
+									clusterid: this.state.cluster.id
+								}
+
+							}}>
 							<img
 								className="plus-sign-icon"
 								src={'./plus-sign.png'}
-								alt="remove"
+								alt="add"
 								title="Add To Cluster"
 							/>
 						</NavLink>
+
 						<img
 							onClick={() => {
 								deleteCluster();

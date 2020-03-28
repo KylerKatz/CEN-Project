@@ -11,55 +11,54 @@ class EditPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			career: this.props.location.state.career
+			career: this.props.location.state.career,
+			name: '',
+			salary: '',
+			description: '',
+			videolink: '',
+			celebrities: '',
+			classes: ''
 		};
 	}
 
 	render() {
+		
 		function updateDataBase() {
-			const careerName = document.getElementsByClassName('career-name-edit')[0]
-				.innerText;
-			console.log(careerName);
+			const careerName = document.getElementsByClassName('career-name-edit')[0].innerText;
+		
+			const description = document.getElementsByClassName('description-text-edit')[0].innerText;
+			
+			const aDayInTheLife = document.getElementsByClassName('day-text-edit')[0].innerText;
+			
+			const salary = document.getElementsByClassName('salary-text-edit')[0].innerText;
 
-			const description = document.getElementsByClassName(
-				'description-text-edit'
-			)[0].innerText;
-			console.log(description);
+			const celebrities = document.getElementsByClassName('celebrities-text-edit')[0].innerText;
 
-			// const aDayInTheLife = document.getElementsByClassName('day-text-edit')[0]
-			// 	.innerText;
-			// console.log(aDayInTheLife);
+			const classes = document.getElementsByClassName('classes-text-edit')[0].innerText;
 
-			const salary = document.getElementsByClassName('salary-text-edit')[0]
-				.innerText;
-			console.log(salary);
+			this.setState({
 
-			const celebrities = document.getElementsByClassName(
-				'celebrities-text-edit'
-			)[0].innerText;
-			console.log(celebrities);
-
-			const classes = document.getElementsByClassName('classes-text-edit')[0]
-				.innerText;
-			console.log(classes);
-
-			const str = 'https://www.youtube.com/watch?v=hx9REVOv7Hc';
-			const str2 = str.substr(str.length - 11);
-			const str3 = 'https://www.youtube.com/embed/' + str2;
-
-			console.log(str3);
+			})
 		}
+
 		function handleSubmit() {
 			// Update DB
 			updateDataBase();
 			// Alert User
 			alert('Your Changes Have Been Saved!');
 			// Redirect back to dashboard
+
 			// This is not correct, I have to look into this more
 			return <NavLink to="/Admin-Dashboard"></NavLink>;
 		}
 
+
+		const str = this.state.career.videolink;
+		const str2 = str.substr(str.length - 11);
+		const str3 = 'https://www.youtube.com/embed/' + str2;
+
 		return (
+
 			<div className="background-edit-page">
 				<div className="intro-edit">
 					<p className="intro-edit-text">
@@ -93,9 +92,7 @@ class EditPage extends React.Component {
 								<div className="description-text-div-edit">
 									<p className="description-text-edit" contentEditable="true">
 										{' '}
-										This text is editable now we have to see how to get all the
-										text in this div, and then send it back to the DB once the
-										submit button is clicked
+										{this.state.career.description}
 									</p>
 								</div>
 							</div>
@@ -110,7 +107,7 @@ class EditPage extends React.Component {
 										className="video-edit"
 										width="420"
 										height="315"
-										src="https://www.youtube.com/embed/hx9REVOv7Hc"
+										src={str3}
 									></iframe>
 								</div>
 							</div>
@@ -120,9 +117,7 @@ class EditPage extends React.Component {
 								<h1 className="salary-title-edit">Average Salary</h1>
 								<div className="salary-text-div-edit">
 									<p className="salary-text-edit" contentEditable="true">
-										This text is editable now we have to see how to get all the
-										text in this div, and then send it back to the DB once the
-										submit button is clicked
+										{this.state.career.salary}
 									</p>
 								</div>
 							</div>
@@ -131,9 +126,7 @@ class EditPage extends React.Component {
 								<h1 className="celebrities-title-edit">Celebrities</h1>
 								<div className="celebrities-text-div-edit">
 									<p className="celebrities-text-edit" contentEditable="true">
-										This text is editable now we have to see how to get all the
-										text in this div, and then send it back to the DB once the
-										submit button is clicked
+										{this.state.career.celebrities}
 									</p>{' '}
 								</div>
 							</div>
@@ -142,9 +135,7 @@ class EditPage extends React.Component {
 								<h1 className="classes-title-edit">Relevant Classes</h1>
 								<div className="classes-text-div-edit">
 									<p className="classes-text-edit" contentEditable="true">
-										This text is editable now we have to see how to get all the
-										text in this div, and then send it back to the DB once the
-										submit button is clicked
+										{this.state.career.classes}
 									</p>{' '}
 								</div>
 							</div>

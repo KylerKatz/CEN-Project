@@ -3,6 +3,7 @@
 			"name": "Agriculture, food, and natural resources",
 			"id": 0,
 			"jobnum": "1.4 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Crop, nursery,and greenhouse farmworkers and laborers",
@@ -26,6 +27,7 @@
 			"name": "Architecture and construction",
 			"id": 1,
 			"jobnum": "7.8 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Landscaping and groundskeeping workers",
@@ -48,6 +50,7 @@
 			"name": "Arts, audio/video technology, and communications",
 			"id": 2,
 			"jobnum": "1.8 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Floral designers",
@@ -70,6 +73,7 @@
 			"name": "Business management and administration",
 			"id": 3,
 			"jobnum": "23.3 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Stock clerks and orderfillers",
@@ -92,6 +96,7 @@
 			"name": "Education and training",
 			"id": 4,
 			"jobnum": "8.7 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Teacher assistants",
@@ -114,6 +119,7 @@
 			"name": "Finance",
 			"id": 5,
 			"jobnum": "5.3 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Tellers",
@@ -136,6 +142,7 @@
 			"name": "Government and public administration",
 			"id": 6,
 			"jobnum": "1 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Legislators",
@@ -158,6 +165,7 @@
 			"name": "Health sciences",
 			"id": 7,
 			"jobnum": "12.2 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Home health aides",
@@ -180,6 +188,7 @@
 			"name": "Hospitality and tourism",
 			"id": 8,
 			"jobnum": "17 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Combined food preparation and serving workers",
@@ -202,6 +211,7 @@
 			"name": "Human services",
 			"id": 9,
 			"jobnum": "5 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Shampooers",
@@ -224,6 +234,7 @@
 			"name": "Information technology",
 			"id": 10,
 			"jobnum": "3.5 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Computer user support specialists",
@@ -246,6 +257,7 @@
 			"name": "Law, public safety, corrections, and security",
 			"id": 11,
 			"jobnum": "4.9 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Lifeguards, ski patrol, and other recreational protective service workers",
@@ -268,6 +280,7 @@
 			"name": "Manufacturing",
 			"id": 12,
 			"jobnum": "11.8 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Sewing machine operators",
@@ -291,6 +304,7 @@
 			"name": "Marketing",
 			"id": 13,
 			"jobnum": "15.3 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Cashiers",
@@ -313,6 +327,7 @@
 			"name": "Science, technology, engineering, and mathematics",
 			"id": 14,
 			"jobnum": "2 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Social science research assistants",
@@ -335,6 +350,7 @@
 			"name": "Transportation, distribution, and logistics",
 			"id": 15,
 			"jobnum": "10.7 Million",
+			"careersLastId": 1,
 			"careers": [{
 				"id": 0,
 				"name": "Parking Lot Attendant",

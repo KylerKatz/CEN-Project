@@ -6,26 +6,34 @@ class CareerPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			cluster: this.props.location.state.cluster,
-			career: 0
+			careers: this.props.location.state.careers,
+			career: 0,
+			index: 0
 		};
+
+		this.changeCareer = this.changeCareer.bind(this)
+	}
+
+	getIndex(id) {
+		return this.props.location.state.careers.findIndex(career => career.id === id)
 	}
 
 	changeCareer(id) {
 		this.setState({
-			cluster: this.state.cluster,
-			career: id
+			careers: this.state.careers,
+			career: id,
+			index: this.getIndex(id)
 		})
 	}
 
 	render() {
 
-		const str = this.props.location.state.career[this.state.career].videolink
+		const str = this.state.careers[this.state.index].videolink
 		const str2 = str.substr(str.length - 11)
 		const str3 = 'https://www.youtube.com/embed/' + str2
 
-		const careers = this.props.location.state.career.map(career => {
-			return <CareerBubble  key={career.id} id={career.id} respond={this.changeCareer.bind(this)}/>;
+		const careers = this.state.careers.map(career => {
+			return <CareerBubble  key={career.id} id={career.id} name={career.name} respond={this.changeCareer.bind(this)}/>;
 		});
 		
 
@@ -36,7 +44,7 @@ class CareerPage extends React.Component {
 				</div>
 				<div className="center-background-2">
 					<div className="career-name-div">
-		<h1 className="career-name">{this.props.location.state.career[this.state.career].name}</h1>
+		<h1 className="career-name">{this.state.careers[this.state.index].name}</h1>
 					</div>
 
 					<div className="career-box-1">
@@ -45,7 +53,7 @@ class CareerPage extends React.Component {
 								<h1 className="description-title">Description</h1>
 								<div className="description-text-div">
 									<p className="description-text">
-										{this.props.location.state.career[this.state.career].description}
+										{this.state.careers[this.state.index].description}
 									</p>
 								</div>
 							</div>
@@ -68,7 +76,7 @@ class CareerPage extends React.Component {
 								<h1 className="salary-title">Average Salary</h1>
 								<div className="salary-text-div">
 									<p className="salary-text">
-										{this.props.location.state.career[this.state.career].salary}
+										{this.state.careers[this.state.index].salary}
 									</p>
 								</div>
 							</div>
@@ -77,7 +85,7 @@ class CareerPage extends React.Component {
 								<h1 className="celebrities-title">Celebrities</h1>
 								<div className="celebrities-text-div">
 									<p className="celebrities-text">
-									{this.props.location.state.career[this.state.career].celebrities}
+									{this.state.careers[this.state.index].celebrities}
 									</p>{' '}
 								</div>
 							</div>
@@ -86,7 +94,7 @@ class CareerPage extends React.Component {
 								<h1 className="classes-title">Relevant Classes</h1>
 								<div className="classes-text-div">
 									<p className="classes-text">
-										{this.props.location.state.career[this.state.career].classes}
+										{this.state.careers[this.state.index].classes}
 									</p>{' '}
 								</div>
 							</div>

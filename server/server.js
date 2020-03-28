@@ -32,12 +32,8 @@ app.use(bodyParser.json());
 app.use('/', express.static('./client/build'));
 
 app.use('/api/clusters/',  clustersRouter);
- 
+
 app.use('/api/Signup/', userRouter);
-
-
-
-
 
 mongoose
 	.connect(config.db.uri, {
