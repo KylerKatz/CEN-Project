@@ -9,5 +9,7 @@ clustersRouter.put('/addCareer/:clusterid', clusterControl.addCareer, clusterCon
 
 clustersRouter.put('/removeCareer/:clusterid', clusterControl.deleteCareer)
 
+clustersRouter.put('/updateCareer/:clusterid', clusterControl.updateCareer)
+
 
 export default clustersRouter;

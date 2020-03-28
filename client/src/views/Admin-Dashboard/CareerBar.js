@@ -8,7 +8,8 @@ class CareerBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			career: this.props.career
+			career: this.props.career, 
+			clusterid: this.props.clusterid
 		};
 
 		this.handleDelete = this.handleDelete.bind(this)
@@ -20,7 +21,7 @@ class CareerBar extends React.Component {
 			career_id: this.props.career.id
 		}
 
-		await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.cluster.id)),
+		await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.clusterid)),
 		 identifier)
 		.then(res => {
 			console.log(res.data)
@@ -39,7 +40,8 @@ class CareerBar extends React.Component {
 						to={{
 							pathname: '/EditPage',
 							state: {
-								career: this.state.career
+								career: this.state.career,
+								clusterid: this.state.clusterid
 							}
 						}}
 					>

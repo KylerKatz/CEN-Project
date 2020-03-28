@@ -15,7 +15,7 @@ class ClusterBar extends React.Component {
 	
 	
 	clusterCareer = this.props.cluster.careers.map(career => {
-		return <CareerBar career={career} cluster={this.props.cluster} key={career.id} />;
+		return <CareerBar career={career} clusterid={this.props.cluster.id} key={career.id} />;
 	});
 
 	render() {

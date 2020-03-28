@@ -77,6 +77,33 @@ export const deleteCareer = (req, res) => {
   })
 };
 
+export const updateCareer = (req, res) => {
+
+  console.log(req.body)
+
+  cluster.findOneAndUpdate({id: req.params.clusterid, 'careers.id': req.body.career_id},
+    {$set: {"careers.$.name": req.body.career_name, "careers.$.description": req.body.career_description,
+    "careers.$.salary": req.body.career_salary, "careers.$.videolink": req.body.career_videolink, 
+    "careers.$.celebrities": req.body.career_celebrities, "careers.$.classes": req.body.career_classes} },
+    { new: true }, 
+    function(err, success) {
+      if (err) {
+        return res.send(err)
+      }
+      else {
+        var redir = {
+          redirect: "/Admin-Dashboard"
+        }
+        console.log(success)
+        return res.json(redir)
+      }
+    })
+
+}
+
+
+
+
 
 
 
