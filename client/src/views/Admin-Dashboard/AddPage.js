@@ -74,10 +74,11 @@ class AddPage extends React.Component {
 			<div className="background-add-page">
 				<div className="intro-add">
 					<p className="intro-add-text">
-						Welcome to the edit page! All of the white text in the career box
-						below can be editted. The format will be exactly how your students
+						Welcome to the add page! You can tyoe in all of the 
+						yellow boxes to add to the career. 
+						The format will be exactly how your students
 						see the page. Don't forget to click the submit button once you are
-						finished with your changes.
+						finished with your new additions.
 					</p>
 
 					<div

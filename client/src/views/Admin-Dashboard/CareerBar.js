@@ -16,17 +16,28 @@ class CareerBar extends React.Component {
 	}
 
 	async handleDelete() {
+
+
+
+		var answer = window.confirm("Are you sure you want to delete this career?")
 		
-		const identifier = {
-			career_id: this.props.career.id
+		if(answer === true){
+			
+			const identifier = {
+				career_id: this.props.career.id
+			}
+	
+			await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.clusterid)),
+			 identifier)
+			.then(res => {
+				console.log(res.data)
+				window.location = res.data.redirect
+			});
 		}
 
-		await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.clusterid)),
-		 identifier)
-		.then(res => {
-			console.log(res.data)
-			window.location = res.data.redirect
-		});
+		else{
+		
+	}
 	}
 
 	render() {
