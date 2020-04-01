@@ -62,7 +62,7 @@ class CareerPage extends React.Component {
 								<div className="day-text-div">
 									<p className="day-text">
 									<iframe
-										className="video-edit"
+										className="video-explore"
 										width="420"
 										height="315"
 										src= {str3}

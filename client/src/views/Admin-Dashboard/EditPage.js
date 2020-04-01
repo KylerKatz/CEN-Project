@@ -1,5 +1,6 @@
 import React from 'react';
 import './EditPage.css';
+import axios from 'axios';
 import ClusterCard from './../../views/Explore/components/ClusterCard';
 import CareerPage from '..//Career-Pages/CareerPage';
 import CareerBar from './CareerBar';
@@ -19,39 +20,54 @@ class EditPage extends React.Component {
 			celebrities: '',
 			classes: ''
 		};
+
+		this.changeState = this.changeState.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
+	async changeState() {
+		this.setState({
+			career: this.state.career,
+			name: document.getElementsByClassName('career-name-edit')[0].innerText,
+			salary: document.getElementsByClassName('salary-text-edit')[0].innerText,
+			description: document.getElementsByClassName('description-text-edit')[0].innerText,
+			videolink: document.getElementsByClassName('day-text-URL-edit')[0].innerText,
+			celebrities: document.getElementsByClassName('celebrities-text-edit')[0].innerText,
+			classes: document.getElementsByClassName('classes-text-edit')[0].innerText
+		})
+	}
+
+
+	async handleSubmit() {
+
+		await this.changeState()
+
+		const updatedCareer = {
+			career_id: this.state.career.id,
+			career_name: this.state.name,
+			career_salary: this.state.salary,
+			career_description: this.state.description,
+			career_videolink: this.state.videolink,
+			career_celebrities: this.state.celebrities,
+			career_classes: this.state.classes
+		}
+
+
+		axios.put('http://localhost:5000/api/clusters/updateCareer/'.concat(this.props.location.state.clusterid),
+		 updatedCareer)
+		.then(res => {
+			console.log(res.data)
+			window.location = res.data.redirect
+		});
+
+		// Alert User
+		alert('Your Changes Have Been Saved!');
+
+	}
+
+
+
 	render() {
-		
-		function updateDataBase() {
-			const careerName = document.getElementsByClassName('career-name-edit')[0].innerText;
-		
-			const description = document.getElementsByClassName('description-text-edit')[0].innerText;
-			
-			const aDayInTheLife = document.getElementsByClassName('day-text-edit')[0].innerText;
-			
-			const salary = document.getElementsByClassName('salary-text-edit')[0].innerText;
-
-			const celebrities = document.getElementsByClassName('celebrities-text-edit')[0].innerText;
-
-			const classes = document.getElementsByClassName('classes-text-edit')[0].innerText;
-
-			this.setState({
-
-			})
-		}
-
-		function handleSubmit() {
-			// Update DB
-			updateDataBase();
-			// Alert User
-			alert('Your Changes Have Been Saved!');
-			// Redirect back to dashboard
-
-			// This is not correct, I have to look into this more
-			return <NavLink to="/Admin-Dashboard"></NavLink>;
-		}
-
 
 		const str = this.state.career.videolink;
 		const str2 = str.substr(str.length - 11);
@@ -71,7 +87,7 @@ class EditPage extends React.Component {
 					<div
 						className="submit-button-edit"
 						onClick={() => {
-							handleSubmit();
+							this.handleSubmit();
 						}}
 					>
 						<h3>Submit</h3>

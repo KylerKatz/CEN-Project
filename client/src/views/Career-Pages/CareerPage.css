@@ -4,13 +4,14 @@ body {
 
 .background-careerpage {
 	background: #344d65;
-	min-height: 150vh;
+	min-height: 180vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	/* font-size: calc(10px + 2vmin); */
-	/* color: white;  */
+	
+	background-image: url('./../Home/Backgroundv1.png');
+	background-size: 50%;
 }
 
 .center-background-2 {
@@ -257,4 +258,9 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-top: 10px;
+}
+
+.video-explore{
+	width: 100%;
+
 }

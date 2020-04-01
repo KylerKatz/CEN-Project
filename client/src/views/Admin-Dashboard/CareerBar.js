@@ -8,24 +8,36 @@ class CareerBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			career: this.props.career
+			career: this.props.career, 
+			clusterid: this.props.clusterid
 		};
 
 		this.handleDelete = this.handleDelete.bind(this)
 	}
 
 	async handleDelete() {
+
+
+
+		var answer = window.confirm("Are you sure you want to delete this career?")
 		
-		const identifier = {
-			career_id: this.props.career.id
+		if(answer === true){
+			
+			const identifier = {
+				career_id: this.props.career.id
+			}
+	
+			await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.clusterid)),
+			 identifier)
+			.then(res => {
+				console.log(res.data)
+				window.location = res.data.redirect
+			});
 		}
 
-		await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.cluster.id)),
-		 identifier)
-		.then(res => {
-			console.log(res.data)
-			window.location = res.data.redirect
-		});
+		else{
+		
+	}
 	}
 
 	render() {
@@ -39,7 +51,8 @@ class CareerBar extends React.Component {
 						to={{
 							pathname: '/EditPage',
 							state: {
-								career: this.state.career
+								career: this.state.career,
+								clusterid: this.state.clusterid
 							}
 						}}
 					>
