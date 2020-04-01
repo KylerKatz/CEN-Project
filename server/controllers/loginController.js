@@ -22,7 +22,7 @@ export const loginreq = (req, res, next) => {
     "isAdmin": ''
   };
 
-  console.log(userc)
+  //console.log(userc)
 
   user.findOne({email: req.body.email, password: req.body.password} ,
     function(err, success) {
@@ -32,7 +32,7 @@ export const loginreq = (req, res, next) => {
       else {
         userc.name=success.name;
         userc.isAdmin=success.isAdmin;
-        console.log(userc)
+        //console.log(userc)
         req.userc=userc;
         next()
       }
@@ -48,9 +48,9 @@ export const loginsuc = (req, res) => {
   //add auth functionality here
   var redir;
   
-        console.log(req.userc);
+        //console.log(req.userc);
         var userc=req.userc;
-        console.log(typeof(userc.isAdmin));
+        //console.log(typeof(userc.isAdmin));
          if(userc.isAdmin===true){
             redir='/Admin-Dashboard';  
 	     }
