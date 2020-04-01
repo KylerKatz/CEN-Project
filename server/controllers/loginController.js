@@ -27,6 +27,7 @@ export const loginreq = (req, res, next) => {
   user.findOne({email: req.body.email, password: req.body.password} ,
     function(err, success) {
       if (err) {
+        console.log("wrong Credentials");
         return res.send(err)
       }
       else {
