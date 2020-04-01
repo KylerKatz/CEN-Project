@@ -28,7 +28,7 @@ function Login() {
 			<div className="login-background">
 				<p className="login-text">Login To Your Account</p>
 
-				<form action="http://localhost:5000/api/Login" method="post" >
+				<form action="https://cen-group-2.herokuapp.com/Login" method="post" >
 					<div className="forms">
 					
 							<input 

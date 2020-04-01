@@ -32,7 +32,7 @@ function Signup(props) {
 				<div className="Signup-background">
 					<p className="login-text">Sign Up For A New Account</p>
 	
-					<form action="http://localhost:5000/api/Signup" method="post" >
+					<form action="https://cen-group-2.herokuapp.com/api/Signup" method="post" >
 	
 						<div className="forms">
 								<input 
