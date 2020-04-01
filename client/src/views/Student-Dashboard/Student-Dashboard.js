@@ -16,7 +16,7 @@ class StudentDashboard extends React.Component {
 	}
 
 	async componentDidMount() {
-		axios.get('http://localhost:5000/api/clusters')
+		axios.get('https://cen-group-2.herokuapp.com/api/clusters')
             .then(response => {
                 this.setState({ clusters: response.data})
             })

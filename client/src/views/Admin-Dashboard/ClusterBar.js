@@ -23,7 +23,7 @@ class ClusterBar extends React.Component {
 		if(answer === true){
 			const clusterid = this.props.cluster.id
 
-			await axios.delete('http://localhost:5000/api/clusters/deleteCluster/'.concat(clusterid))
+			await axios.delete('https://cen-group-2.herokuapp.com/api/clusters/deleteCluster/'.concat(clusterid))
 			.then(res => {
 				console.log(res.data)
 				//window.location = res.data.redirect
@@ -39,7 +39,7 @@ class ClusterBar extends React.Component {
 						new_id: correctId
 					}
 	
-					await axios.put('http://localhost:5000/api/clusters/updateClusterId/'.concat(i), id)
+					await axios.put('https://cen-group-2.herokuapp.com/api/clusters/updateClusterId/'.concat(i), id)
 					.then(res => {
 					console.log(res.data)
 					});

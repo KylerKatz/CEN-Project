@@ -27,7 +27,7 @@ class CareerBar extends React.Component {
 				career_id: this.props.career.id
 			}
 	
-			await axios.put(('http://localhost:5000/api/clusters/removeCareer/'.concat(this.props.clusterid)),
+			await axios.put(('https://cen-group-2.herokuapp.com/api/clusters/removeCareer/'.concat(this.props.clusterid)),
 			 identifier)
 			.then(res => {
 				console.log(res.data)

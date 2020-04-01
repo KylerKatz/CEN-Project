@@ -54,7 +54,7 @@ class AddPage extends React.Component {
 		}
 
 
-		axios.put('http://localhost:5000/api/clusters/addCareer/'.concat(this.props.location.state.clusterid),
+		axios.put('https://cen-group-2.herokuapp.com/api/clusters/addCareer/'.concat(this.props.location.state.clusterid),
 		 newCareer)
 		.then(res => {
 			console.log(res.data)

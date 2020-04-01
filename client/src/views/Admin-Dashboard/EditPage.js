@@ -53,7 +53,7 @@ class EditPage extends React.Component {
 		}
 
 
-		axios.put('http://localhost:5000/api/clusters/updateCareer/'.concat(this.props.location.state.clusterid),
+		axios.put('https://cen-group-2.herokuapp.com/api/clusters/updateCareer/'.concat(this.props.location.state.clusterid),
 		 updatedCareer)
 		.then(res => {
 			console.log(res.data)
