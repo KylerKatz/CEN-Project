@@ -18,7 +18,7 @@ class AdminDashboard extends React.Component {
 	}
 
 	async componentDidMount() {
-		axios.get('http://localhost:5000/api/clusters')
+		axios.get('https://cen-group-2.herokuapp.com/api/clusters')
             .then(response => {
                 this.setState({ clusters: response.data})
             })
@@ -54,7 +54,7 @@ class AdminDashboard extends React.Component {
 				cluster_careersLastId: careersLastId
 			}
 
-			axios.post('http://localhost:5000/api/clusters/addCluster', newCluster)
+			axios.post('https://cen-group-2.herokuapp.com/api/clusters/addCluster', newCluster)
 			.then(res => {
 				console.log(res.data)
 				window.location = res.data.redirect
