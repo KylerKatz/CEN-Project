@@ -28,7 +28,7 @@ function Login() {
 			<div className="login-background">
 				<p className="login-text">Login To Your Account</p>
 
-				<form method = "get">
+				<form action="http://localhost:5000/api/Login" method="post" >
 					<div className="forms">
 					
 							<input 

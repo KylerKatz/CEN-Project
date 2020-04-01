@@ -7,6 +7,7 @@ import cors from "cors";
 import path from 'path';
 import clustersRouter from './routes/clustersRouter.js';
 import userRouter from './routes/userRouter.js';
+import loginRouter from './routes/loginRouter.js';
 //const express = require('./config/express.js')
 
 // Use env port or default
@@ -34,6 +35,8 @@ app.use('/', express.static('./client/build'));
 app.use('/api/clusters/',  clustersRouter);
 
 app.use('/api/Signup/', userRouter);
+
+app.use('/api/Login/', loginRouter)
 
 mongoose
 	.connect(config.db.uri, {
