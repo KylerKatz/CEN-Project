@@ -305,3 +305,16 @@ body {
 	position: relative;
 	text-align: center;
 }
+@media screen and (max-width: 1000px) {
+
+	.center-background-admin-home {
+		position: absolute;
+		width: 700px;
+		
+	}
+
+
+	.career-bar-right{
+		height: 800px;
+	}
+}

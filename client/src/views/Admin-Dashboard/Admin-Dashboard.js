@@ -103,7 +103,7 @@ class AdminDashboard extends React.Component {
 				<div className="center-background-admin-home">
 					<div className="textbox-1-admin-home">
 						{/* The username can be replaced with the name of the account that is loged in */}
-						<h1 className="text1-admin">Welcome Back username!</h1>
+						<h1 className="text1-admin">Welcome Back</h1>
 					</div>
 					<div className="textbox-2-admin-home">
 						<h1 className="text2">
