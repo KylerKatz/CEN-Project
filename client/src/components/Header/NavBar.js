@@ -44,6 +44,23 @@ class NavBar extends React.Component {
 	}
 
 	render() {
+		function dashboard() {
+			// If admin go to admin dashbaord,
+
+			window.location.replace('/Admin-DashBoard');
+
+			// If student go to student dashbaord
+
+			//this.highlightNav('DashBoard')
+		}
+
+		function logout() {
+			// Do the logout process
+
+			alert('You have been logged out');
+			// redirect
+			window.location.replace('/Home');
+		}
 		return (
 			<div className="header">
 				{/* Logo */}
@@ -62,9 +79,9 @@ class NavBar extends React.Component {
 
 				{/* Page Links */}
 				<div className="nav-items">
-
-				<span onClick={() => this.highlightNav('DashBoard')}>
-						<NavItem name={'DashBoard'} clicked={this.state.Explore} />
+					<span className="dashboard" onClick={() => dashboard()}>
+						DashBoard
+						{/* <NavItem name={'DashBoard'} clicked={this.state.Explore} /> */}
 					</span>
 
 					<span onClick={() => this.highlightNav('Explore')}>
@@ -75,8 +92,9 @@ class NavBar extends React.Component {
 						<NavItem name={'Login'} clicked={this.state.Login} />
 					</span>
 
-					<span onClick={() => this.highlightNav('Logout')}>
-						<NavItem name={'Logout'} clicked={this.state.Login} />
+					<span className="dashboard" onClick={() => logout()}>
+						Logout
+						{/* <NavItem name={'DashBoard'} clicked={this.state.Explore} /> */}
 					</span>
 
 					<span onClick={() => this.highlightNav('Signup')}>

@@ -106,7 +106,11 @@ app.get('/Logout', (req, res, next) => {
   req.logout()
   req.session.destroy(() => {
     //clear cookies
-      res.redirect('/Login')
+
+    alert("You have been logged out");
+
+
+      res.redirect('/Home')
   })
 })
 

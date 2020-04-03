@@ -207,6 +207,7 @@ body {
 }
 .add-button-admin:hover {
 	background-color: #2494b6;
+	cursor: pointer;
 }
 
 .add-button-admin h3 {
