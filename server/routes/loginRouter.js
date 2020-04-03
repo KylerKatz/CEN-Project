@@ -11,7 +11,7 @@ const loginRouter = express.Router();
 
 //authenticated useds 
 loginRouter.post('/', passport.authenticate('login',{
-    failureRedirect:'/Signup',
+    failureRedirect:'/Login', failureFlash: true
 }), 
 (req, res) =>{// this is the same code as loginsuc
     //console.log(typeof(userc.isAdmin));
