@@ -1,45 +1,42 @@
-import passport from 'passport';
 import Strategy from 'passport-local';
 import User from '../models/UserSchema.js';
 
-passport.use(new Strategy((email,password, done) =>{
+export default function(passport){
 
-    User.findOne({email: email}, (err, user) => {
-        if(err) {
-            console.log("error in findOne");
-            return done(err)};
-            
-        if(user.password != password){
-            console.log("wrong password");
-            return done(null,false); 
-        };
-
-        if (!user) {
-            console.log("no such email");
-            return done(null, false);
-          }
-
-        console.log("auth fine");
-        return done(null, user);
-    }
-    );
-
-
-  }));
-
-
-passport.serializeUser((user, done) => done (null,user.email));
-passport.deserializeUser((email, done) => {
-//find by email
-    console.log("trying to find by id");
-
-    User.findOne({email: email}, (err, user) => {
+passport.serializeUser((user, done) => done (null,user.id));
+passport.deserializeUser((id, done) => {
+    
+    User.findById(id, (err, user) => {
         if(err){return done(err)};
         done(null, user)
-
     });
 
 });
 
 
-export default passport;
+passport.use('login', new Strategy({usernameField: 'email', passwordField: 'password',  passReqToCallback:true}, 
+
+    (req, email,password, done) =>{
+
+        User.findOne({email:email}, (err, user) => {
+            if(err) {return done(err);}
+            
+
+            //maybe change this?
+           /* if(user.password != password){
+                message: 'wrong password'
+                return done(null,false); 
+            };*/
+    
+            if (!user) {
+                return done(null, false, req.flash('loginMessage','Incorrect username.' ));
+              }
+    
+            return done(null, user);
+
+
+        });
+       
+    }));
+
+};

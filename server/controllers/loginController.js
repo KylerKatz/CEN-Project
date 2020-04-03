@@ -33,13 +33,17 @@ export const loginreq = (req, res, next) => {
 export const findUser = (res, req) => user.findOne({email: req.body.email, password: req.body.password} ,
   function(err, success) {
     if (err) {
+      console.log("error finding user");
       return res.send(err)
     }
     else {
       userc.name=success.name;
       userc.isAdmin=success.isAdmin;
+      console.log("found user");
       //console.log(userc)
+      //return res.send(data);
       req.userc=userc;
+
       next()
     }
   
@@ -67,12 +71,12 @@ export const loginsuc = (req, res) => {
       
 };
 
-export const findByEmail = (res,req) => user.findOne({email: req.body.email}, function (err, success){
+export const findByEmail = (res,req) => user.findOne({email: req.body.email}, function (err, data){
     if(err){
       return res.send(err);
     }else{
 
-      return res.send(success);
+      return res.send(data);
     }
 
   }); 
