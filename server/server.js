@@ -19,6 +19,15 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 
+mongoose
+	.connect(config.db.uri, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useFindAndModify: false
+	})
+	.then(() => {
+		console.log(`Successfully connected to mongoose database.`);
+	});
 
 app.use(cors());
 
@@ -26,14 +35,10 @@ app.use(morgan('dev'));
 
 //body parsing middleware
 
-app.use(
-	bodyParser.urlencoded({
-		extended: true
-	})
-);
+
 app.use(cookieParser());
 app.use(session({secret: 'shh', resave:false, saveUninitialized:false}));
-
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json());
 
@@ -52,15 +57,7 @@ app.use('/api/Login/', loginRouter)
 //app.get('/logout', (req, res) => { req.logout(); res.redirect('/login')})
 
 
-mongoose
-	.connect(config.db.uri, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useFindAndModify: false
-	})
-	.then(() => {
-		console.log(`Successfully connected to mongoose database.`);
-	});
+
 
 //const app = express.init()
 //app.listen(port, () => console.log(`Server now running on port ${port}!`));

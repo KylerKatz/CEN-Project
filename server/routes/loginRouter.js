@@ -10,12 +10,9 @@ const loginRouter = express.Router();
 //loginRouter.post('/', loginController.loginreq, loginController.loginsuc);
 
 //authenticated useds 
-loginRouter.post('/', passport.authenticate('local',{
-    
-    failureRedirect:'/Login'
-    
-
-})), (req, res) => {// this is the same code as loginsuc
+loginRouter.post('/Login', passport.authenticate('local',{
+    failureRedirect:'/Signup'}), 
+(req, res) =>{// this is the same code as loginsuc
     //console.log(typeof(userc.isAdmin));
     console.log("made redirection of post");
     if(req.user.isAdmin===true){
@@ -24,8 +21,7 @@ loginRouter.post('/', passport.authenticate('local',{
     else{
         res.redirect('/Explore');
     }
-
-};
+});
 
 
 export default loginRouter;

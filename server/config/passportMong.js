@@ -3,28 +3,37 @@ import Strategy from 'passport-local';
 import User from '../models/UserSchema.js';
 
 passport.use(new Strategy((email,password, done) =>{
+
     User.findOne({email: email}, (err, user) => {
-            if(err) {
-                console.log("error in findOne");
-                return done(err)};
-            if(user.password != password){
-                console.log("wrong password");
-                return done(false); 
-            };
+        if(err) {
+            console.log("error in findOne");
+            return done(err)};
+            
+        if(user.password != password){
+            console.log("wrong password");
+            return done(null,false); 
+        };
 
-            console.log("auth fine");
-            return done(null, user);
-        }
+        if (!user) {
+            console.log("no such email");
+            return done(null, false);
+          }
+
+        console.log("auth fine");
+        return done(null, user);
+    }
     );
-})
-);
 
-passport.serializeUser((user, done) => done (null,user.id));
-passport.deserializeUser((id, done) => {
+
+  }));
+
+
+passport.serializeUser((user, done) => done (null,user.email));
+passport.deserializeUser((email, done) => {
 //find by email
     console.log("trying to find by id");
-    
-    User.findById(id, (err, user) => {
+
+    User.findOne({email: email}, (err, user) => {
         if(err){return done(err)};
         done(null, user)
 
