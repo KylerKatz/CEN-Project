@@ -18,7 +18,7 @@ class ClusterBar extends React.Component {
 
 	async deleteCluster() {
 		
-		var answer = window.confirm("Are you sure you want to delete this career?")
+		var answer = window.confirm("Are you sure you want to delete this cluster?")
 		
 		if(answer === true){
 			const clusterid = this.props.cluster.id
