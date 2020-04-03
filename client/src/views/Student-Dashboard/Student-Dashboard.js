@@ -4,8 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Student-Dashboard.css';
 import ClusterCard from './../../views/Explore/components/ClusterCard';
 import CareerPage from '..//Career-Pages/CareerPage';
-import CareerBar from './CareerBar';
-import ClusterBar from './ClusterBar';
+
 
 class StudentDashboard extends React.Component {
 	constructor(props) {
@@ -26,9 +25,9 @@ class StudentDashboard extends React.Component {
 	}
 
 	render() {
-		const clusters = this.state.clusters.map(cluster => {
-			return <ClusterBar cluster={cluster} key={cluster.id} />;
-		});
+		// const clusters = this.state.clusters.map(cluster => {
+		// 	return <ClusterBar cluster={cluster} key={cluster.id} />;
+		// });
 		
 		// function createCluster() {
 		// 	let image = document.getElementsByClassName('add-image')[0].files[0];
@@ -58,8 +57,12 @@ class StudentDashboard extends React.Component {
 		
 		
 		return (
-			<div className="background-explorepage-admin-home">
-				<div className="center-background-admin-home">
+			<div className="background-explorepage-student-home">
+				<div className="center-background-student-home">
+				<div className="textbox-1-student-home">
+						{/* The username can be replaced with the name of the account that is loged in */}
+						<h1 className="text1-student">Welcome Back username!</h1>
+					</div>
 					
 				</div>
 			</div>

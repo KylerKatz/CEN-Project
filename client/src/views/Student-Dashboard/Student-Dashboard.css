@@ -2,7 +2,7 @@ body {
 	margin: 0;
 }
 
-.background-explorepage-admin-home {
+.background-explorepage-student-home {
 	background: #344d65;
 	min-height: 600vh;
 	display: flex;
@@ -13,7 +13,7 @@ body {
 	background-size: 50%;
 }
 
-.center-background-admin-home {
+.center-background-student-home {
 	position: absolute;
 	width: 1025px;
 	min-height: 800px;
