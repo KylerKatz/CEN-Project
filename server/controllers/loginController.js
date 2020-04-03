@@ -29,13 +29,19 @@ export const loginreq = (req, res, next) => {
       if (err) {
         return res.send(err)
       }
-      else {
+      else if(success){
         userc.name=success.name;
         userc.isAdmin=success.isAdmin;
         //console.log(userc)
         req.userc=userc;
         next()
       }
+      else{
+        res.status(418);
+        res.redirect('back');
+        //add alert box here
+        alert('Failed Login');
+	  }
     
   })
 
