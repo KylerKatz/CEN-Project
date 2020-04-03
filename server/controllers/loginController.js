@@ -21,7 +21,7 @@ export const isLogged = (req, res) => {
 	if(req.user){
         userc.name=req.user.username;
         userc.email=req.user.email;
-        user.findOne({email: req.body.email} ,
+        user.findOne({email: req.user.email} ,
             function(err, success) {
               if (err) {
                 return res.send(err)
