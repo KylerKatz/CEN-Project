@@ -57,7 +57,6 @@ app.use(flash());
 
 
 //logout
-//app.get('/logout', (req, res) => { req.logout(); res.redirect('/login')})
 
 
 
@@ -95,6 +94,24 @@ app.use('/api/clusters/',  clustersRouter);
 app.use('/api/Signup/', userRouter);
 
 app.use('/api/Login/', loginRouter);
+
+/*
+//if user is not logged in, redirect them to login page 
+app.get('/Explore', (req, res, next) => {
+  if(!req.isAuthenticated()){
+    res.redirect('/Login')
+  }
+    next();
+}); 
+*/
+app.get('/Logout', (req, res, next) => {
+  req.logout()
+  req.session.destroy(() => {
+    //clear cookies
+      res.redirect('/Login')
+  })
+})
+
 
 //const app = express.init()
 //app.listen(port, () => console.log(`Server now running on port ${port}!`));

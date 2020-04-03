@@ -62,12 +62,21 @@ class NavBar extends React.Component {
 
 				{/* Page Links */}
 				<div className="nav-items">
+
+				<span onClick={() => this.highlightNav('DashBoard')}>
+						<NavItem name={'DashBoard'} clicked={this.state.Explore} />
+					</span>
+
 					<span onClick={() => this.highlightNav('Explore')}>
 						<NavItem name={'Explore'} clicked={this.state.Explore} />
 					</span>
 
 					<span onClick={() => this.highlightNav('Login')}>
 						<NavItem name={'Login'} clicked={this.state.Login} />
+					</span>
+
+					<span onClick={() => this.highlightNav('Logout')}>
+						<NavItem name={'Logout'} clicked={this.state.Login} />
 					</span>
 
 					<span onClick={() => this.highlightNav('Signup')}>
