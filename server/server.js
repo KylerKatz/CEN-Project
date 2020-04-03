@@ -7,36 +7,49 @@ import cors from "cors";
 import path from 'path';
 import clustersRouter from './routes/clustersRouter.js';
 import userRouter from './routes/userRouter.js';
-//const express = require('./config/express.js')
+import loginRouter from './routes/loginRouter.js';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import passportMong from './config/passportMong.js';
+//import {findUser} from './controllers/loginController.js';
+//import {findByEmail} from './controllers/loginController.js'
 
 // Use env port or default
 const port = process.env.PORT || 5000;
 
 const app = express();
 
+
 app.use(cors());
 
 app.use(morgan('dev'));
 
 //body parsing middleware
+
 app.use(
 	bodyParser.urlencoded({
 		extended: true
 	})
 );
-
+app.use(cookieParser());
+app.use(session({secret: 'shh', resave:false, saveUninitialized:false}));
 
 
 app.use(bodyParser.json());
 
+
+app.use(passportMong.initialize());
+app.use(passportMong.session()); 
+
 app.use('/', express.static('./client/build'));
 
 app.use('/api/clusters/',  clustersRouter);
- 
+
 app.use('/api/Signup/', userRouter);
 
-
-
+app.use('/api/Login/', loginRouter)
+//logout
+//app.get('/logout', (req, res) => { req.logout(); res.redirect('/login')})
 
 
 mongoose
