@@ -41,7 +41,7 @@ passport.use('login', new Strategy({usernameField: 'email', passwordField: 'pass
     
             if (!user) {
                 console.log('Incorrect credentials');
-                alert('Incorrect credentials');
+                //alert('Incorrect credentials');
                 return done(null, false, req.flash('loginMessage','Incorrect username.' ));
               }
     
