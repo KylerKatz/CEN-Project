@@ -12,6 +12,44 @@ export const list = (req, res) => {
     })
 };
 
+export const isLogged = (req, res) => {
+    var userc = {
+        "name": '', 
+        "email": '', 
+        "isAdmin": ''
+      };
+	if(req.user){
+        userc.name=req.user.username;
+        userc.email=req.user.email;
+        user.findOne({email: req.body.email} ,
+            function(err, success) {
+              if (err) {
+                return res.send(err)
+              }
+              else if(success){
+                //userc.name=success.name;
+                userc.isAdmin=success.isAdmin;
+                //console.log(userc)
+                //req.userc=userc;
+                
+              }
+              else{
+                res.status(418);
+                res.redirect('Explore');
+                userc=false;
+                //add alert box here
+                
+	          }
+    
+          })
+        res.send(userc);
+
+	}
+    else{
+        res.send(false);
+	}
+};
+
 //Login function - Credential retrieval
 export const loginreq = (req, res, next) => {
 
@@ -40,7 +78,7 @@ export const loginreq = (req, res, next) => {
         res.status(418);
         res.redirect('back');
         //add alert box here
-        alert('Failed Login');
+        
 	  }
     
   })
