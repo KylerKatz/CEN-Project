@@ -18,7 +18,8 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			clusters: []
+			clusters: [],
+			user: {}
 		};
 	}
 
@@ -34,7 +35,10 @@ class App extends React.Component {
 		axios.get('http://localhost:5000/api/Login')
 		.then(res => {
 			console.log('Component login mounted');
-			console.log(res.user)
+			console.log(res);
+			console.log(res.data);
+			this.setState({ clusters: this.state.clusters, user: res.data});
+			console.log(this.state.user);
 		});
 	}
 
