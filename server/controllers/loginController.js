@@ -18,25 +18,38 @@ export const isLogged = (req, res) => {
         "email": '', 
         "isAdmin": ''
       };
+
+      console.log(req.user);
+
+
 	if(req.user){
         userc.name=req.user.username;
         userc.email=req.user.email;
-        user.findOne({email: req.body.email} ,
+        user.findOne({email: userc.email} ,
             function(err, success) {
               if (err) {
                 return res.send(err)
               }
               else if(success){
-                //userc.name=success.name;
-                userc.isAdmin=success.isAdmin;
-                //console.log(userc)
-                //req.userc=userc;
-                
+
+                var info = {
+                  username: userc.name,
+                  email: userc.email,
+                  logged: true
+                }
+
+                console.log(success)
+                return res.json(info)
               }
               else{
-                res.status(418);
-                res.redirect('Explore');
-                userc=false;
+
+                var error = {
+                  username: null,
+                  email: null,
+                  logged:false
+                }
+
+                
                 //add alert box here
                 
 	          }
