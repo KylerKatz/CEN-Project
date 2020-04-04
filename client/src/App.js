@@ -33,7 +33,8 @@ class App extends React.Component {
 			
 		axios.get('http://localhost:5000/api/Login')
 		.then(res => {
-			console.log(res.username)
+			console.log('Component login mounted');
+			console.log(res.userc)
 		});
 	}
 

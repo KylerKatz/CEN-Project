@@ -19,10 +19,12 @@ export const isLogged = (req, res) => {
         "isAdmin": ''
       };
 
+      console.log("passport req.user:");
       console.log(req.user);
 
 
 	if(req.user){
+        console.log('req.user exists');
         userc.name=req.user.username;
         userc.email=req.user.email;
         user.findOne({email: userc.email} ,
@@ -31,18 +33,12 @@ export const isLogged = (req, res) => {
                 return res.send(err)
               }
               else if(success){
-
-                var info = {
-                  username: userc.name,
-                  email: userc.email,
-                  logged: true
-                }
-
+                
+                console.log('found user');
                 console.log(success)
-                return res.json(info)
               }
               else{
-
+              console.log('DIDn\'t find user');
                 var error = {
                   username: null,
                   email: null,
@@ -55,10 +51,12 @@ export const isLogged = (req, res) => {
 	          }
     
           })
+        console.log('sending userc');
         res.send(userc);
 
 	}
     else{
+        console.log('sending false');
         res.send(false);
 	}
 };
