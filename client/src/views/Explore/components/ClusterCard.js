@@ -7,7 +7,7 @@ class ClusterCard extends React.Component {
 	
 	render() {
 		return (
-			<NavLink className='cluster-links'
+			<NavLink className='career-links'
 				onClick={() => window.scrollTo(0, 0)}
 				to={{
 					pathname: '/CareerPage/',

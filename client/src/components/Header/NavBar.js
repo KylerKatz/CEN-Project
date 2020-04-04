@@ -55,8 +55,10 @@ class NavBar extends React.Component {
 		}
 
 		function logout() {
+			
 			// Do the logout process
-
+			
+			
 			alert('You have been logged out');
 			// redirect
 			window.location.replace('/Home');
