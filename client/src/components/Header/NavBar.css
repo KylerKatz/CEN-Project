@@ -97,6 +97,51 @@ html* {
 	height: 100px;
 	text-decoration: none;
 }
+
+
+
+.dashboard{
+	/* background-color: #09d3ac; */
+	color: white;
+	padding: 14px 2%;
+	text-align: center;
+	text-decoration: none;
+	font-family: 'Bangers', cursive;
+	/* font-size: 200%; */
+	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+		3px 3px 0 #000;
+	letter-spacing: 3px;
+	border-radius: 50px 20px;
+
+	font-size: calc(15px + 2vmin);
+}
+
+
+.dashboard-clicked {
+	/* background-color: #09d3ac; */
+	color: rgb(182, 174, 174);
+	padding: 14px 2%;
+	text-align: center;
+	text-decoration: none;
+	font-family: 'Bangers', cursive;
+	/* font-size: 200%; */
+	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+		3px 3px 0 #000;
+	letter-spacing: 3px;
+	border-radius: 50px 20px;
+
+	font-size: calc(15px + 2vmin);
+}
+
+.dashboard:hover {
+	background-color: grey;
+	font-size: 250%;
+	cursor: pointer;
+	/* border-bottom: grey; */
+}
+
+
+
 /* Low end desktop */
 @media screen and (max-width: 1449px) {
 	.nav-items {

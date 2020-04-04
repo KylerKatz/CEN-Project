@@ -29,7 +29,7 @@ passport.use('login', new Strategy({usernameField: 'email', passwordField: 'pass
 
     (req, email,password, done) =>{
 
-        User.findOne({email:email}, (err, user) => {
+        User.findOne({email:email, password: password}, (err, user) => {
             if(err) {return done(err);}
             
 
@@ -40,6 +40,8 @@ passport.use('login', new Strategy({usernameField: 'email', passwordField: 'pass
             };*/
     
             if (!user) {
+                console.log('Incorrect credentials');
+                //alert('Incorrect credentials');
                 return done(null, false, req.flash('loginMessage','Incorrect username.' ));
               }
     

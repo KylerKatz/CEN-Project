@@ -9,7 +9,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	
+
 	background-image: url('./../Home/Backgroundv1.png');
 	background-size: 50%;
 }
@@ -46,7 +46,7 @@ body {
 	position: relative;
 	min-width: 168px;
 
-	height: 54px;
+	min-height: 54px;
 	margin: auto;
 	margin-top: 10px;
 
@@ -68,7 +68,7 @@ body {
 }
 
 .career-name-div {
-	height: 100px;
+	min-height: 100px;
 	width: 100%;
 	text-align: center;
 
@@ -260,7 +260,143 @@ body {
 	margin-top: 10px;
 }
 
-.video-explore{
+.video-explore {
 	width: 100%;
+}
 
+@media screen and (max-width: 1100px) {
+	.career-selection-div {
+		width: 400px;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	.center-background-2 {
+		width: 800px;
+	}
+
+	.background-careerpage {
+		background: #344d65;
+		min-height: 200vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		background-image: url('./../Home/Backgroundv1.png');
+		background-size: 50%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.left-side-div {
+		width: 85%;
+		min-height: 40%;
+		border-right: none;
+		float: none;
+
+		margin: 0px;
+		margin-left: 45px;
+	}
+
+	.right-side-div {
+		width: 85%;
+		min-height: 40%;
+		/* background-color: blue; */
+		margin-left: 0px;
+		top: 5px;
+		margin-left: 45px;
+	}
+
+	.center-background-2 {
+		width: 600px;
+	}
+
+	.career-name-div {
+		border-bottom: 2px solid grey;
+	}
+
+	.background-careerpage {
+		background: #344d65;
+		min-height: 280vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		background-image: url('./../Home/Backgroundv1.png');
+		background-size: 50%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.career-name {
+		margin-left: 25px;
+		margin-right: 5px;
+		font-family: 'Montserrat', sans-serif;
+		color: white;
+		font-size: 35px;
+	}
+
+	.left-side-div {
+		width: 85%;
+		min-height: 40%;
+		border-right: none;
+		float: none;
+
+		margin: 0px;
+		margin-left: 25px;
+	}
+
+	.right-side-div {
+		width: 85%;
+		min-height: 40%;
+		/* background-color: blue; */
+		margin-left: 0px;
+		top: 5px;
+		margin-left: 25px;
+	}
+
+	.center-background-2 {
+		width: 400px;
+	}
+
+	.career-name-div {
+		border-bottom: 2px solid grey;
+	}
+
+	.background-careerpage {
+		background: #344d65;
+		min-height: 280vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		background-image: url('./../Home/Backgroundv1.png');
+		background-size: 50%;
+	}
+
+	.video-explore {
+		width: 90%;
+		height: 50%;
+		margin-left: 15px;
+	}
+
+	.day-title {
+		margin-left: 15%;
+	}
+
+	.description-title {
+		margin-left: 25%;
+	}
+	.salary-title {
+		margin-left: 15%;
+	}
+	.celebrities-title {
+		margin-left: 25%;
+	}
+	.classes-title {
+		margin-left: 15%;
+	}
 }

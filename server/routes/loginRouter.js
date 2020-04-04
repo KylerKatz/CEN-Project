@@ -5,13 +5,13 @@ import passport from 'passport';
 const loginRouter = express.Router();
 
 //debug
-//loginRouter.get('/', loginController.list);
+loginRouter.get('/', loginController.isLogged);
 
 //loginRouter.post('/', loginController.loginreq, loginController.loginsuc);
 
 //authenticated useds 
 loginRouter.post('/', passport.authenticate('login',{
-    failureRedirect:'/Signup',
+    failureRedirect:'/Login', failureFlash: true
 }), 
 (req, res) =>{// this is the same code as loginsuc
     //console.log(typeof(userc.isAdmin));

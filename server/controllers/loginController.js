@@ -12,6 +12,72 @@ export const list = (req, res) => {
     })
 };
 
+export const isLogged = (req, res) => {
+    var userc = {
+        "name": '', 
+        "email": '', 
+        "isAdmin": ''
+      };
+
+      console.log("passport req.user:");
+      console.log(req.user);
+
+
+	if(req.user){
+        console.log('req.user exists');
+        userc.name=req.user.username;
+        userc.email=req.user.email;
+        user.findOne({email: userc.email} ,
+            function(err, success) {
+              if (err) {
+                return res.send(err)
+              }
+              else if(success){
+                
+                console.log('found user');
+                console.log(success)
+              }
+              else{
+              console.log('DIDn\'t find user');
+                var error = {
+                  username: null,
+                  email: null,
+                  logged:false
+                }
+
+                
+                //add alert box here
+                
+	          }
+    
+          })
+        console.log('sending userc');
+        res.send(userc);
+
+	}
+    else{
+        console.log('sending false');
+        res.send(false);
+	}
+};
+
+export const isLogged2 = (req, res) => {
+
+      console.log("passport req.user:");
+      console.log(req.user);
+
+
+	if(req.user){
+        console.log('req.user exists, sending it');
+        res.send(req.user);
+
+	}
+    else{
+        console.log('sending false');
+        res.send(false);
+	}
+};
+
 //Login function - Credential retrieval
 export const loginreq = (req, res, next) => {
 
@@ -30,13 +96,19 @@ export const loginreq = (req, res, next) => {
         console.log("wrong Credentials");
         return res.send(err)
       }
-      else {
+      else if(success){
         userc.name=success.name;
         userc.isAdmin=success.isAdmin;
         //console.log(userc)
         req.userc=userc;
         next()
       }
+      else{
+        res.status(418);
+        res.redirect('back');
+        //add alert box here
+        
+	  }
     
   })
 
