@@ -7,6 +7,8 @@ const loginRouter = express.Router();
 //debug
 loginRouter.get('/', loginController.isLogged);
 
+//loginRouter.get('/', loginController.isLogged2);
+
 //loginRouter.post('/', loginController.loginreq, loginController.loginsuc);
 
 //authenticated useds 
