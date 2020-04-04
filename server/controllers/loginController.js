@@ -61,6 +61,23 @@ export const isLogged = (req, res) => {
 	}
 };
 
+export const isLogged2 = (req, res) => {
+
+      console.log("passport req.user:");
+      console.log(req.user);
+
+
+	if(req.user){
+        console.log('req.user exists, sending it');
+        res.send(req.user);
+
+	}
+    else{
+        console.log('sending false');
+        res.send(false);
+	}
+};
+
 //Login function - Credential retrieval
 export const loginreq = (req, res, next) => {
 
