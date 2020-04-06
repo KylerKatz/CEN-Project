@@ -10,7 +10,7 @@ class Home extends React.Component {
 						<div className="career-img-container">
 							<img
 								className="career-img"
-								src={'/Careers-img.png'}
+								src={'/37c83f6.jpg'}
 								alt="Website logo"
 							/>
 						</div>

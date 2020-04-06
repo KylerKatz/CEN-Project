@@ -9,7 +9,7 @@ class NavBar extends React.Component {
 		this.state = {
 			Explore: false,
 			Login: false,
-			Signup: false
+			Signup: false,
 		};
 
 		this.highlightNav = this.highlightNav.bind(this);
@@ -20,25 +20,25 @@ class NavBar extends React.Component {
 			this.setState({
 				Explore: true,
 				Login: false,
-				Signup: false
+				Signup: false,
 			});
 		} else if (item == 'Login') {
 			this.setState({
 				Explore: false,
 				Login: true,
-				Signup: false
+				Signup: false,
 			});
 		} else if (item == 'Signup') {
 			this.setState({
 				Explore: false,
 				Login: false,
-				Signup: true
+				Signup: true,
 			});
 		} else {
 			this.setState({
 				Explore: false,
 				Login: false,
-				Signup: false
+				Signup: false,
 			});
 		}
 	}
@@ -55,10 +55,8 @@ class NavBar extends React.Component {
 		}
 
 		function logout() {
-			
 			// Do the logout process
-			
-			
+
 			alert('You have been logged out');
 			// redirect
 			window.location.replace('/Home');
