@@ -42,7 +42,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<div>
-					<NavBar />
+					<NavBar user={this.state.user}/>
 						<Switch>
 							<Route exact path="/Home" component={Home}/>
 							<Route
