@@ -5,6 +5,12 @@ import express from 'express';
 
 export const create = function(req, res, next){
 
+
+    var date = new Date().getDate(); //Current Date
+	var month = new Date().getMonth() + 1; //Current Month
+	var year = new Date().getFullYear(); //Current Year
+	date=date + '/' + month + '/' + year;
+
     //validate fields 
     
     var addUser = new 
@@ -12,7 +18,9 @@ export const create = function(req, res, next){
         name: req.body.name, 
         email: req.body.email,
         password: req.body.password, 
-        isAdmin: req.body.isAdmin
+        isAdmin: req.body.isAdmin,
+        created: date,
+        
     });
 
     //save to database
