@@ -11,36 +11,71 @@ class NavBar extends React.Component {
 			Explore: false,
 			Login: false,
 			Signup: false,
+			DashBoard: false
 		};
 
 		this.highlightNav = this.highlightNav.bind(this);
 	}
 
 	highlightNav(item) {
-		if (item == 'Explore') {
-			this.setState({
-				Explore: true,
-				Login: false,
-				Signup: false,
-			});
-		} else if (item == 'Login') {
-			this.setState({
-				Explore: false,
-				Login: true,
-				Signup: false,
-			});
-		} else if (item == 'Signup') {
-			this.setState({
-				Explore: false,
-				Login: false,
-				Signup: true,
-			});
-		} else {
-			this.setState({
-				Explore: false,
-				Login: false,
-				Signup: false,
-			});
+		
+		if(this.props.user == false){
+
+			if (item == 'Explore') {
+				this.setState({
+					Explore: true,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			} else if (item == 'Login') {
+				this.setState({
+					Explore: false,
+					Login: true,
+					Signup: false,
+					DashBoard: false
+				});
+			} else if (item == 'Signup') {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: true,
+					DashBoard: false
+				});
+			} else {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			}
+		}
+		else {
+
+			if (item == 'Explore') {
+				this.setState({
+					Explore: true,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			} else if (item == 'Dashboard') {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: false,
+					DashBoard: true
+				});
+			} else {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			}
+
 		}
 	}
 
@@ -56,17 +91,18 @@ class NavBar extends React.Component {
 		alert('You have been logged out');
 	}
 
-	render() {
-		function dashboard() {
-			// If admin go to admin dashbaord,
-
+	async dashboard() {
+		if (this.props.user.isAdmin == true) {
 			window.location.replace('/Admin-DashBoard');
-
-			// If student go to student dashbaord
-
-			//this.highlightNav('DashBoard')
+		}
+		else {
+			window.location.replace('/Student-Dashboard')
 		}
 
+	}
+
+	render() {
+		
 		return (
 			<div className="header">
 				{/* Logo */}
@@ -85,21 +121,23 @@ class NavBar extends React.Component {
 
 				{/* Page Links */}
 				<div className="nav-items">
-					<span className="dashboard" onClick={() => dashboard()}>
+
+					{this.props.user == false ? '' :
+					<span className="dashboard" onClick={() => this.dashboard()}>
 						DashBoard
-						{/* <NavItem name={'DashBoard'} clicked={this.state.Explore} /> */}
 					</span>
+					}	
 
 					<span onClick={() => this.highlightNav('Explore')}>
 						<NavItem name={'Explore'} clicked={this.state.Explore} />
 					</span>
 
-					<span onClick={() => this.highlightNav('Signup')}>
-						<NavItem name={'Signup'} clicked={this.state.Signup} />
-					</span>
-
 					{this.props.user == false ? 
 						<span>
+							<span onClick={() => this.highlightNav('Signup')}>
+								<NavItem name={'Signup'} clicked={this.state.Signup} />
+							</span>
+
 							<span onClick={() => this.highlightNav('Login')}>
 								<NavItem name={'Login'} clicked={this.state.Login} />
 							</span>
@@ -107,7 +145,7 @@ class NavBar extends React.Component {
 						:
 						<span>
 							<span className="dashboard" onClick={() => this.logout()}>
-								<NavItem name={'Logout'} clicked={this.state.Explore} />
+								Logout
 							</span>
 						</span>
 					}
