@@ -118,7 +118,7 @@ class EditPage extends React.Component {
 									<p className="day-text-edit">
 										Input the video URL below to change the video
 									</p>{' '}
-									<p className="day-text-URL-edit" contentEditable="true"></p>{' '}
+									<p className="day-text-URL-edit" contentEditable="true">{str3}</p>{' '}
 									<iframe
 										className="video-edit"
 										width="420"
