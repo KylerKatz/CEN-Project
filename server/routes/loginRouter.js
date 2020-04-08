@@ -17,7 +17,7 @@ loginRouter.post('/', passport.authenticate('login',{
 }), 
 (req, res) =>{// this is the same code as loginsuc
     //console.log(typeof(userc.isAdmin));
-    console.log(req.flash('error'));
+    //console.log(req.flash('error'));
     console.log("made redirection of post");
     if(req.user.isAdmin===true){
         res.redirect('/Admin-Dashboard');  

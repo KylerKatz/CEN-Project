@@ -6,7 +6,12 @@ import bcrypt from 'bcrypt';
 
 export const create = function(req, res, next){
 
-    //validate fields 
+    var date = new Date().getDate(); //Current Date
+	var month = new Date().getMonth() + 1; //Current Month
+	var year = new Date().getFullYear(); //Current Year
+	date=date + '/' + month + '/' + year;
+
+
     const hashPass = bcrypt.hashSync(req.body.password, 10);
 
     var addUser = new 
@@ -14,20 +19,14 @@ export const create = function(req, res, next){
         name: req.body.name, 
         email: req.body.email,
         password: hashPass, 
-        isAdmin: req.body.isAdmin
-
+        isAdmin: req.body.isAdmin,
+        created: date
 
     });
 
     //save to database
     addUser.save(function(err, data){
-
-
         if (err) throw err; 
-
-        //console.log("user created");
-        //res.send(data);
-        
     }); 
     console.log(req.body.isAdmin);
     next();
@@ -53,7 +52,3 @@ export const redir = function(req, res){
 	}
 
 }
-//const check = 
-
-//export default userController;
-//export default userController;

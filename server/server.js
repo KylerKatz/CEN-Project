@@ -57,39 +57,6 @@ app.use((req, res, next) => {
 }); 
 
 app.use(flash());
-  
-
-
-//logout
-
-
-
-  
-  /*passport.use(new Strategy({ usernameField: email},(username, password, done) =>{
-
-    findUser(username, (err, user) => {
-        if(err) {
-            console.log('error');
-            return done(err)};
-            
-        if(user.password != password){
-            console.log('wrong password');
-            return done(null,false); 
-        };
-
-        if (!user) {
-            console.log('no such email');
-            return done(null, false);
-          }
-
-        return done(null, user);
-    }
-    );
-
-
-  }));
-*/
-  
 
 app.use('/', express.static('./client/build'));
 
@@ -118,9 +85,6 @@ app.get('/Admin-Dashboard/', (req, res) =>{
 
 }); 
 
-
-//const app = express.init()
-//app.listen(port, () => console.log(`Server now running on port ${port}!`));
 app.get('*', (req, res) => {
 	console.log("path: ");
 	console.log(path.join(path.resolve(), './client/build/index.html'));
