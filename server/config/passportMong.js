@@ -20,15 +20,17 @@ passport.use('login', new Strategy({usernameField: 'email', passwordField: 'pass
         User.findOne({email:email}, (err, user) => {
             if(err) {return done(err);}
 
+            if (!user) {
+                return done(null, false,{message : 'Incorrect credentials'});
+              }
+
             bcrypt.compareSync(password, user.password, function(err, result) {
                 if (result == false){
                     return done(null,false,  req.flash('loginMessage','Incorrect password.' )); 
                 }
             });
     
-            if (!user) {
-                return done(null, false,{message : 'Incorrect credentials'});
-              }
+            
 
             return done(null, user);
 
