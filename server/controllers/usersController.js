@@ -2,30 +2,29 @@ import User from '../models/UserSchema.js';
 import mongoose from 'mongoose';
 import path from 'path';
 import express from 'express';
+import bcrypt from 'bcrypt';
 
 export const create = function(req, res, next){
 
-
-    var date = new Date().getDate(); //Current Date
-	var month = new Date().getMonth() + 1; //Current Month
-	var year = new Date().getFullYear(); //Current Year
-	date=date + '/' + month + '/' + year;
-
     //validate fields 
-    
+    const hashPass = bcrypt.hashSync(req.body.password, 10);
+
     var addUser = new 
     User({
         name: req.body.name, 
         email: req.body.email,
-        password: req.body.password, 
-        isAdmin: req.body.isAdmin,
-        created: date,
-        
+        password: hashPass, 
+        isAdmin: req.body.isAdmin
+
+
     });
 
     //save to database
     addUser.save(function(err, data){
+
+
         if (err) throw err; 
+
         //console.log("user created");
         //res.send(data);
         
@@ -56,4 +55,5 @@ export const redir = function(req, res){
 }
 //const check = 
 
+//export default userController;
 //export default userController;
