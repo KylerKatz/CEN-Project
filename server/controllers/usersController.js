@@ -14,6 +14,10 @@ export const create = function(req, res, next){
 
     const hashPass = bcrypt.hashSync(req.body.password, 10);
 
+    if(!req.body.isAdmin){
+        req.body.isAdmin=false;
+	}
+
     var addUser = new 
     User({
         name: req.body.name, 
@@ -23,6 +27,8 @@ export const create = function(req, res, next){
         created: date
 
     });
+
+    
 
     //save to database
     addUser.save(function(err, data){
@@ -40,8 +46,10 @@ export const redir = function(req, res){
     console.log("Redirect: ", req.body.isAdmin);
     console.log(req.body);
     var t=req.body.isAdmin;
-    //User.find({email})
+    res.redirect('/Login');
 
+    //readd this after passport autologins after signup
+    /*
     if(t==='false'){
          res.redirect('/Explore');
          
@@ -49,6 +57,6 @@ export const redir = function(req, res){
     else{
          res.redirect('/Admin-Dashboard');
          
-	}
+	}*/
 
 }
