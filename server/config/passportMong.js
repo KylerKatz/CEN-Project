@@ -29,10 +29,10 @@ passport.use('login', new Strategy({usernameField: 'email', passwordField: 'pass
                     return done(null,false,  req.flash('loginMessage','Incorrect password.' )); 
                 }
             });
-    
+            
             
 
-            return done(null, user);
+            return done(null, false,{message : 'Incorrect credentials'});
 
         });
        
