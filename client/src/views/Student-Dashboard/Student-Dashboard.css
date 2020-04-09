@@ -9,8 +9,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-image: url('./../../views/Home/Backgroundv1.png');
-	background-size: 50%;
 }
 
 .center-background-student-home {
@@ -27,12 +25,12 @@ body {
 .student-dashboard-upper-div {
 	width: 100%;
 	height: 300px;
-	background-color: green;
+	/* background-color: green; */
 }
 .textbox-1-student-home {
 	width: 100%;
 	min-height: 10px;
-	background-color: chartreuse;
+	/* background-color: chartreuse; */
 	text-align: center;
 	margin-bottom: 20px;
 }
@@ -42,28 +40,36 @@ body {
 .student-dashboard-upper-lower-div {
 	width: 100%;
 	height: 155px;
-	background-color: darkgrey;
+	/* background-color: darkgrey; */
 	display: flex;
 }
 .student-dashboard-upper-left-div {
 	display: flex;
 	width: 50%;
 	height: 100%;
-	background-color: chocolate;
+	/* background-color: chocolate; */
 }
-.student-pic {
-	width: 100px;
-	height: 100px;
-	background-color: cyan;
+.student-pic-div {
+	width: 120px;
+	height: 120px;
+	/* border: 2px solid grey; */
+	/* background-color: cyan; */
 	margin-left: 30px;
 }
+.student-pic {
+	width: 100%;
+	height: 90%;
+}
+
 .bio-div {
+	padding-top: 20px;
 	margin-left: 15px;
 	width: 370px;
 	height: 100%;
-	background-color: darkblue;
+	/* background-color: darkblue; */
 }
 .bio-text {
+	font-size: 20px;
 	margin-bottom: 0px;
 	margin-top: 3px;
 }
@@ -74,8 +80,8 @@ body {
 }
 .achivement-text {
 	width: 100%;
-	height: 20px;
-	background-color: darkolivegreen;
+	min-height: 20px;
+	/* background-color: darkolivegreen; */
 	text-align: center;
 }
 h4 {
@@ -87,23 +93,45 @@ h4 {
 	display: flex;
 	background-color: darkred;
 }
+
 .student-dashboard-middle-div {
 	width: 100%;
 	height: 200px;
-	background-color: red;
+	/* background-color: blue; */
+	margin-top: 10px;
 }
 
 .student-dashboard-lower-div {
+	margin-top: 10px;
 	width: 100%;
 	height: 200px;
-	background-color: blue;
+	/* background-color: red; */
+}
+
+.student-dashboard-lower-div-text {
+	width: 98%;
+	min-height: 5px;
+	padding-left: 20px;
+	border-bottom: 2px solid grey;
+	margin-bottom: 2px;
+}
+
+.student-dashboard-lower-div-text h3 {
+	font-family: 'Montserrat', sans-serif;
+	color: #459cd1;
+	font-size: 25px;
+	font-weight: 700;
+	margin-bottom: 5px;
+
+	/* border-bottom: 5px solid grey; */
 }
 
 .student-dashboard-recmmmended-cards-div {
 	width: 100%;
 	position: relative;
 	height: 150px;
-	background-color: yellow;
-	align-self: center;
-	overflow-x: scroll;
+	/* background-color: yellow; */
+
+	padding-left: 15px;
+	margin-top: 30px;
 }

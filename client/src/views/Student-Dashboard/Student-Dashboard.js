@@ -64,11 +64,16 @@ class StudentDashboard extends React.Component {
 						</div>
 						<div className="student-dashboard-upper-lower-div">
 							<div className="student-dashboard-upper-left-div">
-								<div className="student-pic"></div>
+								<div className="student-pic-div">
+									<img
+										className="student-pic"
+										// Just a place holder image for now
+										src={'./default-profile-picture-png-clip-art.png'}
+									></img>
+								</div>
 								<div className="bio-div">
 									<p className="bio-text">Member Since:</p>
 									<p className="bio-text">Teacher:</p>
-									<p className="bio-text">Most Viewed Career:</p>
 									<p className="bio-text">Achivement Points:</p>
 								</div>
 							</div>
@@ -81,8 +86,17 @@ class StudentDashboard extends React.Component {
 							</div>
 						</div>
 					</div>
+
 					<div className="student-dashboard-middle-div">
-						<h3> Chatbot Recommended Careers</h3>
+						<div className="student-dashboard-lower-div-text">
+							<h3> Take A Quiz To Earn Points</h3>
+						</div>
+					</div>
+					<div className="student-dashboard-lower-div">
+						<div className="student-dashboard-lower-div-text">
+							<h3> Chatbot Recommended Careers</h3>
+						</div>
+
 						<div className="student-dashboard-recmmmended-cards-div">
 							<div className="delete-this-after-testing">
 								{' '}
@@ -138,23 +152,9 @@ class StudentDashboard extends React.Component {
 								>
 									<div className="career-card">Name</div>
 								</NavLink>
-								<NavLink
-									className="career-links"
-									onClick={() => window.scrollTo(0, 0)}
-									to={{
-										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
-									}}
-								>
-									<div className="career-card">Name</div>
-								</NavLink>
 							</div>
 						</div>
 					</div>
-					<div className="student-dashboard-lower-div"></div>
 				</div>
 			</div>
 		);

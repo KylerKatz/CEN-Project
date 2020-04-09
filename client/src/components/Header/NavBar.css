@@ -42,7 +42,7 @@ html* {
 
 .nav-link-clicked {
 	/* background-color: #09d3ac; */
-	color: rgb(182, 174, 174);
+	color: white;
 	padding: 14px 2%;
 	text-align: center;
 	text-decoration: none;
@@ -58,6 +58,12 @@ html* {
 }
 
 .nav-link:hover {
+	background-color: grey;
+	/* font-size: 180%; */
+	/* border-bottom: grey; */
+}
+
+.nav-link-clicked:hover {
 	background-color: grey;
 	/* font-size: 180%; */
 	/* border-bottom: grey; */
