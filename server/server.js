@@ -13,7 +13,6 @@ import session from 'express-session';
 import passport from 'passport';
 import flash from 'connect-flash';
 import func from './config/passportMong.js';
-
 // Use env port or default
 const port = process.env.PORT || 5000;
 
@@ -38,7 +37,6 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
 
 
 
