@@ -9,6 +9,8 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+		-1px -1px 0 #000;
 }
 
 .center-background-student-home {
@@ -96,7 +98,7 @@ h4 {
 
 .student-dashboard-middle-div {
 	width: 100%;
-	height: 200px;
+	min-height: 1px;
 	/* background-color: blue; */
 	margin-top: 10px;
 }
@@ -108,20 +110,17 @@ h4 {
 	/* background-color: red; */
 }
 
-.student-dashboard-lower-div-text {
+.student-dashboard-lower-div-text h3 {
+	font-family: 'Montserrat', sans-serif;
+	color: #459cd1;
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 5px;
 	width: 98%;
 	min-height: 5px;
 	padding-left: 20px;
 	border-bottom: 2px solid grey;
 	margin-bottom: 2px;
-}
-
-.student-dashboard-lower-div-text h3 {
-	font-family: 'Montserrat', sans-serif;
-	color: #459cd1;
-	font-size: 25px;
-	font-weight: 700;
-	margin-bottom: 5px;
 
 	/* border-bottom: 5px solid grey; */
 }
@@ -134,4 +133,65 @@ h4 {
 
 	padding-left: 15px;
 	margin-top: 30px;
+}
+.take-quiz {
+	width: 220px;
+	height: 54px;
+	margin-right: 70px;
+	margin-top: 40px;
+	background: #2db4de;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 32px;
+	text-align: center;
+	font-weight: bolder;
+	margin: auto;
+	margin-top: 15px;
+}
+
+.take-quiz:hover {
+	background-color: #2494b6;
+	cursor: pointer;
+}
+
+.quiz-containter {
+	width: 90%;
+	min-height: 1px;
+	/* background-color: green; */
+	margin: auto;
+	display: none;
+	margin-top: 50px;
+}
+
+.quiz-containter h1 {
+	font-size: 25px;
+	color: rgb(199, 194, 194);
+}
+
+.quiz-containter label {
+	font-size: 20px;
+	color: white;
+}
+
+.quiz-containter label:hover {
+	color: rgb(206, 204, 204);
+	cursor: pointer;
+}
+
+.quiz-containter input[type='submit'] {
+	position: relative;
+	margin-left: 40%;
+	margin-top: 10px;
+}
+
+.quiz-containter input[type='submit']:hover {
+	background-color: #2494b6;
+	cursor: pointer;
+}
+
+.question {
+	background-color: #344d65;
+	border-radius: 32px;
+	padding-left: 20px;
+	box-shadow: 0px 4px 5px #000000;
 }

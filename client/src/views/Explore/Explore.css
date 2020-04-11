@@ -84,6 +84,11 @@ body {
 	margin-bottom: 2%;
 	text-align: center;
 	overflow: hidden;
+
+	/* background-image: url('./37c83f6.jpg'); */
+
+	/* width: 100%;
+	height: 100%; */
 }
 .career-card:hover {
 	box-shadow: 0px 10px 10px #000000;
@@ -99,9 +104,61 @@ body {
 .cluster-card-image {
 	width: 100%;
 	height: 100%;
+	z-index: 5;
+	/* filter: grayscale(100%); */
+	/* filter: blur(100%); */
+}
+
+.cluster-image-container {
+	position: relative;
+	/* background-image: url('./ClusterCardPictures/Health-sciences.png'); */
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding: auto;
+}
+
+.testing {
+	display: inline;
+	width: 100%;
+	height: 100%;
+	background-color: grey;
+	text-align: center;
+}
+
+.cluster-card-text {
+	display: block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+
+	margin: 0;
+	position: relative;
+	font-size: 22px;
+	color: white;
+	text-decoration: none;
+	font-family: 'Fira Sans', sans-serif;
+	/* font-style: italic; */
+	font-weight: 700;
+
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+		1px 1px 0 #000;
+	padding: 2px 0;
+	text-align: center;
+
+	background-color: rgba(23, 22, 22, 0.46);
 }
 
 @media screen and (max-width: 1450px) {
+
+	.text1{
+		font-size: 40px;
+	}
+
+
 	.center-background-1 {
 		position: absolute;
 		width: 800px;
@@ -114,6 +171,10 @@ body {
 
 	.background-explorepage {
 		height: 150vh;
+	}
+
+	.row1{
+		margin-left: 20px;
 	}
 }
 
@@ -134,6 +195,15 @@ body {
 }
 
 @media screen and (max-width: 550px) {
+
+	.text1{
+		font-size: 30px;
+	}
+
+	.text2{
+		font-size: 20px;
+	}
+
 	.center-background-1 {
 		position: absolute;
 		width: 360px;
@@ -146,5 +216,9 @@ body {
 
 	.background-explorepage {
 		height: 300vh;
+	}
+
+	.row1{
+		margin-left: 50px;
 	}
 }
