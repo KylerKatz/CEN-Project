@@ -61,12 +61,87 @@ export const validate = (req, res, next) =>{
     
     };
 
+export const update = function(req, res, next){
+
+    const hashPass = bcrypt.hashSync(req.body.password, 10);
+    const hashPass2 = bcrypt.hashSync(req.body.newpassword, 10);
+
+    if(!req.body.isAdmin){
+        res.send(false);
+	}
+    else{
+    //update
+        User.findOneAndUpdate({email: req.body.email, password: hashPass}, {$set: {password: req.body.newpassword}}, function(err, data){
+            if (err) throw err; 
+            if(data){
+                console.log(req.body.newpassword, data);
+                res.send(true);
+		    }
+            else{
+                res.send(false);
+		    }
+        });
+    }    
+
+    
+
+};
+
+export const assign = function(req, res, next){
+
+    if(!req.body.isAdmin){
+        res.send(false);
+	}
+    else{
+    //update
+        User.findOneAndUpdate({email: req.body.email}, {$set: {teacher: req.body.teacher}}, function(err, data){
+            if (err) throw err; 
+            if(data){
+                console.log(req.body.teacher, data);
+                res.send(true);
+		    }
+            else{
+                res.send(false);
+		    }
+        });
+    }    
+
+    
+
+};
+
+export const delete = function(req, res, next){
+
+    if(!req.body.isAdmin){
+        res.send(false);
+	}
+    else{
+    //update
+        User.deleteOne({email: req.body.email}, function(err, data){
+            if (err) throw err; 
+            if(data){
+                console.log(data);
+                res.send(true);
+		    }
+            else{
+                res.send(false);
+		    }
+        }); 
+    }
+    
+
+    
+
+};
+
 export const redir = function(req, res){
     console.log("Redirect: ", req.body.isAdmin);
     console.log(req.body);
     var t=req.body.isAdmin;
-    //User.find({email})
+    res.redirect('/Login');
 
+    //readd this after passport autologins after signup
+    /*
     if(t==='false'){
          res.redirect('/Explore');
          
@@ -74,10 +149,25 @@ export const redir = function(req, res){
     else{
          res.redirect('/Admin-Dashboard');
          
-	}
+	}*/
 
 }
-//const check = 
 
-//export default userController;
-//export default userController;
+export const redir2 = function(req, res){
+    console.log("Redirect: ", req.body.isAdmin);
+    console.log(req.body);
+    var t=req.body.isAdmin;
+    res.redirect('back');
+
+    //readd this after passport autologins after signup
+    /*
+    if(t==='false'){
+         res.redirect('/Explore');
+         
+	}
+    else{
+         res.redirect('/Admin-Dashboard');
+         
+	}*/
+
+}
