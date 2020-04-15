@@ -1,0 +1,28 @@
+{
+	"questions": [{
+			"question": "What is the standard distance between the target and archer in Olympics?",
+			"options": ["50 meters", "70 meters", "100 meters", "120 meters"],
+			"answer": 1
+		},
+		{
+			"question": "Which is the highest number on a standard roulette wheel?",
+			"options": ["22", "24", "32", "36"],
+			"answer": 3
+		},
+		{
+			"q": "How much wood could a woodchuck chuck if a woodchuck would chuck wood?",
+			"options": ["400 pounds", "550 pounds", "700 pounds", "750 pounds"],
+			"answer": 2
+		},
+		{
+			"question": "Which is the seventh planet from the sun?",
+			"options": ["Uranus", "Earth", "Pluto", "Mars"],
+			"answer": 0
+		},
+		{
+			"question": "Which is the largest ocean on Earth?",
+			"options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+			"answer": 3
+		}
+	]
+}
