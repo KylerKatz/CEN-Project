@@ -7,6 +7,7 @@ import cors from "cors";
 import path from 'path';
 import clustersRouter from './routes/clustersRouter.js';
 import userRouter from './routes/userRouter.js';
+import quizRouter from './routes/quizRouter.js';
 import loginRouter from './routes/loginRouter.js';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
@@ -64,6 +65,7 @@ app.use('/api/Signup/', userRouter);
 
 app.use('/api/Login/', loginRouter);
 
+app.use('/api/Quiz/', quizRouter);
 
 
 app.get('/Logout/', (req, res, next) => {
