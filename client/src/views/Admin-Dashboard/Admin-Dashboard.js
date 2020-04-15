@@ -201,11 +201,11 @@ class AdminDashboard extends React.Component {
 									<span> Email</span>
 								</div>
 								<div className="index-password">
-									<span> Password</span>
+									<span> Reset Password</span>
 								</div>
-								<div className="index-details">
+								{/* <div className="index-details">
 									<span> Details</span>
-								</div>
+								</div> */}
 							</div>
 						</div>
 						<div className="student-list">

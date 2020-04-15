@@ -3,7 +3,7 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import './Student-Dashboard.css';
 import ClusterCard from './../../views/Explore/components/ClusterCard';
-import CareerPage from '..//Career-Pages/CareerPage';
+import AchievementBar from './AchievementBar';
 // import Quiz from './quiz';
 
 class StudentDashboard extends React.Component {
@@ -173,10 +173,17 @@ class StudentDashboard extends React.Component {
 							</div>
 
 							<div className="student-dashboard-upper-right-div">
-								<div className="achivement-text">
-									<h4>Achivements</h4>
+								<div className="achievement-text">
+									<h4>Achievements</h4>
 								</div>
-								<div className="achivements-div"></div>
+								<div className="achievement-div">
+									<AchievementBar></AchievementBar>
+									<AchievementBar></AchievementBar>
+									<AchievementBar></AchievementBar>
+									<AchievementBar></AchievementBar>
+									<AchievementBar></AchievementBar>
+									<AchievementBar></AchievementBar>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -203,7 +210,7 @@ class StudentDashboard extends React.Component {
 						</div>
 
 						<div className="student-dashboard-recmmmended-cards-div">
-							<div className="delete-this-after-testing">
+							<div className="chatbot-cluster-cards">
 								{' '}
 								<NavLink
 									className="career-links"

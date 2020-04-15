@@ -46,8 +46,10 @@ body {
 	display: flex;
 }
 .student-dashboard-upper-left-div {
-	display: flex;
-	width: 50%;
+	/* display: flex; */
+	margin-left: 150px;
+	margin-top: 20px;
+	width: 350px;
 	height: 100%;
 	/* background-color: chocolate; */
 }
@@ -64,8 +66,8 @@ body {
 }
 
 .bio-div {
-	padding-top: 20px;
-	margin-left: 15px;
+	padding-top: 10px;
+	margin-left: 0px;
 	width: 370px;
 	height: 100%;
 	/* background-color: darkblue; */
@@ -76,16 +78,44 @@ body {
 	margin-top: 3px;
 }
 .student-dashboard-upper-right-div {
-	width: 50%;
+	width: 45%;
 	height: 235px;
-	background-color: darkmagenta;
+	/* background-color: darkmagenta; */
+	/* overflow-y: scroll; */
 }
-.achivement-text {
+.achievement-text h4 {
+	font-size: 25px;
+	color: #459cd1;
+	padding-bottom: 2px;
+	border-bottom: 2px solid grey;
+}
+.achievement-text {
 	width: 100%;
 	min-height: 20px;
 	/* background-color: darkolivegreen; */
 	text-align: center;
 }
+.achievement-div {
+	width: 100%;
+	height: 97%;
+	/* background-color: blue; */
+	overflow-y: scroll;
+}
+.achivement-bar {
+	margin: auto;
+	width: 80%;
+	min-height: 50px;
+	background-color: #bccacf;
+	border-radius: 32px;
+	text-align: center;
+	color: black;
+	text-shadow: none;
+}
+
+.achivement-bar h3 {
+	padding-top: 10px;
+}
+
 h4 {
 	margin: 0px;
 }
@@ -107,6 +137,7 @@ h4 {
 	margin-top: 10px;
 	width: 100%;
 	height: 200px;
+	margin-bottom: 20px;
 	/* background-color: red; */
 }
 
@@ -164,6 +195,7 @@ h4 {
 }
 
 .quiz-containter h1 {
+	padding-top: 10px;
 	font-size: 25px;
 	color: rgb(199, 194, 194);
 }
@@ -194,4 +226,8 @@ h4 {
 	border-radius: 32px;
 	padding-left: 20px;
 	box-shadow: 0px 4px 5px #000000;
+}
+
+.chatbot-cluster-cards {
+	margin-top: 50px;
 }

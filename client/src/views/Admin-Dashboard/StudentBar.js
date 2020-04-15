@@ -14,6 +14,25 @@ class StudentBar extends React.Component {
 				details[index].style.display = 'block';
 			}
 		}
+
+		function restPassword() {
+			var password = window.prompt('Enter The New Password:', 'Password');
+			var txt;
+			if (
+				password == null ||
+				password == '' ||
+				password == 'Password' ||
+				password.length < 6
+			) {
+				txt =
+					'Password Not Reset, Please Try A Different Password. Password Must Be At Least Six Characters Long';
+			} else {
+				txt = 'Password Reset';
+				// Luis take the password from here
+			}
+
+			alert(txt);
+		}
 		return (
 			<div>
 				<div className="student-bar">
@@ -33,10 +52,18 @@ class StudentBar extends React.Component {
 						<p> This is an email </p>
 					</div>
 					<div className="student-password-section">
-						<p> This is a password </p>
+						<p
+							className="reset-password"
+							onClick={() => {
+								restPassword();
+							}}
+						>
+							{' '}
+							Reset Password{' '}
+						</p>
 					</div>
 
-					<div className="student-details-section">
+					{/* <div className="student-details-section">
 						<img
 							className="details"
 							src={'./details.png'}
@@ -46,25 +73,9 @@ class StudentBar extends React.Component {
 								showDetails(3);
 							}}
 						></img>
-					</div>
-
-					{/* <div className="student-type-section">
-            <select className="select-student-type">
-                <option value="Admin">Admin</option>
-                <option value="Student">Student</option>
-            </select>
-        </div> */}
-
-					{/* <div className="delete-student">
-					<img
-						className="trashcan-icon"
-						src={'./trashcan.png'}
-						alt="remove"
-						title="Delete"
-					></img>
-				</div> */}
+					</div> */}
 				</div>
-				<div className="details-div"></div>
+				{/* <div className="details-div"></div> */}
 			</div>
 		);
 	}

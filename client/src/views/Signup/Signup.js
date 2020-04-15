@@ -20,13 +20,9 @@ function Signup(props) {
 			[e.target.name]: e.target.value,
 		});
 	};
-	
-	
 
 	return (
-		
 		<div className="background">
-			
 			<div className="Signup-background">
 				<p className="login-text">Sign Up For A New Account</p>
 
@@ -57,6 +53,7 @@ function Signup(props) {
 							placeholder="Password"
 							onChange={onChange}
 							required
+							minLength="5"
 						></input>
 
 						<input
@@ -66,6 +63,7 @@ function Signup(props) {
 							placeholder="Confirm Password"
 							onChange={onChange}
 							required
+							minLength="5"
 						></input>
 
 						<text>

@@ -9,9 +9,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
-	background-image: url('./../Home/Backgroundv1.png');
-	background-size: 50%;
 }
 
 .center-background-2 {
@@ -282,9 +279,6 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		background-image: url('./../Home/Backgroundv1.png');
-		background-size: 50%;
 	}
 }
 
@@ -323,9 +317,6 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		background-image: url('./../Home/Backgroundv1.png');
-		background-size: 50%;
 	}
 }
 
@@ -372,9 +363,6 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		background-image: url('./../Home/Backgroundv1.png');
-		background-size: 50%;
 	}
 
 	.video-explore {
