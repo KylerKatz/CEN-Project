@@ -13,11 +13,10 @@ export const validate = (req, res, next) =>{
     if(req.body.email.length<4){errors.push("Please enter a valid email");};
     if(req.body.password.length <= 8){errors.push("Passwords must be atleast 8 characters long")};
     if(req.body.conpassword != req.body.password){errors.push("Passwords mush match")};
-   next();
+    next();
+}
 
-};
-
-    export const create = function(req, res, next){
+export const create = function(req, res, next){
 
         if(!(errors === undefined) || !(errors.length == 0)){
             console.log(errors);
@@ -55,13 +54,9 @@ export const validate = (req, res, next) =>{
         }); 
         console.log(req.body.isAdmin);
         next();
-        
-    
-        
-    
-    };
+}
 
-export const update = function(req, res, next){
+export const update = function(req, res){
 
     const hashPass = bcrypt.hashSync(req.body.password, 10);
     const hashPass2 = bcrypt.hashSync(req.body.newpassword, 10);
@@ -82,12 +77,9 @@ export const update = function(req, res, next){
 		    }
         });
     }    
+}
 
-    
-
-};
-
-export const assign = function(req, res, next){
+export const assign = function(req, res){
 
     if(!req.body.isAdmin){
         res.send(false);
@@ -105,12 +97,9 @@ export const assign = function(req, res, next){
 		    }
         });
     }    
+}
 
-    
-
-};
-
-export const delete = function(req, res, next){
+export const deleteu = function(req, res){
 
     if(!req.body.isAdmin){
         res.send(false);
@@ -128,29 +117,13 @@ export const delete = function(req, res, next){
 		    }
         }); 
     }
-    
-
-    
-
-};
+}
 
 export const redir = function(req, res){
     console.log("Redirect: ", req.body.isAdmin);
     console.log(req.body);
     var t=req.body.isAdmin;
     res.redirect('/Login');
-
-    //readd this after passport autologins after signup
-    /*
-    if(t==='false'){
-         res.redirect('/Explore');
-         
-	}
-    else{
-         res.redirect('/Admin-Dashboard');
-         
-	}*/
-
 }
 
 export const redir2 = function(req, res){
@@ -158,7 +131,6 @@ export const redir2 = function(req, res){
     console.log(req.body);
     var t=req.body.isAdmin;
     res.redirect('back');
-
     //readd this after passport autologins after signup
     /*
     if(t==='false'){
@@ -169,7 +141,6 @@ export const redir2 = function(req, res){
          res.redirect('/Admin-Dashboard');
          
 	}*/
-
 }
 
 export const list = (req, res) => {

@@ -9,6 +9,6 @@ const quizSchema =  new mongoose.Schema({
 
 }); 
 
-var quizzes = mongoose.model('quizzes', userSchema); 
+var quizzes = mongoose.model('quizzes', quizSchema); 
 
 export default quizzes;

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import CareerPage from '../../Career-Pages/CareerPage';
 import Explore from '../Explore';
-import Background from './../ClusterCardPictures/Marketing.png'
+//import Background from './../ClusterCardPictures/Marketing.png'
 class ClusterCard extends React.Component {
 	render() {
 		return (
@@ -18,9 +18,10 @@ class ClusterCard extends React.Component {
 				}}
 			>
 				<div className="career-card">
-					<div
-						className="cluster-image-container"
-						style={{ backgroundImage: `url(${Background})` }}
+
+					// <div
+					//	className="cluster-image-container"
+					//	style={{ backgroundImage: `url(${Background})` }}
 					>
 						<span className="cluster-card-text">
 							{this.props.cluster.name}{' '}

@@ -7,6 +7,6 @@ userRouter.post("/", userController.validate, userController.create, userControl
 userRouter.put("/", userController.list);
 userRouter.put("/Password/", userController.update);
 userRouter.put("/Teacher/", userController.assign);
-userRouter.put("/Delete/", userController.delete);
+userRouter.put("/Delete/", userController.deleteu);
 
 export default userRouter; 
