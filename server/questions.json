@@ -10,7 +10,7 @@
 			"answer": 3
 		},
 		{
-			"q": "How much wood could a woodchuck chuck if a woodchuck would chuck wood?",
+			"question": "How much wood could a woodchuck chuck if a woodchuck would chuck wood?",
 			"options": ["400 pounds", "550 pounds", "700 pounds", "750 pounds"],
 			"answer": 2
 		},
