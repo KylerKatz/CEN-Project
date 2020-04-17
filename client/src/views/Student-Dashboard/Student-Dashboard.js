@@ -10,31 +10,36 @@ class StudentDashboard extends React.Component {
 	render() {
 		var questions = [
 			{
-				q:
+				qustion:
 					'What is the standard distance between the target and archer in Olympics?',
-				o: ['50 meters', '70 meters', '100 meters', '120 meters'],
-				a: 1, // arrays start with 0, so it is 70 meters
+				options: ['50 meters', '70 meters', '100 meters', '120 meters'],
+				answer: 1, // arrays start with 0, so it is 70 meters
 			},
 			{
-				q: 'Which is the highest number on a standard roulette wheel?',
-				o: ['22', '24', '32', '36'],
-				a: 3,
+				qustion: 'Which is the highest number on a standard roulette wheel?',
+				options: ['22', '24', '32', '36'],
+				answer: 3,
 			},
 			{
-				q:
+				qustion:
 					'How much wood could a woodchuck chuck if a woodchuck would chuck wood?',
-				o: ['400 pounds', '550 pounds', '700 pounds', '750 pounds'],
-				a: 2,
+				options: ['400 pounds', '550 pounds', '700 pounds', '750 pounds'],
+				answer: 2,
 			},
 			{
-				q: 'Which is the seventh planet from the sun?',
-				o: ['Uranus', 'Earth', 'Pluto', 'Mars'],
-				a: 0,
+				qustion: 'Which is the seventh planet from the sun?',
+				options: ['Uranus', 'Earth', 'Pluto', 'Mars'],
+				answer: 0,
 			},
 			{
-				q: 'Which is the largest ocean on Earth?',
-				o: ['Atlantic Ocean', 'Indian Ocean', 'Arctic Ocean', 'Pacific Ocean'],
-				a: 3,
+				qustion: 'Which is the largest ocean on Earth?',
+				options: [
+					'Atlantic Ocean',
+					'Indian Ocean',
+					'Arctic Ocean',
+					'Pacific Ocean',
+				],
+				answer: 3,
 			},
 		];
 
@@ -55,11 +60,11 @@ class StudentDashboard extends React.Component {
 
 					// The question - <h1> header
 					var question = document.createElement('h1');
-					question.innerHTML = number + ') ' + questions[index]['q'];
+					question.innerHTML = number + ') ' + questions[index]['qustion'];
 					qwrap.appendChild(question);
 
 					// The options - <input> radio buttons and <label>
-					for (var oindex in questions[index]['o']) {
+					for (var oindex in questions[index]['options']) {
 						// The <label> tag
 						var label = document.createElement('label');
 						qwrap.appendChild(label);
@@ -76,7 +81,9 @@ class StudentDashboard extends React.Component {
 						label.appendChild(option);
 
 						// Add the option text
-						var otext = document.createTextNode(questions[index]['o'][oindex]);
+						var otext = document.createTextNode(
+							questions[index]['options'][oindex]
+						);
 						label.appendChild(otext);
 					}
 
@@ -105,7 +112,7 @@ class StudentDashboard extends React.Component {
 				// Get the score
 				var score = 0;
 				for (var index in questions) {
-					if (selected[index].value == questions[index]['a']) {
+					if (selected[index].value == questions[index]['answer']) {
 						score++;
 					}
 				}

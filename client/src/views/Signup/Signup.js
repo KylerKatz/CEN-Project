@@ -44,6 +44,7 @@ function Signup(props) {
 							placeholder="Email"
 							onChange={onChange}
 							required
+							minLength="5"
 						></input>
 
 						<input
@@ -53,7 +54,7 @@ function Signup(props) {
 							placeholder="Password"
 							onChange={onChange}
 							required
-							minLength="5"
+							minLength="8"
 						></input>
 
 						<input
@@ -63,7 +64,7 @@ function Signup(props) {
 							placeholder="Confirm Password"
 							onChange={onChange}
 							required
-							minLength="5"
+							minLength="8"
 						></input>
 
 						<text>

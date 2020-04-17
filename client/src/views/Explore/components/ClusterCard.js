@@ -18,10 +18,9 @@ class ClusterCard extends React.Component {
 				}}
 			>
 				<div className="career-card">
-
-					// <div
-					//	className="cluster-image-container"
-					//	style={{ backgroundImage: `url(${Background})` }}
+					<div
+						className="cluster-image-container"
+						//style={{ backgroundImage: `url(${Background})` }}
 					>
 						<span className="cluster-card-text">
 							{this.props.cluster.name}{' '}

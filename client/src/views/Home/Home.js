@@ -34,10 +34,11 @@ class Home extends React.Component {
 
 					<div className="bottom-div">
 						<div className="chatbot-container">
-							<p> The chatbot will be here </p>
-							<div className="cluster-container">
-								<p></p>
-							</div>
+							<iframe
+								className="chatbot-bot-embeded"
+								allow="microphone;"
+								src="https://console.dialogflow.com/api-client/demo/embedded/41b729cc-ad14-4aa7-bbdc-457da6e1237b"
+							></iframe>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './CareerPage.css';
 import CareerBubble from './CareerBubble';
+import plusSign from './plus-sign.png';
 
 class CareerPage extends React.Component {
 	constructor(props) {
@@ -8,43 +9,61 @@ class CareerPage extends React.Component {
 		this.state = {
 			careers: this.props.location.state.careers,
 			career: 0,
-			index: 0
+			index: 0,
 		};
 
-		this.changeCareer = this.changeCareer.bind(this)
+		this.changeCareer = this.changeCareer.bind(this);
 	}
 
 	getIndex(id) {
-		return this.props.location.state.careers.findIndex(career => career.id === id)
+		return this.props.location.state.careers.findIndex(
+			(career) => career.id === id
+		);
 	}
 
 	changeCareer(id) {
 		this.setState({
 			careers: this.state.careers,
 			career: id,
-			index: this.getIndex(id)
-		})
-	}
-
-	render() {
-
-		const str = this.state.careers[this.state.index].videolink
-		const str2 = str.substr(str.length - 11)
-		const str3 = 'https://www.youtube.com/embed/' + str2
-
-		const careers = this.state.careers.map(career => {
-			return <CareerBubble  key={career.id} id={career.id} name={career.name} respond={this.changeCareer.bind(this)}/>;
+			index: this.getIndex(id),
 		});
-		
+	}
+	addCluster() {}
+	render() {
+		const str = this.state.careers[this.state.index].videolink;
+		const str2 = str.substr(str.length - 11);
+		const str3 = 'https://www.youtube.com/embed/' + str2;
+
+		const careers = this.state.careers.map((career) => {
+			return (
+				<CareerBubble
+					key={career.id}
+					id={career.id}
+					name={career.name}
+					respond={this.changeCareer.bind(this)}
+				/>
+			);
+		});
 
 		return (
 			<div className="background-careerpage">
-				<div className="career-selection-div">
-					{careers}
-				</div>
+				<div className="career-selection-div">{careers}</div>
 				<div className="center-background-2">
+					<div className="add-cluster-div-CP">
+						<img
+							className="add-icon"
+							src={plusSign}
+							alt="add"
+							title="Add Cluster"
+							onClick={() => {
+								this.addCluster();
+							}}
+						/>
+					</div>
 					<div className="career-name-div">
-		<h1 className="career-name">{this.state.careers[this.state.index].name}</h1>
+						<h1 className="career-name">
+							{this.state.careers[this.state.index].name}
+						</h1>
 					</div>
 
 					<div className="career-box-1">
@@ -61,12 +80,12 @@ class CareerPage extends React.Component {
 								<h1 className="day-title">A Day In The Life</h1>
 								<div className="day-text-div">
 									<p className="day-text">
-									<iframe
-										className="video-explore"
-										width="420"
-										height="315"
-										src= {str3}
-									></iframe>
+										<iframe
+											className="video-explore"
+											width="420"
+											height="315"
+											src={str3}
+										></iframe>
 									</p>{' '}
 								</div>
 							</div>
@@ -85,7 +104,7 @@ class CareerPage extends React.Component {
 								<h1 className="celebrities-title">Celebrities</h1>
 								<div className="celebrities-text-div">
 									<p className="celebrities-text">
-									{this.state.careers[this.state.index].celebrities}
+										{this.state.careers[this.state.index].celebrities}
 									</p>{' '}
 								</div>
 							</div>
