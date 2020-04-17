@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt';
 
 var errors = ["Signup Errors"];
 
-export const validate = (req, res, next) =>{
+/*export const validate = (req, res, next) =>{
 
     
     if(req.body.name.lenth < 4){errors.push("Usernames must be at least 4 characters")}
@@ -15,14 +15,14 @@ export const validate = (req, res, next) =>{
     if(req.body.conpassword != req.body.password){errors.push("Passwords mush match")};
     next();
 }
-
+*/
 export const create = function(req, res, next){
 
-        if(!(errors === undefined) || !(errors.length == 0)){
+        /*if(!(errors === undefined) || !(errors.length == 0)){
             console.log(errors);
             res.send('validate', {errors: JSON.stringify(errors)});
             errors = ["Signup Errors"];
-        }
+        }*/
 
         var date = new Date().getDate(); //Current Date
         var month = new Date().getMonth() + 1; //Current Month
