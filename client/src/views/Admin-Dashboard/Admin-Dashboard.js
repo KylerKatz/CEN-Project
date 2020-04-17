@@ -13,20 +13,38 @@ class AdminDashboard extends React.Component {
 		super(props);
 		this.state = {
 			clusters: [],
+			students: []
 		};
 
 		this.createCluster = this.createCluster.bind(this);
 	}
 
 	async componentDidMount() {
+
 		axios
 			.get('http://localhost:5000/api/clusters')
 			.then((response) => {
-				this.setState({ clusters: response.data });
+				this.setState({ 
+					clusters: response.data,
+					students: this.state.students
+				 });
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
+		
+		axios
+			.get('http://localhost:5000/api/Signup')
+			.then((response) => {
+				this.setState({ 
+					clusters: this.state.clusters,
+					students: response.data
+				 });
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
 	}
 
 	async createCluster() {
