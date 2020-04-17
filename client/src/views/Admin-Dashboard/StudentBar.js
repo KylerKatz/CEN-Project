@@ -46,10 +46,10 @@ class StudentBar extends React.Component {
 						></input>
 					</div>
 					<div className="student-name-section">
-						<p> This is a name </p>
+						<p> {this.props.student.name} </p>
 					</div>
 					<div className="student-email-section">
-						<p> This is an email </p>
+						<p> {this.props.student.email} </p>
 					</div>
 					<div className="student-password-section">
 						<p

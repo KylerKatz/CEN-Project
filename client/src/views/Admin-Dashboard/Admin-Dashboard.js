@@ -13,20 +13,38 @@ class AdminDashboard extends React.Component {
 		super(props);
 		this.state = {
 			clusters: [],
+			students: []
 		};
 
 		this.createCluster = this.createCluster.bind(this);
 	}
 
 	async componentDidMount() {
+
 		axios
 			.get('http://localhost:5000/api/clusters')
 			.then((response) => {
-				this.setState({ clusters: response.data });
+				this.setState({ 
+					clusters: response.data,
+					students: this.state.students
+				 });
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
+		
+		axios
+			.get('http://localhost:5000/api/Signup')
+			.then((response) => {
+				this.setState({ 
+					clusters: this.state.clusters,
+					students: response.data
+				 });
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
 	}
 
 	async createCluster() {
@@ -77,6 +95,14 @@ class AdminDashboard extends React.Component {
 					key={cluster.id}
 					clusterslength={this.state.clusters.length}
 				/>
+			);
+		});
+
+		const students = this.state.students.filter(student => {
+			return student.isAdmin == false
+		}).map(student => {
+			return (
+				<StudentBar key={student.email} student={student}/>
 			);
 		});
 
@@ -209,14 +235,7 @@ class AdminDashboard extends React.Component {
 							</div>
 						</div>
 						<div className="student-list">
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
+							{students}
 						</div>
 					</div>
 
