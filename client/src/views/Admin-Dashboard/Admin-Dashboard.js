@@ -98,6 +98,14 @@ class AdminDashboard extends React.Component {
 			);
 		});
 
+		const students = this.state.students.filter(student => {
+			return student.isAdmin == false
+		}).map(student => {
+			return (
+				<StudentBar key={student.email} student={student}/>
+			);
+		});
+
 		function imagePreview() {
 			const image = document.getElementsByClassName('add-image')[0].files[0];
 			const previewContainer = document.getElementsByClassName('image-preview');
@@ -227,14 +235,7 @@ class AdminDashboard extends React.Component {
 							</div>
 						</div>
 						<div className="student-list">
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
-							<StudentBar></StudentBar>
+							{students}
 						</div>
 					</div>
 
