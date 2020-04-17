@@ -35,6 +35,7 @@ function Signup(props) {
 							placeholder="Your Name"
 							onChange={onChange}
 							required
+							minLength="4"
 						></input>
 
 						<input

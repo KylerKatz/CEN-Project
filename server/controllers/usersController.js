@@ -6,27 +6,27 @@ import bcrypt from 'bcrypt';
 
 var errors = ['Signup Errors'];
 
-export const validate = (req, res, next) => {
-	if (req.body.name.lenth < 4) {
-		errors.push('Usernames must be at least 4 characters');
-	}
-	if (req.body.email.length < 4) {
-		errors.push('Please enter a valid email');
-	}
-	//if(req.body.password.length <= 8){errors.push("Passwords must be atleast 8 characters long")};
-	if (req.body.conpassword != req.body.password) {
-		alert('Passwords must match');
-		errors.push('Passwords must match');
-	}
-	next();
-};
+// export const validate = (req, res, next) => {
+// 	if (req.body.name.lenth < 4) {
+// 		errors.push('Usernames must be at least 4 characters');
+// 	}
+// 	if (req.body.email.length < 4) {
+// 		errors.push('Please enter a valid email');
+// 	}
+// 	//if(req.body.password.length <= 8){errors.push("Passwords must be atleast 8 characters long")};
+// 	if (req.body.conpassword != req.body.password) {
+// 		alert('Passwords must match');
+// 		errors.push('Passwords must match');
+// 	}
+// 	next();
+// };
 
 export const create = function (req, res, next) {
-	if (!(errors === undefined) || !(errors.length == 0)) {
-		console.log(errors);
-		res.send('validate', { errors: JSON.stringify(errors) });
-		errors = ['Signup Errors'];
-	}
+	// if (!(errors === undefined) || !(errors.length == 0)) {
+	// 	console.log(errors);
+	// 	res.send('validate', { errors: JSON.stringify(errors) });
+	// 	errors = ['Signup Errors'];
+	// }
 
 	var date = new Date().getDate(); //Current Date
 	var month = new Date().getMonth() + 1; //Current Month
