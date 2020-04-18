@@ -142,7 +142,7 @@ export const redir2 = function (req, res) {
 };
 
 export const list = (req, res) => {
-	user.find({}, function (err, users) {
+	User.find({}, function (err, users) {
 		if (err) {
 			console.log(err);
 		} else {
