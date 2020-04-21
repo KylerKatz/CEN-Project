@@ -36,6 +36,7 @@ class AdminDashboard extends React.Component {
 		axios
 			.get('http://localhost:5000/api/Signup')
 			.then((response) => {
+				console.log(response.data)
 				this.setState({ 
 					clusters: this.state.clusters,
 					students: response.data

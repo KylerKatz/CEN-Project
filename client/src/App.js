@@ -56,10 +56,11 @@ class App extends React.Component {
 						<Route exact path="/Admin-Dashboard" component={AdminDashboard} />
 						<Route exact path="/EditPage" component={EditPage} />
 						<Route exact path="/AddPage" component={AddPage} />
+						
 						<Route
 							exact
 							path="/Student-Dashboard"
-							component={StudentDashboard}
+							component={(props) => <StudentDashboard user={this.state.user} />}
 						/>
 
 						<Route exact path="/">

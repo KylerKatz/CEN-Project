@@ -155,13 +155,18 @@ class StudentDashboard extends React.Component {
 				quizContainer[0].style.display = 'block';
 			}
 		}
+
+		var imageLink1 = 'https://avatars.dicebear.com/v2/initials/'
+		var imageLink2 = imageLink1.concat(this.props.user.name)
+		var imageLink3 = imageLink2.concat('.svg')
+
 		return (
 			<div className="background-explorepage-student-home">
 				<div className="center-background-student-home">
 					<div className="student-dashboard-upper-div">
 						<div className="textbox-1-student-home">
 							{/* The username can be replaced with the name of the account that is loged in */}
-							<h1 className="text1-student">Welcome Back username!</h1>
+							<h1 className="text1-student">Welcome Back {this.props.user.name}!</h1>
 						</div>
 						<div className="student-dashboard-upper-lower-div">
 							<div className="student-dashboard-upper-left-div">
@@ -169,13 +174,13 @@ class StudentDashboard extends React.Component {
 									<img
 										className="student-pic"
 										// Just a place holder image for now
-										src={'./default-profile-picture-png-clip-art.png'}
+										src= {imageLink3}
 									></img>
 								</div>
 								<div className="bio-div">
-									<p className="bio-text">Member Since:</p>
-									<p className="bio-text">Teacher:</p>
-									<p className="bio-text">Achivement Points:</p>
+									<p className="bio-text">Member Since: {this.props.user.created}</p>
+									<p className="bio-text">Teacher: {this.props.user.teacher}</p>
+									<p className="bio-text">Achivement Points:TO BE DONE ON</p>
 								</div>
 							</div>
 
