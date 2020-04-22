@@ -12,8 +12,12 @@ import AdminDashboard from './views/Admin-Dashboard/Admin-Dashboard';
 import EditPage from './views/Admin-Dashboard/EditPage';
 import AddPage from './views/Admin-Dashboard/AddPage';
 import StudentDashboard from './views/Student-Dashboard/Student-Dashboard';
+<<<<<<< HEAD
+import ChatBot from './Chat.js'
+=======
 import LoginFailed from './views/Miscellaneous-Pages/LoginFailed';
 import NotFound from './views/Miscellaneous-Pages/NotFound';
+>>>>>>> 4af0f4d626353bf7391e2a893174524b48db36f8
 
 class App extends React.Component {
 	//create states here
@@ -74,8 +78,10 @@ class App extends React.Component {
 						<Route component={NotFound} />
 					</Switch>
 				</div>
+				<ChatBot/>
 				)}
 			</div>
+
 		);
 	}
 }
