@@ -67,10 +67,9 @@ app.use('/api/Login/', loginRouter);
 
 app.use('/api/Quiz/', quizRouter);
 
-app.get('/LoginFailed', (req, res)  => {
-	res.json("Incorrect credentials");
-	
-});
+/*app.get('/LoginFailed', (req, res)  => {
+	res.json("Incorrect credentials");	
+});*/
 
 app.get('/Logout/', (req, res, next) => {
   req.logout()
