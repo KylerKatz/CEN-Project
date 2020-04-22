@@ -7,7 +7,8 @@ const userSchema =  new mongoose.Schema({
     password:{type:String, required:true}, 
     isAdmin: {type:Boolean, required:true},
     created: {type:String, required: true},
-    teacher: {type:String, required:false}
+    teacher: {type:String, required:false},
+    achievementPoints: {type: mongoose.Number, required: false}
 
 }); 
 

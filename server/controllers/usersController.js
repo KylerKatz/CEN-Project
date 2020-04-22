@@ -100,6 +100,27 @@ export const assign = function (req, res) {
 	}
 };
 
+export const updatePoints = function (req, res) {
+	if (!req.body.isAdmin) {
+		res.send(false);
+	} else {
+		//update
+		User.findOneAndUpdate(
+			{ email: req.body.email },
+			{ $set: { achievementPoints: req.body.points } },
+			function (err, data) {
+				if (err) throw err;
+				if (data) {
+					console.log(req.body.teacher, data);
+					res.send(true);
+				} else {
+					res.send(false);
+				}
+			}
+		);
+	}
+};
+
 export const deleteu = function (req, res) {
 	if (!req.body.isAdmin) {
 		res.send(false);
