@@ -7,47 +7,43 @@ import AchievementBar from './AchievementBar';
 // import Quiz from './quiz';
 
 class StudentDashboard extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
 			questions: [],
-			quizComplete: false
+			quizComplete: false,
 		};
 	}
 
 	async componentDidMount() {
-
 		axios
 			.get('http://localhost:5000/api/Quiz')
 			.then((response) => {
-				this.setState({ 
+				this.setState({
 					questions: response.data,
-					students: this.state.quizComplete
-				 });
+					students: this.state.quizComplete,
+				});
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
-
 	}
 
-
 	render() {
-
 		const shuffled = this.state.questions.sort(() => 0.5 - Math.random());
 
 		let selected = shuffled.slice(0, 5);
 
-		console.log(selected)
+		console.log(selected);
 
-		var questions = selected
+		var questions = selected;
 
-		console.log(questions)
+		console.log(questions);
 
 		/* [QUIZ ENGINE] */
 		var quiz = {
 			draw: function () {
+				console.log(selected);
 				// quiz.draw() : draw the quiz
 
 				// Fetch the HTML quiz wrapper
@@ -62,7 +58,7 @@ class StudentDashboard extends React.Component {
 
 					// The question - <h1> header
 					var question = document.createElement('h1');
-					question.innerHTML = number + ') ' + questions[index]['qustion'];
+					question.innerHTML = number + ') ' + questions[index]['question'];
 					qwrap.appendChild(question);
 
 					// The options - <input> radio buttons and <label>
@@ -158,9 +154,9 @@ class StudentDashboard extends React.Component {
 			}
 		}
 
-		var imageLink1 = 'https://avatars.dicebear.com/v2/initials/'
-		var imageLink2 = imageLink1.concat(this.props.user.name)
-		var imageLink3 = imageLink2.concat('.svg')
+		var imageLink1 = 'https://avatars.dicebear.com/v2/initials/';
+		var imageLink2 = imageLink1.concat(this.props.user.name);
+		var imageLink3 = imageLink2.concat('.svg');
 
 		return (
 			<div className="background-explorepage-student-home">
@@ -168,7 +164,9 @@ class StudentDashboard extends React.Component {
 					<div className="student-dashboard-upper-div">
 						<div className="textbox-1-student-home">
 							{/* The username can be replaced with the name of the account that is loged in */}
-							<h1 className="text1-student">Welcome Back {this.props.user.name}!</h1>
+							<h1 className="text1-student">
+								Welcome Back {this.props.user.name}!
+							</h1>
 						</div>
 						<div className="student-dashboard-upper-lower-div">
 							<div className="student-dashboard-upper-left-div">
@@ -176,11 +174,13 @@ class StudentDashboard extends React.Component {
 									<img
 										className="student-pic"
 										// Just a place holder image for now
-										src= {imageLink3}
+										src={imageLink3}
 									></img>
 								</div>
 								<div className="bio-div">
-									<p className="bio-text">Member Since: {this.props.user.created}</p>
+									<p className="bio-text">
+										Member Since: {this.props.user.created}
+									</p>
 									<p className="bio-text">Teacher: {this.props.user.teacher}</p>
 									<p className="bio-text">Achivement Points:TO BE DONE ON</p>
 								</div>
