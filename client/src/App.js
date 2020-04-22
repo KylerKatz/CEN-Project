@@ -58,21 +58,29 @@ class App extends React.Component {
 						<Route exact path="/Signup" component={Signup} />
 						<Route exact path="/CareerPage" component={CareerPage} />
 
+						{this.state.user == false || this.state.user.isAdmin == false ? 
+						<Route exact path="/Admin-Dashboard" component={AccessDenied} /> 
+						:
 						<Route 
 							exact 
 							path="/Admin-Dashboard" 
 							component={(props) => <AdminDashboard user={this.state.user} />} />
+						}
 
 						<Route exact path="/EditPage" component={EditPage} />
 						<Route exact path="/AddPage" component={AddPage} />
 						<Route exact path="/LoginFailed" component={LoginFailed} />
 						<Route exact path="/AccessDenied" component={AccessDenied} />
 
-						<Route
+						{ this.state.user == false || this.state.user.isAdmin == true ? 
+							<Route exact path="/Student-Dashboard" component={AccessDenied} /> 
+							:
+							<Route
 							exact
 							path="/Student-Dashboard"
-							component={(props) => <StudentDashboard user={this.state.user} />}
-						/>
+							component={(props) => <StudentDashboard user={this.state.user} />}/>
+						}
+						
 
 						<Route exact path="/">
 							<Redirect to="/Home" />
