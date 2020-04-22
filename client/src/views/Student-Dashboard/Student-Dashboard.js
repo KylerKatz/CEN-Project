@@ -135,7 +135,7 @@ class StudentDashboard extends React.Component {
 				html += '<div>You scored ' + score + ' out of ' + total + '.</div>';
 				document.getElementById('quiz-wrap').innerHTML = html;
 				document.getElementById('quiz-wrap').style.textAlign = 'center';
-				quizButton[0].style.display = 'block';
+				retakeQuizButton[0].style.display = 'block';
 			},
 		};
 
@@ -143,6 +143,7 @@ class StudentDashboard extends React.Component {
 		//window.addEventListener('click', quiz.draw);
 		const quizContainer = document.getElementsByClassName('quiz-containter');
 		const quizButton = document.getElementsByClassName('take-quiz');
+		const retakeQuizButton = document.getElementsByClassName('retake-quiz');
 
 		function showQuiz() {
 			if ((quizButton[0].style.display = 'block')) {
@@ -152,6 +153,10 @@ class StudentDashboard extends React.Component {
 				quiz.draw();
 				quizContainer[0].style.display = 'block';
 			}
+		}
+
+		function retakeQuiz() {
+			window.location.replace('./Student-DashBoard');
 		}
 
 		var imageLink1 = 'https://avatars.dicebear.com/v2/initials/';
@@ -213,6 +218,16 @@ class StudentDashboard extends React.Component {
 							>
 								<p>Take Quiz</p>
 							</div>
+
+							<div
+								className="retake-quiz"
+								onClick={() => {
+									retakeQuiz();
+								}}
+							>
+								<p>Retake Quiz</p>
+							</div>
+
 							<div className="quiz-containter">
 								<form id="quiz-wrap"></form>
 							</div>
@@ -220,7 +235,7 @@ class StudentDashboard extends React.Component {
 					</div>
 					<div className="student-dashboard-lower-div">
 						<div className="student-dashboard-lower-div-text">
-							<h3> Chatbot Recommended Careers</h3>
+							<h3> Chatbot Recommended Career Clusters</h3>
 						</div>
 
 						<div className="student-dashboard-recmmmended-cards-div">

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Home from './views/Home/Home';
-import NotFound from './views/NotFound';
+import AccessDenied from './views/Miscellaneous-Pages/AccessDenied';
 import NavBar from './components/Header/NavBar';
 import Explore from './views/Explore/Explore';
 import Login from './views/Login/Login';
@@ -12,6 +12,8 @@ import AdminDashboard from './views/Admin-Dashboard/Admin-Dashboard';
 import EditPage from './views/Admin-Dashboard/EditPage';
 import AddPage from './views/Admin-Dashboard/AddPage';
 import StudentDashboard from './views/Student-Dashboard/Student-Dashboard';
+import LoginFailed from './views/Miscellaneous-Pages/LoginFailed';
+import NotFound from './views/Miscellaneous-Pages/NotFound';
 
 class App extends React.Component {
 	//create states here
@@ -56,7 +58,9 @@ class App extends React.Component {
 						<Route exact path="/Admin-Dashboard" component={AdminDashboard} />
 						<Route exact path="/EditPage" component={EditPage} />
 						<Route exact path="/AddPage" component={AddPage} />
-						
+						<Route exact path="/LoginFailed" component={LoginFailed} />
+						<Route exact path="/AccessDenied" component={AccessDenied} />
+
 						<Route
 							exact
 							path="/Student-Dashboard"

@@ -18,16 +18,15 @@ class Home extends React.Component {
 						<div className="test-container">
 							<p className="intro-text">
 								{' '}
-								Lorem Ipsum is simply dummy text of the printing and typesetting
-								industry. Lorem Ipsum has been the industry's standard dummy
-								text ever since the 1500s, when an unknown printer took a galley
-								of type and scrambled it to make a type specimen book. It has
-								survived not only five centuries, but also the leap into
-								electronic typesetting, remaining essentially unchanged. It was
-								popularised in the 1960s with the release of Letraset sheets
-								containing Lorem Ipsum passages, and more recently with desktop
-								publishing software like Aldus PageMaker including versions of
-								Lorem Ipsum.
+								Career Find is a web app made to help you discover a wide
+								variety of careers. We recommend creating an account on the
+								Signup page, and then coming back here to have a conversation
+								with the chatbot below. You’ll be asked a few questions to gauge
+								which career best suits you. You can also search through all the
+								careers on the Explore page. Click on a cluster you find
+								interesting and explore away! If you’re up for a challenge, you
+								can earn points by completing achievements on your dashboard. We
+								hope you learn something new and have fun!
 							</p>
 						</div>
 					</div>
