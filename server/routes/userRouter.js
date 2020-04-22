@@ -5,9 +5,9 @@ const userRouter = express.Router();
 userRouter.post('/', userController.create, userController.redir);
 
 userRouter.get('/', userController.list);
-userRouter.put('/Password/', userController.update);
-userRouter.put('/Teacher/', userController.assign);
-userRouter.put('/Delete/', userController.deleteu);
+userRouter.put('/Password', userController.update);
+userRouter.put('/Teacher', userController.assign);
+userRouter.put('/Delete', userController.deleteu);
 userRouter.put('/Points', userController.updatePoints)
 
 export default userRouter;

@@ -114,6 +114,15 @@ body {
 	margin-top: 7px;
 	box-shadow: 0px 4px 5px #000000;
 }
+.student-bar-class {
+	width: 100%;
+	min-height: 50px;
+	background: red;
+	display: flex;
+	border-radius: 32px;
+	margin-top: 7px;
+	box-shadow: 0px 4px 5px #000000;
+}
 .add-student-section {
 	padding-left: 10px;
 	margin-top: 20px;

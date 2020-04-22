@@ -80,6 +80,8 @@ export const update = function (req, res) {
 };
 
 export const assign = function (req, res) {
+
+	console.log(req.body)
 	if (!req.body.isAdmin) {
 		res.send(false);
 	} else {
@@ -99,6 +101,7 @@ export const assign = function (req, res) {
 		);
 	}
 };
+
 
 export const updatePoints = function (req, res) {
 	if (!req.body.isAdmin) {

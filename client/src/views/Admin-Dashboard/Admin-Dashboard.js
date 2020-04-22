@@ -102,7 +102,7 @@ class AdminDashboard extends React.Component {
 				return student.isAdmin == false;
 			})
 			.map((student) => {
-				return <StudentBar key={student.email} student={student} />;
+				return <StudentBar key={student.email} student={student} user={this.props.user} />;
 			});
 
 		function imagePreview() {
