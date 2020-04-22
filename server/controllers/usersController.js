@@ -56,7 +56,7 @@ export const create = function (req, res, next) {
 };
 
 export const update = function (req, res) {
-	const hashPass = bcrypt.hashSync(req.body.password, 10);
+	const hashPass = req.body.password;
 	const hashPass2 = bcrypt.hashSync(req.body.newpassword, 10);
 
 	if (!req.body.isAdmin) {
