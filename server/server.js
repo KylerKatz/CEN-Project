@@ -67,6 +67,10 @@ app.use('/api/Login/', loginRouter);
 
 app.use('/api/Quiz/', quizRouter);
 
+app.get('/LoginFailed', (req, res)  => {
+	res.json("Incorrect credentials");
+	
+});
 
 app.get('/Logout/', (req, res, next) => {
   req.logout()
@@ -75,14 +79,6 @@ app.get('/Logout/', (req, res, next) => {
       res.redirect('/Login/');
 
   });
-}); 
-
-//check if user is admin for rights to page 
-app.get('/Admin-Dashboard/', (req, res) =>{
-    if(!req.user.isAdmin){
-      res.redirect('/Explore'); 
-    }
-
 }); 
 
 app.get('*', (req, res) => {

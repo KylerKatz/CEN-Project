@@ -13,11 +13,9 @@ loginRouter.get('/', loginController.isLogged2);
 
 //authenticated useds 
 loginRouter.post('/', passport.authenticate('login',{
-    failureRedirect:'/Login', failureFlash: true
+    failureRedirect:'/LoginFailed'
 }), 
-(req, res) =>{// this is the same code as loginsuc
-    //console.log(typeof(userc.isAdmin));
-    //console.log(req.flash('error'));
+(req, res) =>{
     console.log("made redirection of post");
     if(req.user.isAdmin===true){
         res.redirect('/Admin-Dashboard');  
@@ -26,16 +24,4 @@ loginRouter.post('/', passport.authenticate('login',{
         res.redirect('/Explore');
     }
 });
-
-/*
-loginRouter.post('/', function(req, res, next) {
-    console.log(req.url);
-    passport.authenticate('local', function(err, user, info) {
-        console.log("authenticate");
-        console.log(err);
-        console.log(req.user.email);
-        console.log(info);
-    })(req, res, next);
-});
-*/
 export default loginRouter;

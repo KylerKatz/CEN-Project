@@ -2,7 +2,7 @@
 	"users": [{
 			"name": "Testy",
 			"email": "test@ufl.edu",
-			"password": "123",
+			"password": "$2b$10$vVC3qQX0CcTa.YbQn9xOAOs8.86Cj69SyRfhdCl44ff.taxVENt2W",
 			"isAdmin": false,
 			"created": "4/1/2020",
 			"teacher": "Mr. Joshua Fox"
@@ -10,7 +10,7 @@
 		{
 			"name": "Mr. Joshua Fox",
 			"email": "joshuafox@ufl.edu",
-			"password": "123",
+			"password": "$2b$10$fTKTIqKMHEa2erpuUh5rGuFnLuYdYP6fm2k/ImDvxEWFV5ZrVVWBO",
 			"isAdmin": true,
 			"created": "4/1/2020",
 			"teacher": "1"
@@ -18,3 +18,4 @@
 	]
 
 }
+//12345

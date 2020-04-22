@@ -110,7 +110,6 @@ export const loginreq = (req, res, next) => {
 	  }
     
   })
-
 };
 
 //Login authentication - Assign token
@@ -130,10 +129,4 @@ export const loginsuc = (req, res) => {
             redir='/Explore';
          }
         return res.redirect(redir)
-        
-      
-    
-  
-  
-
 }

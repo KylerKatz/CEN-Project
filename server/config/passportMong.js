@@ -16,28 +16,45 @@ passport.deserializeUser((id, done) => {
 passport.use('login', new Strategy({usernameField: 'email', passwordField: 'password',  passReqToCallback:true}, 
 
     (req, email,password, done) =>{
+        console.log('searching for user');
+        
 
         User.findOne({email:email}, (err, user) => {
             if(err) {return done(err);}
 
+            
             if (!user) {
                 console.log('user not found');
-                return done(null, false,{message : 'Incorrect credentials'});
-              }
-
-            bcrypt.compareSync(password, user.password, function(err, result) {
+                return done(err);
+            }
+            console.log('user found');
+            console.log('passwords: ', password, user.password);
+            
+            /*
+            bcrypt.compareSync(password, user.password, function(err2, result) {
+                console.log('bcrypt works: ', result);
                 if (result == false){
-                console.log('password doesn\'t match');  
-                    return done(null,false,  req.flash('loginMessage','Incorrect password.' )); 
+                    console.log('password doesn\'t match');
+                    user=false;
+                    return done(null, false); 
                 }
                 else{
-                    console.log('password does match');        
+                    console.log('password does match');  
+                    return done(null, user);
 				}
             });
+            //bcrypt.
+            */
+            if(bcrypt.compareSync(password, user.password)){
+                console.log('passwords match: ', user);
+                req.session.user = user;
+            }
+            else{
+                console.log('password doesn\'t match');
+                    user=false;
+                    return done(null, false); 
+			}
             
-            
-
-            return done(null, user);
 
         });
        
