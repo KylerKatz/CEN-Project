@@ -104,7 +104,7 @@ body {
 .intro-text {
 	position: absolute;
 	font-family: 'Montserrat', sans-serif;
-	text-align: -webkit-center;
+	/* text-align: -webkit-center; */
 
 	color: #ffffff;
 }
