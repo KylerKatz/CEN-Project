@@ -48,6 +48,7 @@ passport.use('login', new Strategy({usernameField: 'email', passwordField: 'pass
             if(bcrypt.compareSync(password, user.password)){
                 console.log('passwords match: ', user);
                 req.session.user = user;
+                return done(null, user);
             }
             else{
                 console.log('password doesn\'t match');
