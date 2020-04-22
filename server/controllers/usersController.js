@@ -65,11 +65,11 @@ export const update = function (req, res) {
 		//update
 		User.findOneAndUpdate(
 			{ email: req.body.email, password: hashPass },
-			{ $set: { password: req.body.newpassword } },
+			{ $set: { password: hashPass2 } },
 			function (err, data) {
 				if (err) throw err;
 				if (data) {
-					console.log(req.body.newpassword, data);
+					console.log(hashPass2, data);
 					res.send(true);
 				} else {
 					res.send(false);
