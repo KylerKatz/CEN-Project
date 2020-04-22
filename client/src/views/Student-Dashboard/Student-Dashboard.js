@@ -7,45 +7,43 @@ import AchievementBar from './AchievementBar';
 // import Quiz from './quiz';
 
 class StudentDashboard extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			questions: [],
+			quizComplete: false,
+		};
+	}
+
+	async componentDidMount() {
+		axios
+			.get('http://localhost:5000/api/Quiz')
+			.then((response) => {
+				this.setState({
+					questions: response.data,
+					students: this.state.quizComplete,
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
+
 	render() {
-		var questions = [
-			{
-				qustion:
-					'What is the standard distance between the target and archer in Olympics?',
-				options: ['50 meters', '70 meters', '100 meters', '120 meters'],
-				answer: 1, // arrays start with 0, so it is 70 meters
-			},
-			{
-				qustion: 'Which is the highest number on a standard roulette wheel?',
-				options: ['22', '24', '32', '36'],
-				answer: 3,
-			},
-			{
-				qustion:
-					'How much wood could a woodchuck chuck if a woodchuck would chuck wood?',
-				options: ['400 pounds', '550 pounds', '700 pounds', '750 pounds'],
-				answer: 2,
-			},
-			{
-				qustion: 'Which is the seventh planet from the sun?',
-				options: ['Uranus', 'Earth', 'Pluto', 'Mars'],
-				answer: 0,
-			},
-			{
-				qustion: 'Which is the largest ocean on Earth?',
-				options: [
-					'Atlantic Ocean',
-					'Indian Ocean',
-					'Arctic Ocean',
-					'Pacific Ocean',
-				],
-				answer: 3,
-			},
-		];
+		const shuffled = this.state.questions.sort(() => 0.5 - Math.random());
+
+		let selected = shuffled.slice(0, 5);
+
+		console.log(selected);
+
+		var questions = selected;
+
+		console.log(questions);
 
 		/* [QUIZ ENGINE] */
 		var quiz = {
 			draw: function () {
+				console.log(selected);
 				// quiz.draw() : draw the quiz
 
 				// Fetch the HTML quiz wrapper
@@ -60,7 +58,7 @@ class StudentDashboard extends React.Component {
 
 					// The question - <h1> header
 					var question = document.createElement('h1');
-					question.innerHTML = number + ') ' + questions[index]['qustion'];
+					question.innerHTML = number + ') ' + questions[index]['question'];
 					qwrap.appendChild(question);
 
 					// The options - <input> radio buttons and <label>
@@ -155,13 +153,20 @@ class StudentDashboard extends React.Component {
 				quizContainer[0].style.display = 'block';
 			}
 		}
+
+		var imageLink1 = 'https://avatars.dicebear.com/v2/initials/';
+		var imageLink2 = imageLink1.concat(this.props.user.name);
+		var imageLink3 = imageLink2.concat('.svg');
+
 		return (
 			<div className="background-explorepage-student-home">
 				<div className="center-background-student-home">
 					<div className="student-dashboard-upper-div">
 						<div className="textbox-1-student-home">
 							{/* The username can be replaced with the name of the account that is loged in */}
-							<h1 className="text1-student">Welcome Back username!</h1>
+							<h1 className="text1-student">
+								Welcome Back {this.props.user.name}!
+							</h1>
 						</div>
 						<div className="student-dashboard-upper-lower-div">
 							<div className="student-dashboard-upper-left-div">
@@ -169,13 +174,15 @@ class StudentDashboard extends React.Component {
 									<img
 										className="student-pic"
 										// Just a place holder image for now
-										src={'./default-profile-picture-png-clip-art.png'}
+										src={imageLink3}
 									></img>
 								</div>
 								<div className="bio-div">
-									<p className="bio-text">Member Since:</p>
-									<p className="bio-text">Teacher:</p>
-									<p className="bio-text">Achivement Points:</p>
+									<p className="bio-text">
+										Member Since: {this.props.user.created}
+									</p>
+									<p className="bio-text">Teacher: {this.props.user.teacher}</p>
+									<p className="bio-text">Achivement Points:TO BE DONE ON</p>
 								</div>
 							</div>
 
