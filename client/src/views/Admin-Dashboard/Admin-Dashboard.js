@@ -13,34 +13,33 @@ class AdminDashboard extends React.Component {
 		super(props);
 		this.state = {
 			clusters: [],
-			students: []
+			students: [],
 		};
 
 		this.createCluster = this.createCluster.bind(this);
 	}
 
 	async componentDidMount() {
-
 		axios
 			.get('http://localhost:5000/api/clusters')
 			.then((response) => {
-				this.setState({ 
+				this.setState({
 					clusters: response.data,
-					students: this.state.students
-				 });
+					students: this.state.students,
+				});
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
-		
+
 		axios
 			.get('http://localhost:5000/api/Signup')
 			.then((response) => {
-				console.log(response.data)
-				this.setState({ 
+				console.log(response.data);
+				this.setState({
 					clusters: this.state.clusters,
-					students: response.data
-				 });
+					students: response.data,
+				});
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -98,13 +97,13 @@ class AdminDashboard extends React.Component {
 			);
 		});
 
-		const students = this.state.students.filter(student => {
-			return student.isAdmin == false
-		}).map(student => {
-			return (
-				<StudentBar key={student.email} student={student}/>
-			);
-		});
+		const students = this.state.students
+			.filter((student) => {
+				return student.isAdmin == false;
+			})
+			.map((student) => {
+				return <StudentBar key={student.email} student={student} />;
+			});
 
 		function imagePreview() {
 			const image = document.getElementsByClassName('add-image')[0].files[0];
@@ -143,15 +142,15 @@ class AdminDashboard extends React.Component {
 			if (studentList[0].style.display == 'block') {
 				studentList[0].style.display = 'none';
 				index[0].style.display = 'none';
-				deleteStudent[0].style.display = 'none';
-				addStudent[0].style.display = 'none';
-				removeFromClass[0].style.display = 'block';
+				// deleteStudent[0].style.display = 'none';
+				// addStudent[0].style.display = 'none';
+				// removeFromClass[0].style.display = 'block';
 			} else {
 				studentList[0].style.display = 'block';
 				index[0].style.display = 'block';
-				deleteStudent[0].style.display = 'block';
-				addStudent[0].style.display = 'block';
-				removeFromClass[0].style.display = 'none';
+				// deleteStudent[0].style.display = 'block';
+				// addStudent[0].style.display = 'block';
+				// removeFromClass[0].style.display = 'none';
 			}
 		}
 
@@ -167,15 +166,15 @@ class AdminDashboard extends React.Component {
 			if (studentList[0].style.display == 'block') {
 				studentList[0].style.display = 'none';
 				index[0].style.display = 'none';
-				deleteStudent[0].style.display = 'none';
-				removeFromClass[0].style.display = 'none';
-				addStudent[0].style.display = 'block';
+				// deleteStudent[0].style.display = 'none';
+				// removeFromClass[0].style.display = 'none';
+				// addStudent[0].style.display = 'block';
 			} else {
 				studentList[0].style.display = 'block';
 				index[0].style.display = 'block';
-				deleteStudent[0].style.display = 'block';
-				removeFromClass[0].style.display = 'block';
-				addStudent[0].style.display = 'none';
+				// deleteStudent[0].style.display = 'block';
+				// removeFromClass[0].style.display = 'block';
+				// addStudent[0].style.display = 'none';
 			}
 		}
 
@@ -208,7 +207,7 @@ class AdminDashboard extends React.Component {
 							</div>
 						</div>
 						<div className="index-section">
-							<div className="buttons">
+							{/* <div className="buttons">
 								<div className="add-to-class">
 									<h3>Add To Class</h3>
 								</div>
@@ -218,7 +217,7 @@ class AdminDashboard extends React.Component {
 								<div className="delete-student">
 									<h3>Delete Student</h3>
 								</div>
-							</div>
+							</div> */}
 							<div className="index">
 								<div className="index-name">
 									<span> Name</span>
@@ -227,16 +226,14 @@ class AdminDashboard extends React.Component {
 									<span> Email</span>
 								</div>
 								<div className="index-password">
-									<span> Reset Password</span>
+									<span> Admin Controls</span>
 								</div>
 								{/* <div className="index-details">
 									<span> Details</span>
 								</div> */}
 							</div>
 						</div>
-						<div className="student-list">
-							{students}
-						</div>
+						<div className="student-list">{students}</div>
 					</div>
 
 					<div className="textbox-2-admin-home">

@@ -20,20 +20,14 @@ class Home extends React.Component {
 								{' '}
 								Career Find is a web app made to help you discover a wide
 								variety of careers. We recommend creating an account on the
-								Signup page, and then coming back here to have a conversation
-								with the chatbot below. You’ll be asked a few questions to gauge
-								which career best suits you. You can also search through all the
-								careers on the Explore page. Click on a cluster you find
-								interesting and explore away! If you’re up for a challenge, you
-								can earn points by completing achievements on your dashboard. We
-								hope you learn something new and have fun!
+								Signup page, and then having a conversation with the chatbot
+								below. You’ll be asked a few questions to gauge which career
+								best suits you. You can also search through all the careers on
+								the Explore page. Click on a cluster you find interesting and
+								explore away! If you’re up for a challenge, you can earn points
+								by completing achievements on your dashboard. We hope you learn
+								something new and have fun!
 							</p>
-						</div>
-					</div>
-
-					<div className="bottom-div">
-						<div className="chatbot-container">
-				
 						</div>
 					</div>
 				</div>

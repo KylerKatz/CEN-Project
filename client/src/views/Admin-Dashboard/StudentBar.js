@@ -16,7 +16,7 @@ class StudentBar extends React.Component {
 		}
 
 		function restPassword() {
-			var password = window.prompt('Enter The New Password:', 'Password');
+			var password = window.prompt('Enter The New Password:');
 			var txt;
 			if (
 				password == null ||
@@ -33,18 +33,14 @@ class StudentBar extends React.Component {
 
 			alert(txt);
 		}
+
+		function addToClass() {}
+		function removeFromClass() {}
+		function removeFromSite() {}
 		return (
 			<div>
 				<div className="student-bar">
-					<div className="add-student-section">
-						<input
-							className="checkbox"
-							type="checkbox"
-							id="vehicle1"
-							name="vehicle1"
-							value="Bike"
-						></input>
-					</div>
+					<div className="add-student-section"></div>
 					<div className="student-name-section">
 						<p> {this.props.student.name} </p>
 					</div>
@@ -52,28 +48,41 @@ class StudentBar extends React.Component {
 						<p> {this.props.student.email} </p>
 					</div>
 					<div className="student-password-section">
-						<p
-							className="reset-password"
+						<img
+							src="reset-password-icon.png"
+							className="reset-password-icon"
+							title="Reset Password"
 							onClick={() => {
 								restPassword();
 							}}
-						>
-							{' '}
-							Reset Password{' '}
-						</p>
-					</div>
+						></img>
 
-					{/* <div className="student-details-section">
 						<img
-							className="details"
-							src={'./details.png'}
-							alt="details"
-							title="Details"
+							src="plus-sign.png"
+							className="add-student-icon"
+							title="Add Student To Your Class"
 							onClick={() => {
-								showDetails(3);
+								addToClass();
 							}}
 						></img>
-					</div> */}
+						<img
+							src="Remove-User-icon.png
+							"
+							className="remove-student-from-class-icon"
+							title="Remove Student From Your Class"
+							onClick={() => {
+								removeFromClass();
+							}}
+						></img>
+						<img
+							src="trashcan.png"
+							className="remove-student-icon"
+							title="Delete Student Account"
+							onClick={() => {
+								removeFromSite();
+							}}
+						></img>
+					</div>
 				</div>
 				{/* <div className="details-div"></div> */}
 			</div>
