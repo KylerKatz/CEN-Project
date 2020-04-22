@@ -1,28 +1,103 @@
 {
 	"questions": [{
-			"question": "What is the standard distance between the target and archer in Olympics?",
-			"options": ["50 meters", "70 meters", "100 meters", "120 meters"],
-			"answer": 1
-		},
-		{
-			"question": "Which is the highest number on a standard roulette wheel?",
-			"options": ["22", "24", "32", "36"],
-			"answer": 3
-		},
-		{
-			"question": "How much wood could a woodchuck chuck if a woodchuck would chuck wood?",
-			"options": ["400 pounds", "550 pounds", "700 pounds", "750 pounds"],
+			"question": "How much do natural science managers earn on average per year?",
+			"options": ["85,000", "100,000", "115,000", "95,000"],
 			"answer": 2
 		},
 		{
-			"question": "Which is the seventh planet from the sun?",
-			"options": ["Uranus", "Earth", "Pluto", "Mars"],
+			"question": "Which of the following is a celebrity who worked as a Landscaping and groundskeeping worker?",
+			"options": ["Werner Baumann", "Louis Le Vau", "Thomas Church", "Anna Wintour"],
+			"answer": 2
+		},
+		{
+			"question": "Which of the following tasks is floral designers not responsible for?",
+			"options": ["Smelling the flowers", "Design the floral arrangement", "Cutting live and dried flowers", "Arranging live and dried flowers"],
 			"answer": 0
 		},
 		{
-			"question": "Which is the largest ocean on Earth?",
-			"options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+			"question": "Which class should one take if one wants to pursue a career as an Art Director?",
+			"options": ["Interior Design", "Fundamentals of Drawing", "Jewelry Design", "Art History"],
+			"answer": 0
+		},
+		{
+			"question": "Which of the following celebrities worked as Stock clerks and orderfillers?",
+			"options": ["Tina Fey", "Ashton Kutcher", "Blake Lively", "Kit Harington"],
 			"answer": 3
-		}
+		},
+		{
+			"question": "What is the average yearly salary for Chief Executives?",
+			"options": ["200,000", "150,000", "170,000", "250,000"],
+			"answer": 2
+		},
+		{
+			"question": "Which class should one take in order to become a teacher assistant?",
+			"options": ["Overcoming adversity", "Anger management", "Child Development", "Fundamentals of math"],
+			"answer": 3
+		},
+		{
+			"question": "Which of the following is not a task required of postsecondary teachers?",
+			"options": ["Preparation of course materials", "Teaching to graduate and undergraduate students", "Supervising and instructing laboratory activities", "Disciplining lazy students"],
+			"answer": 3
+		},
+		{
+			"question": "Which celebrity has worked as a bank teller?",
+			"options": ["Orlando Bloom", "Whoopi Goldberg", "Kate Winslet", "Chris Hemsworth"],
+			"answer": 1
+		},
+		{
+			"question": "Which class should one take if one wishes to become a financial manager?",
+			"options": ["Interpretation of Graphs", "Identifying Potential", "Statistics", "How to fake charisma"],
+			"answer": 2
+		},
+		{
+			"question": "How much money do surgeons make per year on average?",
+			"options": ["250,000", "185,000", "150,000", "300,000"],
+			"answer": 1
+		},
+		{
+			"question": "Which of the following is not a famous surgeon?",
+			"options": ["Henry Marsh", "Anthony Atala", "Denton Cooley", "Sally Ride"],
+			"answer": 3
+		},
+		{
+			"question": "Which of the following is not a responsibility of gaming managers in casinos?",
+			"options": ["Plan and direct gaming operations", "Promote gambling as non-addictive", "Formulate house rules", "Distribute earned rewards"],
+			"answer": 1
+		},
+		{
+			"question": "Which of the following courses should one take if one plans to become a shampooer?",
+			"options": ["Efficiency of hand movement", "Getting over fear of germs", "Cosmetology", "Anatomy"],
+			"answer": 2
+		},
+		{
+			"question": "How much money do Systems Software Developers make in a year?",
+			"options": ["60,000", "80,000", "125,000", "100,000"],
+			"answer": 3
+		},
+		{
+			"question": "Which of the following is not a responsibility of Lifeguards, ski patrol, and other recreational protective service workers?",
+			"options": ["Monitor recreational areas", "Daydream of abstract possibilities", "Aid and protection", "Respond quickly to emergencies"],
+			"answer": 1
+		},
+		{
+			"question": "Which course is not recommended in order to become a Nuclear power reactor operators?",
+			"options": ["History of Nuclear Weapons", "Chemistry", "Physics", "Earth Science"],
+			"answer": 0
+		},
+		{
+			"question": "How much money do cashiers earn yearly?",
+			"options": ["15,000", "25,000", "29,000", "19,000"],
+			"answer": 3
+		},
+		{
+			"question": "Which of the celebrities listed below have worked as Cashiers?",
+			"options": ["Madonna", "Kim Kardashian", "Emma Watson", "Jared Leto"],
+			"answer": 1
+		},
+		{
+			"question": "Which of the following is not a recommended course for becoming a petroleum engineer?",
+			"options": ["Algebra", "Trigonometry", "Calculus", "Ceramics"],
+			"answer": 3
+		}	
 	]
 }
