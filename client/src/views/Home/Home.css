@@ -87,7 +87,7 @@ body {
 	position: absolute;
 	/* align-self: center; */
 	left: 10%;
-	top: 8%;
+	top: 2%;
 	margin-left: 50%;
 
 	/* background: red; */
@@ -101,6 +101,7 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	/* text-align: -webkit-center; */
 
+	font-size: 20px;
 	color: #ffffff;
 }
 
@@ -126,33 +127,53 @@ body {
 @media screen and (max-width: 1250px) {
 	.center-background-home {
 		display: flex;
-		position: absolute;
-		width: 735px;
-		height: 650px;
-		/* /* top: 252px; */
+		/*  position: absolute; */
+		width: 900px;
+		height: 700px;
+
+		top: 200px;
 
 		background: #332f2f;
 		box-shadow: 0px 4px 5px #000000;
 		border-radius: 43px;
 	}
 
-	.chatbot-container {
-		background: green;
+	.career-img-container {
 		position: absolute;
-		/* align-self: center; */
-		width: 50%;
-		height: 85%;
+		align-self: center;
+		top: 5%;
+		height: 100%;
+		width: 75%;
+		border-right: 0;
+		left: 100px;
 
-		right: 45%;
-		top: 10%;
-		border-radius: 43px;
+		border-bottom: 5px solid #c4c4c4;
+		clear: both;
+		padding-bottom: 10px;
 	}
-	.chatbot-bot-embeded {
-		bottom: 70px;
+
+	.test-container {
+		position: absolute;
+		top: 120%;
+		height: 60%;
+		width: 80%;
+		clear: both;
+		padding: 0;
+		margin: 0;
+	}
+	.intro-text {
+		position: absolute;
+		font-family: 'Montserrat', sans-serif;
+		/* text-align: -webkit-center; */
+
+		color: #ffffff;
 	}
 
 	.top-div {
-		border-bottom: 0;
+		position: absolute;
+		width: 100%;
+		/* background-color: red; */
+		height: 20%;
 	}
 }
 
@@ -161,7 +182,7 @@ body {
 		display: flex;
 		/* /* position: absolute; */
 		width: 480px;
-		height: 1250px;
+		height: 700px;
 
 		top: 200px;
 
@@ -174,10 +195,10 @@ body {
 		position: absolute;
 		align-self: center;
 		top: 5%;
-		height: 45%;
+		height: 65%;
 		width: 85%;
 		border-right: 0;
-		left: 40px;
+		left: 30px;
 
 		border-bottom: 5px solid #c4c4c4;
 		clear: both;
@@ -186,7 +207,7 @@ body {
 	.test-container {
 		position: absolute;
 
-		top: 55%;
+		top: 75%;
 
 		/* background: red; */
 		height: 60%;
@@ -195,7 +216,6 @@ body {
 		clear: both;
 		padding: 0;
 		margin: 0;
-		border-bottom: 5px solid #c4c4c4;
 	}
 	.intro-text {
 		position: absolute;
@@ -211,18 +231,6 @@ body {
 		/* background-color: red; */
 		height: 20%;
 	}
-
-	.chatbot-container {
-		background: green;
-		position: absolute;
-		/* align-self: center; */
-		width: 95%;
-		height: 400px;
-
-		right: 3%;
-		top: 20%;
-		border-radius: 43px;
-	}
 }
 
 @media screen and (max-width: 660px) {
@@ -230,7 +238,7 @@ body {
 		display: flex;
 		/* /* position: absolute; */
 		width: 360px;
-		height: 1450px;
+		height: 800px;
 
 		top: 200px;
 
@@ -246,7 +254,7 @@ body {
 		height: 45%;
 		width: 85%;
 		border-right: 0;
-		left: 40px;
+		left: 20px;
 
 		border-bottom: 5px solid #c4c4c4;
 		clear: both;
@@ -264,76 +272,6 @@ body {
 		clear: both;
 		padding: 0;
 		margin: 0;
-		border-bottom: 5px solid #c4c4c4;
-	}
-	.intro-text {
-		position: absolute;
-		font-family: 'Montserrat', sans-serif;
-		/* text-align: -webkit-center; */
-
-		color: #ffffff;
-	}
-
-	.top-div {
-		position: absolute;
-		width: 100%;
-		/* background-color: red; */
-		height: 20%;
-	}
-
-	.chatbot-container {
-		background: green;
-		position: absolute;
-		/* align-self: center; */
-		width: 95%;
-		height: 400px;
-
-		right: 3%;
-		top: 35%;
-		border-radius: 43px;
-	}
-}
-
-@media screen and (max-width: 660px) {
-	.center-background-home {
-		display: flex;
-		/* /* position: absolute; */
-		width: 360px;
-		height: 1450px;
-
-		top: 200px;
-
-		background: #332f2f;
-		box-shadow: 0px 4px 5px #000000;
-		border-radius: 43px;
-	}
-
-	.career-img-container {
-		position: absolute;
-		align-self: center;
-		top: 5%;
-		height: 45%;
-		width: 85%;
-		border-right: 0;
-		left: 40px;
-
-		border-bottom: 5px solid #c4c4c4;
-		clear: both;
-	}
-
-	.test-container {
-		position: absolute;
-
-		top: 55%;
-
-		/* background: red; */
-		height: 70%;
-		width: 80%;
-
-		clear: both;
-		padding: 0;
-		margin: 0;
-		border-bottom: 5px solid #c4c4c4;
 	}
 	.intro-text {
 		position: absolute;

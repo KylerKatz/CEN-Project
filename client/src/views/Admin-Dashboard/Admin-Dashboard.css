@@ -48,7 +48,8 @@ body {
 .student-list {
 	margin: auto;
 	width: 95%;
-	height: 500px;
+	min-height: 1px;
+	max-height: 500px;
 	/* background-color: green; */
 	overflow-y: scroll;
 	display: none;

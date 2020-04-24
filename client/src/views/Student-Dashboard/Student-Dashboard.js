@@ -11,7 +11,7 @@ class StudentDashboard extends React.Component {
 		super(props);
 		this.state = {
 			questions: [],
-			quizScore: 0
+			quizScore: 0,
 		};
 	}
 
@@ -176,17 +176,16 @@ class StudentDashboard extends React.Component {
 						<div className="student-dashboard-upper-lower-div">
 							<div className="student-dashboard-upper-left-div">
 								<div className="student-pic-div">
-									<img
-										className="student-pic"
-										src={imageLink3}
-									></img>
+									<img className="student-pic" src={imageLink3}></img>
 								</div>
 								<div className="bio-div">
 									<p className="bio-text">
 										Member Since: {this.props.user.created}
 									</p>
 									<p className="bio-text">Teacher: {this.props.user.teacher}</p>
-									<p className="bio-text">Achivement Points: {this.props.user.achievementPoints}</p>
+									<p className="bio-text">
+										Achivement Points: {this.props.user.achievementPoints}
+									</p>
 								</div>
 							</div>
 
