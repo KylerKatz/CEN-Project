@@ -11,9 +11,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
-	background-image: url('./../Home/Backgroundv1.png');
-	background-size: 50%;
 }
 
 .center-background-edit-page {

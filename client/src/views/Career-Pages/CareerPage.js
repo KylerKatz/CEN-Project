@@ -28,7 +28,7 @@ class CareerPage extends React.Component {
 			index: this.getIndex(id),
 		});
 	}
-	addCluster() {}
+
 	render() {
 		const str = this.state.careers[this.state.index].videolink;
 		const str2 = str.substr(str.length - 11);
@@ -49,17 +49,7 @@ class CareerPage extends React.Component {
 			<div className="background-careerpage">
 				<div className="career-selection-div">{careers}</div>
 				<div className="center-background-2">
-					<div className="add-cluster-div-CP">
-						<img
-							className="add-icon"
-							src={plusSign}
-							alt="add"
-							title="Add Cluster"
-							onClick={() => {
-								this.addCluster();
-							}}
-						/>
-					</div>
+					<div className="add-cluster-div-CP"></div>
 					<div className="career-name-div">
 						<h1 className="career-name">
 							{this.state.careers[this.state.index].name}

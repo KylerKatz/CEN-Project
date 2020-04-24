@@ -132,11 +132,10 @@ body {
 .cluster-card-text {
 	display: block;
 	position: relative;
-	top: 50%;
+	top: 55%;
 	transform: translateY(-50%);
 
 	margin: 0;
-	position: relative;
 	font-size: 22px;
 	color: white;
 	text-decoration: none;
@@ -152,12 +151,24 @@ body {
 	background-color: rgba(23, 22, 22, 0.46);
 }
 
-@media screen and (max-width: 1450px) {
+.add-icon-on-card {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 10px;
+	top: 3px;
+	z-index: 1000;
+}
 
-	.text1{
+.add-icon-on-card:hover {
+	filter: invert(100%);
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1450px) {
+	.text1 {
 		font-size: 40px;
 	}
-
 
 	.center-background-1 {
 		position: absolute;
@@ -173,7 +184,7 @@ body {
 		height: 150vh;
 	}
 
-	.row1{
+	.row1 {
 		margin-left: 20px;
 	}
 }
@@ -195,12 +206,11 @@ body {
 }
 
 @media screen and (max-width: 550px) {
-
-	.text1{
+	.text1 {
 		font-size: 30px;
 	}
 
-	.text2{
+	.text2 {
 		font-size: 20px;
 	}
 
@@ -218,7 +228,7 @@ body {
 		height: 300vh;
 	}
 
-	.row1{
+	.row1 {
 		margin-left: 50px;
 	}
 }
