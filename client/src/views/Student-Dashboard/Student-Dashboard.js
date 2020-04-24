@@ -11,7 +11,7 @@ class StudentDashboard extends React.Component {
 		super(props);
 		this.state = {
 			questions: [],
-			quizComplete: false,
+			quizScore: 0
 		};
 	}
 
@@ -21,7 +21,7 @@ class StudentDashboard extends React.Component {
 			.then((response) => {
 				this.setState({
 					questions: response.data,
-					students: this.state.quizComplete,
+					quizScore: this.state.quizScore,
 				});
 			})
 			.catch(function (error) {
@@ -178,7 +178,6 @@ class StudentDashboard extends React.Component {
 								<div className="student-pic-div">
 									<img
 										className="student-pic"
-										// Just a place holder image for now
 										src={imageLink3}
 									></img>
 								</div>
@@ -187,7 +186,7 @@ class StudentDashboard extends React.Component {
 										Member Since: {this.props.user.created}
 									</p>
 									<p className="bio-text">Teacher: {this.props.user.teacher}</p>
-									<p className="bio-text">Achivement Points:TO BE DONE ON</p>
+									<p className="bio-text">Achivement Points: {this.props.user.achievementPoints}</p>
 								</div>
 							</div>
 

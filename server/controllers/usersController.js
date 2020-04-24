@@ -45,6 +45,7 @@ export const create = function (req, res, next) {
 		password: hashPass,
 		isAdmin: req.body.isAdmin,
 		created: date,
+		achievementPoints: 0
 	});
 
 	//save to database
