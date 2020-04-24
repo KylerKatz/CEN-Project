@@ -121,6 +121,20 @@ export const assign = function (req, res) {
 	}
 };
 
+export const saveCluster = (req,res) =>{
+	//is an array
+	var cluster = req.body.cluster;
+	Userd.findOneAndUpdate(
+		{email:req.body.email}, 
+		{$push: {clusters : cluster}},
+		(err,data) => {
+			if (err) throw err;
+			if(data){
+				console.log(req.body.saveCluster, data);
+			};
+		}
+	);
+};
 
 export const updatePoints = function (req, res) {
 	if (!req.body.isAdmin) {
