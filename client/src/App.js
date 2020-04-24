@@ -12,10 +12,10 @@ import AdminDashboard from './views/Admin-Dashboard/Admin-Dashboard';
 import EditPage from './views/Admin-Dashboard/EditPage';
 import AddPage from './views/Admin-Dashboard/AddPage';
 import StudentDashboard from './views/Student-Dashboard/Student-Dashboard';
-import ChatBot from './Chat.js'
+import ChatBot from './Chat.js';
 import LoginFailed from './views/Miscellaneous-Pages/LoginFailed';
 import NotFound from './views/Miscellaneous-Pages/NotFound';
-
+import SignupFailed from './views/Miscellaneous-Pages/SignupFailed';
 
 class App extends React.Component {
 	//create states here
@@ -58,29 +58,33 @@ class App extends React.Component {
 						<Route exact path="/Signup" component={Signup} />
 						<Route exact path="/CareerPage" component={CareerPage} />
 
-						{this.state.user == false || this.state.user.isAdmin == false ? 
-						<Route exact path="/Admin-Dashboard" component={AccessDenied} /> 
-						:
-						<Route 
-							exact 
-							path="/Admin-Dashboard" 
-							component={(props) => <AdminDashboard user={this.state.user} />} />
-						}
+						{this.state.user == false || this.state.user.isAdmin == false ? (
+							<Route exact path="/Admin-Dashboard" component={AccessDenied} />
+						) : (
+							<Route
+								exact
+								path="/Admin-Dashboard"
+								component={(props) => <AdminDashboard user={this.state.user} />}
+							/>
+						)}
 
 						<Route exact path="/EditPage" component={EditPage} />
 						<Route exact path="/AddPage" component={AddPage} />
 						<Route exact path="/LoginFailed" component={LoginFailed} />
 						<Route exact path="/AccessDenied" component={AccessDenied} />
+						<Route exact path="/SignupFailed" component={SignupFailed} />
 
-						{ this.state.user == false || this.state.user.isAdmin == true ? 
-							<Route exact path="/Student-Dashboard" component={AccessDenied} /> 
-							:
+						{this.state.user == false || this.state.user.isAdmin == true ? (
+							<Route exact path="/Student-Dashboard" component={AccessDenied} />
+						) : (
 							<Route
-							exact
-							path="/Student-Dashboard"
-							component={(props) => <StudentDashboard user={this.state.user} />}/>
-						}
-						
+								exact
+								path="/Student-Dashboard"
+								component={(props) => (
+									<StudentDashboard user={this.state.user} />
+								)}
+							/>
+						)}
 
 						<Route exact path="/">
 							<Redirect to="/Home" />
@@ -89,10 +93,9 @@ class App extends React.Component {
 						<Route component={NotFound} />
 					</Switch>
 				</div>
-				<ChatBot/>
+				<ChatBot />
 				)}
 			</div>
-
 		);
 	}
 }

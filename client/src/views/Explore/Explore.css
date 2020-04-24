@@ -132,7 +132,7 @@ body {
 .cluster-card-text {
 	display: block;
 	position: relative;
-	top: 55%;
+	top: 50%;
 	transform: translateY(-50%);
 
 	margin: 0;
@@ -149,6 +149,7 @@ body {
 	text-align: center;
 
 	background-color: rgba(23, 22, 22, 0.46);
+	z-index: 3;
 }
 
 .add-icon-on-card {
@@ -157,7 +158,7 @@ body {
 	height: 20px;
 	right: 10px;
 	top: 3px;
-	z-index: 1000;
+	z-index: 4;
 }
 
 .add-icon-on-card:hover {
