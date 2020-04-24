@@ -39,6 +39,21 @@ export const create = function (req, res, next) {
 		req.body.isAdmin = false;
 	}
 
+	User.findOne({email:req.body.email}, (err, user) => {
+            if(err) {return done(err);}
+
+            
+            if (!user) {
+                console.log('Unique Email');
+            }
+			else{
+				console.log('Email is taken');
+				res.suc=false;
+				next();
+			}
+
+	});
+
 	var addUser = new User({
 		name: req.body.name,
 		email: req.body.email,
@@ -147,8 +162,13 @@ export const deleteu = function (req, res) {
 export const redir = function (req, res) {
 	console.log('Redirect: ', req.body.isAdmin);
 	console.log(req.body);
-	var t = req.body.isAdmin;
-	res.redirect('/Login');
+	var t = req.suc;
+	if(t){
+		res.redirect('/Login');
+	}
+	else{
+		res.redirect('/SignupFailed');
+	}
 };
 
 export const redir2 = function (req, res) {
