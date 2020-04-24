@@ -45,6 +45,7 @@ export const create = function (req, res, next) {
             
             if (!user) {
                 console.log('Unique Email');
+				res.suc=true;
             }
 			else{
 				console.log('Email is taken');
