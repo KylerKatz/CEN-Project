@@ -67,8 +67,7 @@ body {
 	margin: auto;
 	padding-bottom: 20px;
 }
-
-.career-card {
+.career-card-main {
 	display: inline-block;
 	position: relative;
 	width: 205px;
@@ -84,14 +83,16 @@ body {
 	margin-bottom: 2%;
 	text-align: center;
 	overflow: hidden;
+}
 
-	/* background-image: url('./37c83f6.jpg'); */
+.career-card-main:hover {
+	/* box-shadow: 0px 10px 10px #000000; */
+}
 
-	/* width: 100%;
-	height: 100%; */
+.career-card {
 }
 .career-card:hover {
-	box-shadow: 0px 10px 10px #000000;
+	/* box-shadow: 0px 10px 10px #000000; */
 }
 
 .cluster-links {
@@ -150,6 +151,8 @@ body {
 
 	background-color: rgba(23, 22, 22, 0.46);
 	z-index: 3;
+
+	margin-left: -10px;
 }
 
 .add-icon-on-card {
