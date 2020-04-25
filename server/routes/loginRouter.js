@@ -21,7 +21,7 @@ loginRouter.post('/', passport.authenticate('login',{
         res.redirect('/Admin-Dashboard');  
     }
     else{
-        res.redirect('/Explore');
+        res.redirect('/Student-Dashboard');
     }
 });
 export default loginRouter;
