@@ -22,6 +22,21 @@ class ClusterCard extends React.Component {
 	}
 
 	render() {
+		
+		function dataURLtoFile(dataurl, filename) {
+			var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+				bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+			while(n--){
+				u8arr[n] = bstr.charCodeAt(n);
+			}
+			return new File([u8arr], filename, {type:mime});
+		}
+
+		var file = dataURLtoFile(this.props.cluster.icon.icon, 'a.png');
+
+		
+		console.log(file)
+		
 		return (
 			<div className="career-card-main">
 				{this.props.user == false ? (
@@ -62,7 +77,9 @@ class ClusterCard extends React.Component {
 					<div className="career-card-in">
 						<div
 							className="cluster-image-container"
-							style={{ backgroundImage: `url(${this.Background})` }}
+							style={{ backgroundImage: `url(${file})` }}
+
+							
 						>
 							<span className="cluster-card-text">
 								{this.props.cluster.name}{' '}
