@@ -60,6 +60,8 @@ class StudentDashboard extends React.Component {
 
 		var trueScore;
 
+		console.log(this.props.user.achievementPoints)
+
 		/* [QUIZ ENGINE] */
 		var quiz = {
 			draw: function () {
@@ -227,12 +229,30 @@ class StudentDashboard extends React.Component {
 									<h4>Achievements</h4>
 								</div>
 								<div className="achievement-div">
-									<AchievementBar></AchievementBar>
-									<AchievementBar></AchievementBar>
-									<AchievementBar></AchievementBar>
-									<AchievementBar></AchievementBar>
-									<AchievementBar></AchievementBar>
-									<AchievementBar></AchievementBar>
+									{this.props.user.achievementPoints >=  10? 
+									<AchievementBar name={'Bronze'}/>:
+									""
+									}
+
+									{this.props.user.achievementPoints >=  20? 
+									<AchievementBar name={'Silver'}/>:
+									""
+									}
+
+									{this.props.user.achievementPoints >=  30? 
+									<AchievementBar name={'Gold'}/>:
+									""
+									}
+
+									{this.props.user.achievementPoints >=  40? 
+									<AchievementBar name={'Platinum'}/>:
+									""
+									}
+
+									{this.props.user.achievementPoints >=  50? 
+									<AchievementBar name={'SuperNova'}/>:
+									""
+									}
 								</div>
 							</div>
 						</div>

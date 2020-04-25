@@ -16,6 +16,7 @@ import ChatBot from './Chat.js';
 import LoginFailed from './views/Miscellaneous-Pages/LoginFailed';
 import NotFound from './views/Miscellaneous-Pages/NotFound';
 import SignupFailed from './views/Miscellaneous-Pages/SignupFailed';
+import SignupFailed2 from './views/Miscellaneous-Pages/SignupFailed2';
 
 class App extends React.Component {
 	//create states here
@@ -57,7 +58,6 @@ class App extends React.Component {
 						<Route exact path="/Login" component={Login} />
 						<Route exact path="/Signup" component={Signup} />
 						<Route exact path="/CareerPage" component={CareerPage} />
-
 						{this.state.user == false || this.state.user.isAdmin == false ? (
 							<Route exact path="/Admin-Dashboard" component={AccessDenied} />
 						) : (
@@ -67,12 +67,12 @@ class App extends React.Component {
 								component={(props) => <AdminDashboard user={this.state.user} />}
 							/>
 						)}
-
 						<Route exact path="/EditPage" component={EditPage} />
 						<Route exact path="/AddPage" component={AddPage} />
 						<Route exact path="/LoginFailed" component={LoginFailed} />
 						<Route exact path="/AccessDenied" component={AccessDenied} />
 						<Route exact path="/SignupFailed" component={SignupFailed} />
+						<Route exact path="/SignupFailed2" component={SignupFailed2} />
 
 						{this.state.user == false || this.state.user.isAdmin == true ? (
 							<Route exact path="/Student-Dashboard" component={AccessDenied} />
@@ -85,11 +85,9 @@ class App extends React.Component {
 								)}
 							/>
 						)}
-
 						<Route exact path="/">
 							<Redirect to="/Home" />
 						</Route>
-
 						<Route component={NotFound} />
 					</Switch>
 				</div>

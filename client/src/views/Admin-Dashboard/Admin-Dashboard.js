@@ -102,7 +102,13 @@ class AdminDashboard extends React.Component {
 				return student.isAdmin == false;
 			})
 			.map((student) => {
-				return <StudentBar key={student.email} student={student} user={this.props.user} />;
+				return (
+					<StudentBar
+						key={student.email}
+						student={student}
+						user={this.props.user}
+					/>
+				);
 			});
 
 		function imagePreview() {
@@ -142,39 +148,9 @@ class AdminDashboard extends React.Component {
 			if (studentList[0].style.display == 'block') {
 				studentList[0].style.display = 'none';
 				index[0].style.display = 'none';
-				// deleteStudent[0].style.display = 'none';
-				// addStudent[0].style.display = 'none';
-				// removeFromClass[0].style.display = 'block';
 			} else {
 				studentList[0].style.display = 'block';
 				index[0].style.display = 'block';
-				// deleteStudent[0].style.display = 'block';
-				// addStudent[0].style.display = 'block';
-				// removeFromClass[0].style.display = 'none';
-			}
-		}
-
-		function myStudents() {
-			const studentList = document.getElementsByClassName('student-list');
-			const index = document.getElementsByClassName('index-section');
-			const deleteStudent = document.getElementsByClassName('delete-student');
-			const removeFromClass = document.getElementsByClassName(
-				'remove-student-class'
-			);
-			const addStudent = document.getElementsByClassName('add-to-class');
-
-			if (studentList[0].style.display == 'block') {
-				studentList[0].style.display = 'none';
-				index[0].style.display = 'none';
-				// deleteStudent[0].style.display = 'none';
-				// removeFromClass[0].style.display = 'none';
-				// addStudent[0].style.display = 'block';
-			} else {
-				studentList[0].style.display = 'block';
-				index[0].style.display = 'block';
-				// deleteStudent[0].style.display = 'block';
-				// removeFromClass[0].style.display = 'block';
-				// addStudent[0].style.display = 'none';
 			}
 		}
 
@@ -196,28 +172,8 @@ class AdminDashboard extends React.Component {
 							>
 								<h3>All Students</h3>
 							</div>
-
-							<div
-								className="my-students-button-admin"
-								onClick={() => {
-									myStudents();
-								}}
-							>
-								<h3>My Students</h3>
-							</div>
 						</div>
 						<div className="index-section">
-							{/* <div className="buttons">
-								<div className="add-to-class">
-									<h3>Add To Class</h3>
-								</div>
-								<div className="remove-student-class">
-									<h3>Remove From Class</h3>
-								</div>
-								<div className="delete-student">
-									<h3>Delete Student</h3>
-								</div>
-							</div> */}
 							<div className="index">
 								<div className="index-name">
 									<span> Name</span>
@@ -228,9 +184,6 @@ class AdminDashboard extends React.Component {
 								<div className="index-password">
 									<span> Admin Controls</span>
 								</div>
-								{/* <div className="index-details">
-									<span> Details</span>
-								</div> */}
 							</div>
 						</div>
 						<div className="student-list">{students}</div>
