@@ -2,7 +2,7 @@ import * as userController from '../controllers/usersController.js';
 import express from 'express';
 const userRouter = express.Router();
 
-userRouter.post('/', userController.create, userController.redir);
+userRouter.post('/', userController.create, userController.savef, userController.redir);
 
 userRouter.get('/', userController.list);
 userRouter.put('/Password', userController.update);

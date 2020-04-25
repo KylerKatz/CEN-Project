@@ -7,24 +7,11 @@ import Userd from '../models/UserDataModel.js';
 
 
 export const create = function (req, res, next) {
-	// if (!(errors === undefined) || !(errors.length == 0)) {
-	// 	console.log(errors);
-	// 	res.send('validate', { errors: JSON.stringify(errors) });
-	// 	errors = ['Signup Errors'];
-	// }
-
-	var date = new Date().getDate(); //Current Date
-	var month = new Date().getMonth() + 1; //Current Month
-	var year = new Date().getFullYear(); //Current Year
-	date = date + '/' + month + '/' + year;
-
-	const hashPass = bcrypt.hashSync(req.body.password, 10);
-
 	if (!req.body.isAdmin) {
 		req.body.isAdmin = false;
 	}
-
-	User.findOne({email:req.body.email}, (err, user) => {
+	res.suc=null;
+	User.findOne({email:req.body.email}).exec(function (err, user) {
             if(err) {return done(err);}
 
             
@@ -35,11 +22,20 @@ export const create = function (req, res, next) {
 			else{
 				console.log('Email is taken');
 				res.suc=false;
-				next();
+				
 			}
-
+			return next();
 	});
 
+};
+
+export const savef = function (req, res, next){
+	var date = new Date().getDate(); //Current Date
+	var month = new Date().getMonth() + 1; //Current Month
+	var year = new Date().getFullYear(); //Current Year
+	date = date + '/' + month + '/' + year;
+
+	const hashPass = bcrypt.hashSync(req.body.password, 10);
 	var addUser = new User({
 		name: req.body.name,
 		email: req.body.email,
@@ -55,8 +51,11 @@ export const create = function (req, res, next) {
 	addUser.save(function (err, data) {
 		if (err) throw err;
 	});
-	console.log(req.body.isAdmin);
-	next();
+	console.log("creating a user with perms: ", req.body.isAdmin);
+	if(res.suc==null){
+		console.log("res.suc is null");
+	}
+	return next();
 };
 
 export const update = function (req, res) {
@@ -167,12 +166,15 @@ export const deleteu = function (req, res) {
 
 export const redir = function (req, res) {
 	console.log('Redirect: ', req.body.isAdmin);
-	console.log(req.body);
-	var t = req.suc;
+	console.log(req.body, req.suc);
+	var t = res.suc;
+	
 	if(t){
+		res.suc=null;
 		res.redirect('/Login');
 	}
 	else{
+		res.suc=null;
 		res.redirect('/SignupFailed');
 	}
 };
