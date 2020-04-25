@@ -10,7 +10,7 @@ class StudentDashboard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			questions: []
+			questions: [],
 		};
 	}
 
@@ -19,7 +19,7 @@ class StudentDashboard extends React.Component {
 			.get('http://localhost:5000/api/Quiz')
 			.then((response) => {
 				this.setState({
-					questions: response.data
+					questions: response.data,
 				});
 			})
 			.catch(function (error) {
@@ -28,23 +28,21 @@ class StudentDashboard extends React.Component {
 	}
 
 	async updatePoints(score) {
-
-		console.log("Hello I m here")
+		console.log('Hello I m here');
 
 		var newInfo = {
 			email: this.props.user.email,
-			points: this.props.user.achievementPoints + score
-		}
+			points: this.props.user.achievementPoints + score,
+		};
 
 		await axios
-		.put('http://localhost:5000/api/Signup/Points', newInfo)
-		.then((response) => {
-			console.log(response)
-		})
-		.catch(function (error) {
-			console.log(error);
-		});
-
+			.put('http://localhost:5000/api/Signup/Points', newInfo)
+			.then((response) => {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
 	}
 
 	render() {
@@ -157,19 +155,17 @@ class StudentDashboard extends React.Component {
 				document.getElementById('quiz-wrap').style.textAlign = 'center';
 				retakeQuizButton[0].style.display = 'block';
 
-				dealWithIt(score)
+				dealWithIt(score);
 			},
 		};
 
 		async function dealWithIt(score) {
-
-			trueScore = score
-			dealWithIt2()
+			trueScore = score;
+			dealWithIt2();
 		}
 
-		function dealWithIt2()
-		{
-			console.log(trueScore)
+		function dealWithIt2() {
+			console.log(trueScore);
 		}
 
 		/* [INIT] */
@@ -250,16 +246,19 @@ class StudentDashboard extends React.Component {
 								<p>Take Quiz</p>
 							</div>
 
-							<span onClick={() => {
-									this.updatePoints(trueScore)
-								}}>>
-							<div
-								className="retake-quiz"
+							<span
 								onClick={() => {
-									retakeQuiz();
-								}}>
-								<p>Retake Quiz</p>
-							</div>
+									this.updatePoints(trueScore);
+								}}
+							>
+								<div
+									className="retake-quiz"
+									onClick={() => {
+										retakeQuiz();
+									}}
+								>
+									<p>Retake Quiz</p>
+								</div>
 							</span>
 
 							<div className="quiz-containter">
@@ -269,7 +268,7 @@ class StudentDashboard extends React.Component {
 					</div>
 					<div className="student-dashboard-lower-div">
 						<div className="student-dashboard-lower-div-text">
-							<h3> Chatbot Recommended Career Clusters</h3>
+							<h3> Your Saved Clusters</h3>
 						</div>
 
 						<div className="student-dashboard-recmmmended-cards-div">
@@ -280,10 +279,6 @@ class StudentDashboard extends React.Component {
 									onClick={() => window.scrollTo(0, 0)}
 									to={{
 										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
 									}}
 								>
 									<div className="career-card">Name</div>
@@ -293,10 +288,6 @@ class StudentDashboard extends React.Component {
 									onClick={() => window.scrollTo(0, 0)}
 									to={{
 										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
 									}}
 								>
 									<div className="career-card">Name</div>
@@ -306,10 +297,6 @@ class StudentDashboard extends React.Component {
 									onClick={() => window.scrollTo(0, 0)}
 									to={{
 										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
 									}}
 								>
 									<div className="career-card">Name</div>
@@ -319,10 +306,6 @@ class StudentDashboard extends React.Component {
 									onClick={() => window.scrollTo(0, 0)}
 									to={{
 										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
 									}}
 								>
 									<div className="career-card">Name</div>

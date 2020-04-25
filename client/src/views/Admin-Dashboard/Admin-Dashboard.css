@@ -42,7 +42,6 @@ body {
 .admin-students-div {
 	width: 100%;
 	min-height: 10px;
-	/* background-color: red; */
 }
 
 .student-list {
@@ -50,7 +49,6 @@ body {
 	width: 95%;
 	min-height: 1px;
 	max-height: 500px;
-	/* background-color: green; */
 	overflow-y: scroll;
 	display: none;
 }
@@ -75,7 +73,6 @@ body {
 	height: 100%;
 	text-align: center;
 	margin-top: none;
-	/* background-color: brown; */
 	color: black;
 	font-size: 25px;
 	font-weight: 600;
@@ -87,7 +84,6 @@ body {
 	color: black;
 	font-size: 25px;
 	font-weight: 600;
-	/* background-color: yellow; */
 }
 .index-password {
 	width: 21.5%;
@@ -96,16 +92,7 @@ body {
 	color: black;
 	font-size: 25px;
 	font-weight: 600;
-	/* background-color: green; */
 }
-/* .index-details {
-	width: 17%;
-	height: 100%;
-	text-align: center;
-	color: black;
-	font-size: 25px;
-	font-weight: 600;
-} */
 .student-bar {
 	width: 100%;
 	min-height: 50px;
@@ -129,18 +116,15 @@ body {
 	margin-top: 20px;
 	width: 20px;
 	height: 100%;
-	/* background-color: black; */
 }
 .student-name-section {
 	width: 45%;
-	/* background-color: mediumaquamarine; */
 	min-height: 100%;
 	padding-left: 15px;
 	border-right: 1px grey solid;
 }
 .student-email-section {
 	width: 45%;
-	/* background-color: purple; */
 	min-height: 100%;
 	border-right: 1px grey solid;
 	padding-left: 15px;
@@ -148,22 +132,14 @@ body {
 
 .student-password-section {
 	width: 30%;
-	/* background-color: orange; */
 	min-height: 100%;
-	/* border-right: 1px grey solid; */
 	padding-left: 15px;
 }
 .reset-password:hover {
 	cursor: pointer;
 	color: #2db4de;
 }
-/* .student-details-section {
-	min-width: 20px;
-	min-height: 100%;
-	justify-content: center;
-	padding-left: 5%;
-	padding-top: 10px;
-} */
+
 .details {
 	width: 40px;
 	height: 40px;
@@ -191,7 +167,6 @@ body {
 	min-height: 10px;
 	width: 100%;
 	border-bottom: 2px solid grey;
-	/* background-color: aquamarine; */
 	position: relative;
 	margin-top: 10px;
 	text-align: center;
@@ -207,11 +182,8 @@ body {
 	margin-top: 20px;
 	width: 80%;
 	min-height: 400px;
-	/* background-color: #344d65; */
 	border-radius: 32px;
 	margin-bottom: 50px;
-	/* border: 1px solid black; */
-	/* overflow-y: auto; */
 }
 .career-bar-admin {
 	width: 100%;
@@ -241,12 +213,9 @@ body {
 
 .career-bar-right-1 {
 	display: flex;
-	/* position: relative; */
 	width: 12%;
 	min-height: 100%;
 	align-items: center;
-
-	/* background-color: brown; */
 }
 
 .cluster-div-admin {
@@ -331,9 +300,7 @@ body {
 .add-cluster-div {
 	width: 100%;
 	min-height: 20px;
-
 	white-space: nowrap;
-
 	border-bottom: 2px solid grey;
 	padding-bottom: 40px;
 }
@@ -366,7 +333,6 @@ body {
 	bottom: 10px;
 	text-decoration: none;
 	color: white;
-	/* text-shadow: 0px 2px 5px black; */
 	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
 		-1px -1px 0 #000;
 }
@@ -402,7 +368,6 @@ body {
 .buttons {
 	width: 100%;
 	min-height: 15px;
-	/* background-color: darkred; */
 	display: flex;
 	margin-bottom: 20px;
 }
@@ -410,7 +375,6 @@ body {
 .top-buttons-admin {
 	width: 100%;
 	min-height: 15px;
-	/* background-color: darkred; */
 	display: flex;
 	margin-bottom: 20px;
 }
@@ -440,7 +404,6 @@ body {
 	bottom: 10px;
 	text-decoration: none;
 	color: white;
-	/* text-shadow: 0px 2px 5px black; */
 	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
 		-1px -1px 0 #000;
 }
@@ -451,7 +414,6 @@ body {
 	right: 100px;
 	width: 220px;
 	height: 54px;
-	/* margin-right: 70px; */
 	margin-top: 40px;
 	background: grey;
 	border: 1px solid #000000;
@@ -471,7 +433,6 @@ body {
 	bottom: 20px;
 	text-decoration: none;
 	color: white;
-	/* text-shadow: 0px 2px 5px black; */
 	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
 		-1px -1px 0 #000;
 }
@@ -479,11 +440,9 @@ body {
 .remove-student-class {
 	display: none;
 	position: relative;
-
 	left: 100px;
 	width: 220px;
 	height: 54px;
-	/* margin-right: 70px; */
 	margin-top: 40px;
 	background: grey;
 	border: 1px solid #000000;
@@ -503,7 +462,6 @@ body {
 	bottom: 10px;
 	text-decoration: none;
 	color: white;
-	/* text-shadow: 0px 2px 5px black; */
 	text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
 		-1px -1px 0 #000;
 }
@@ -518,10 +476,8 @@ body {
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
-
 	margin-bottom: 2%;
 	text-align: center;
-
 	position: relative;
 	margin-left: 35%;
 }
@@ -533,16 +489,12 @@ body {
 }
 .middle-div {
 	display: flex;
-
 	width: 100%;
 	min-height: 100px;
-
 	display: none;
 	align-content: center;
 	text-align: center;
-
 	border-bottom: 2px solid grey;
-	/* border-top: 2px solid grey; */
 	padding-top: 20px;
 	margin-bottom: 20px;
 }
@@ -563,8 +515,6 @@ body {
 	position: relative;
 	width: 12%;
 	margin-left: 80%;
-
-	/* background-color: green; */
 }
 .trashcan-icon-cluster {
 	position: relative;
@@ -662,8 +612,6 @@ body {
 	}
 	.career-bar-left {
 		width: 95%;
-		/* height: 100%; */
-		/* background-color: blueviolet; */
 	}
 	.career-bar-right-1 {
 		margin-left: 80%;
@@ -672,7 +620,5 @@ body {
 		min-width: 12%;
 		min-height: 100%;
 		align-items: center;
-
-		/* background-color: brown; */
 	}
 }
