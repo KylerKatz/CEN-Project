@@ -3,23 +3,8 @@ import mongoose from 'mongoose';
 import path from 'path';
 import express from 'express';
 import bcrypt from 'bcrypt';
+import Userd from '../models/UserDataModel.js';
 
-var errors = ['Signup Errors'];
-
-// export const validate = (req, res, next) => {
-// 	if (req.body.name.lenth < 4) {
-// 		errors.push('Usernames must be at least 4 characters');
-// 	}
-// 	if (req.body.email.length < 4) {
-// 		errors.push('Please enter a valid email');
-// 	}
-// 	//if(req.body.password.length <= 8){errors.push("Passwords must be atleast 8 characters long")};
-// 	if (req.body.conpassword != req.body.password) {
-// 		alert('Passwords must match');
-// 		errors.push('Passwords must match');
-// 	}
-// 	next();
-// };
 
 export const create = function (req, res, next) {
 	// if (!(errors === undefined) || !(errors.length == 0)) {
@@ -123,17 +108,24 @@ export const assign = function (req, res) {
 
 export const saveCluster = (req,res) =>{
 	//is an array
-	var cluster = req.body.cluster;
-	User.findOneAndUpdate(
-		{email:req.body.email}, 
-		{$push: {savedClusters : cluster}},
-		(err,data) => {
-			if (err) throw err;
-			if(data){
-				console.log(req.body.cluster, data);
-			};
-		}
-	);
+	//find clusterbyidandthensave
+
+	var saveCluster = req.body.cluster;
+	console.log("completed");
+/*
+	Users.findOneAndUpdate({name: req.user.name}, 
+		{$push: {friends: friend}});
+};*/
+	Userd.findOneAndUpdate({email:req.body.email},
+							{$push:{clusters: saveCluster}},
+
+		(err,data)=>{
+			if (err) console.log("error");
+			else{
+				console.log(saveCluster);
+				res.send(data); 
+			}
+		});
 };
 
 export const updatePoints = function (req, res) {
@@ -154,6 +146,7 @@ export const updatePoints = function (req, res) {
 			}
 		);
 };
+
 
 export const deleteu = function (req, res) {
 	if (!req.body.isAdmin) {

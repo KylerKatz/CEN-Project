@@ -9,8 +9,7 @@ const userSchema =  new mongoose.Schema({
     created: {type:String, required: true},
     teacher: {type:String, required:false},
     achievementPoints: {type: mongoose.Number, required: false},
-    achievements: [String],
-    savedClusters: [mongoose.Number]
+    achievements: [String]
 
 }); 
 
