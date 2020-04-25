@@ -39,6 +39,7 @@ class App extends React.Component {
 			});
 
 		axios.get('http://localhost:5000/api/Login').then((res) => {
+			console.log(res.data);
 			this.setState({ clusters: this.state.clusters, user: res.data });
 		});
 	}
