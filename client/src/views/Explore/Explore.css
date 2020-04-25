@@ -86,10 +86,24 @@ body {
 }
 
 .career-card-main:hover {
-	/* box-shadow: 0px 10px 10px #000000; */
+	box-shadow: 0px 10px 10px #000000;
 }
 
-.career-card {
+.career-card-in {
+	display: inline-block;
+	position: relative;
+	width: 205px;
+	height: 107px;
+	left: 0px;
+	background: #c4c4c4;
+	border-radius: 18px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	/* margin-left: 2%; */
+	margin-bottom: 2%;
+	text-align: center;
+	overflow: hidden;
 }
 .career-card:hover {
 	/* box-shadow: 0px 10px 10px #000000; */
@@ -106,8 +120,6 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 5;
-	/* filter: grayscale(100%); */
-	/* filter: blur(100%); */
 }
 
 .cluster-image-container {
@@ -180,7 +192,7 @@ body {
 		/* height: 1050px; */
 	}
 
-	.career-card {
+	.career-card-main-main {
 		left: 35px;
 	}
 
@@ -200,7 +212,7 @@ body {
 		/* height: 1300px; */
 	}
 
-	.career-card {
+	.career-card-main {
 		left: 35px;
 	}
 
@@ -224,7 +236,7 @@ body {
 		/* height: 2500px; */
 	}
 
-	.career-card {
+	.career-card-main {
 		left: 60px;
 	}
 

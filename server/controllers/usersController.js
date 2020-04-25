@@ -125,13 +125,13 @@ export const assign = function (req, res) {
 export const saveCluster = (req,res) =>{
 	//is an array
 	var cluster = req.body.cluster;
-	Userd.findOneAndUpdate(
+	User.findOneAndUpdate(
 		{email:req.body.email}, 
-		{$push: {clusters : cluster}},
+		{$push: {savedClusters : cluster}},
 		(err,data) => {
 			if (err) throw err;
 			if(data){
-				console.log(req.body.saveCluster, data);
+				console.log(req.body.cluster, data);
 			};
 		}
 	);

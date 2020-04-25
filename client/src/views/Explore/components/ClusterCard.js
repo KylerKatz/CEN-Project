@@ -43,7 +43,7 @@ class ClusterCard extends React.Component {
 						},
 					}}
 				>
-					<div className="career-card">
+					<div className="career-card-in">
 						<div
 							className="cluster-image-container"
 							//style={{ backgroundImage: `url(${Background})` }}
