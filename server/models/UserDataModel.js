@@ -6,7 +6,7 @@ const userdSchema =  new mongoose.Schema({
     email:{type:String, required:true}, 
     //probably replace achievements with {type: [mongoose.Number], required: false} and create achievement schema 
     achievements: [mongoose.Schema.Types.Mixed],
-    clusters: {type: [mongoose.Number], required: false}
+    clusters: [{type: Number, required: false}]
 
 }); 
 
