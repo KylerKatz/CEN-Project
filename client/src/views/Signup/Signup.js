@@ -12,6 +12,7 @@ function Signup(props) {
 		name: '',
 		email: '',
 		password: '',
+		conpassword: '',
 		isAdmin: false,
 	});
 

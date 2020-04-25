@@ -7,6 +7,13 @@ import Userd from '../models/UserDataModel.js';
 
 
 export const create = function (req, res, next) {
+	if(req.body.password!=req.body.conpassword){
+		console.log('redirect, bad passwords');
+		return res.redirect('/SignupFailed2');
+	}
+	else{
+		console.log('passwords match');
+	}
 	if (!req.body.isAdmin) {
 		req.body.isAdmin = false;
 	}
