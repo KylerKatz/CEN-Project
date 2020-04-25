@@ -13,11 +13,7 @@ export const list = (req, res) => {
 };
 
 export const isLogged = (req, res) => {
-    var userc = {
-        "name": '', 
-        "email": '', 
-        "isAdmin": ''
-      };
+    var userc;
 
       console.log("passport req.user:");
       console.log(req.user);
@@ -25,28 +21,19 @@ export const isLogged = (req, res) => {
 
 	if(req.user){
         console.log('req.user exists');
-        userc.name=req.user.username;
-        userc.email=req.user.email;
-        user.findOne({email: userc.email} ,
+        user.findOne({email: req.user.email} ,
             function(err, success) {
               if (err) {
                 return res.send(err)
               }
               else if(success){
                 
-                console.log('found user');
+                console.log('found user in db');
                 console.log(success)
               }
               else{
-              console.log('DIDn\'t find user');
-                var error = {
-                  username: null,
-                  email: null,
-                  logged:false
-                }
-
-                
-                //add alert box here
+                console.log('DIDn\'t find user, VERY BAD');
+                return res.send(false);
                 
 	          }
     
