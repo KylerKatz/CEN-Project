@@ -5,6 +5,8 @@ const clustersRouter = express.Router();
 
 clustersRouter.get('/', clusterControl.list);
 
+clustersRouter.get('/Icons', clusterControl.listicon);
+
 clustersRouter.put('/addCareer/:clusterid', clusterControl.addCareer, clusterControl.prepareCareerId)
 
 clustersRouter.put('/removeCareer/:clusterid', clusterControl.deleteCareer)

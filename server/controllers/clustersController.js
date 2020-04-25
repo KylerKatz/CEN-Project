@@ -12,6 +12,16 @@ export const list = (req, res) => {
     })
 };
 
+export const listicon = (req, res) => {
+	icon.find({}, function(err, icons){
+        if(err){
+          console.log(err);
+        } else{
+            res.json(icons);
+        }
+    })
+};
+
 // Will instert a new cluster in the Database
 export const addCluster = (req, res) => {
 
