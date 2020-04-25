@@ -23,6 +23,8 @@ class ClusterCard extends React.Component {
 	}
 
 	render() {
+
+		
 		return (
 			<div className="career-card-main">
 				{this.props.user == false ? "" :
