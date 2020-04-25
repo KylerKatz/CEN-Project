@@ -3,13 +3,22 @@ import { NavLink } from 'react-router-dom';
 import CareerPage from '../../Career-Pages/CareerPage';
 import Explore from '../Explore';
 
-function addCluster() {
-	console.log('hello');
-	alert('You have been logged out');
-}
 
 //import Background from './../ClusterCardPictures/Marketing.png'
 class ClusterCard extends React.Component {
+
+	async addCluster() {
+		console.log('hello');
+	
+		const cluster = this.props.cluster.id; 
+		console.log(cluster); 
+		fetch('http://localhost:5000/api/Signup/Career',{
+			method:'post',
+			body: cluster,
+		});
+	
+	}
+
 	render() {
 		return (
 			<div className="career-card-main">
@@ -19,7 +28,7 @@ class ClusterCard extends React.Component {
 					alt="add"
 					title="Add Cluster"
 					onClick={() => {
-						addCluster();
+						this.addCluster();
 					}}
 				/>
 
@@ -43,6 +52,7 @@ class ClusterCard extends React.Component {
 								{this.props.cluster.name}{' '}
 							</span>
 						</div>
+
 					</div>
 				</NavLink>
 			</div>
