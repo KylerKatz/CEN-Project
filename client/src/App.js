@@ -82,7 +82,7 @@ class App extends React.Component {
 								exact
 								path="/Student-Dashboard"
 								component={(props) => (
-									<StudentDashboard user={this.state.user} />
+									<StudentDashboard clusters={this.state.clusters} user={this.state.user} />
 								)}
 							/>
 						)}

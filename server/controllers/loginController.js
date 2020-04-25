@@ -30,6 +30,8 @@ export const isLogged = (req, res) => {
                 console.log('found user in db');
                 console.log(success)
                 userc=success;
+                console.log(Array.isArray(userc.savedClusters));
+                //userc.savedClusters=userc.savedClusters.toObject();
                 console.log('sending userc');
                 res.send(userc);
               }
