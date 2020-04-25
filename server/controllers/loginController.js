@@ -13,11 +13,7 @@ export const list = (req, res) => {
 };
 
 export const isLogged = (req, res) => {
-    var userc = {
-        "name": '', 
-        "email": '', 
-        "isAdmin": ''
-      };
+    var userc;
 
       console.log("passport req.user:");
       console.log(req.user);
@@ -25,34 +21,26 @@ export const isLogged = (req, res) => {
 
 	if(req.user){
         console.log('req.user exists');
-        userc.name=req.user.username;
-        userc.email=req.user.email;
-        user.findOne({email: userc.email} ,
-            function(err, success) {
+        user.findOne({email: req.user.email}).exec(function(err, success) {
               if (err) {
                 return res.send(err)
               }
               else if(success){
                 
-                console.log('found user');
+                console.log('found user in db');
                 console.log(success)
+                userc=success;
+                console.log('sending userc');
+                res.send(userc);
               }
               else{
-              console.log('DIDn\'t find user');
-                var error = {
-                  username: null,
-                  email: null,
-                  logged:false
-                }
-
-                
-                //add alert box here
+                console.log('DIDn\'t find user, VERY BAD');
+                return res.send(false);
                 
 	          }
     
-          })
-        console.log('sending userc');
-        res.send(userc);
+        });
+        
 
 	}
     else{
@@ -63,14 +51,11 @@ export const isLogged = (req, res) => {
 
 export const isLogged2 = (req, res) => {
 
-      console.log("passport req.user:");
-      console.log(req.user);
-
-
-	if(req.user){
+    console.log("passport req.user:");
+    console.log(req.user);
+    if(req.user){
         console.log('req.user exists, sending it');
         res.send(req.user);
-
 	}
     else{
         console.log('sending false');

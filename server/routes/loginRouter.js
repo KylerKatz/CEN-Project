@@ -5,9 +5,9 @@ import passport from 'passport';
 const loginRouter = express.Router();
 
 //debug
-loginRouter.get('/', loginController.isLogged2);
+loginRouter.get('/', loginController.isLogged);
 
-//loginRouter.get('/', loginController.isLogged);
+//loginRouter.get('/', loginController.isLogged2);
 
 //loginRouter.post('/', loginController.loginreq, loginController.loginsuc);
 

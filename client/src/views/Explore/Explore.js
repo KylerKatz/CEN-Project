@@ -9,7 +9,7 @@ class Explore extends React.Component {
 				return cluster.careers.length > 0;
 			})
 			.map((cluster) => {
-				return <ClusterCard cluster={cluster} key={cluster.id} />;
+				return <ClusterCard cluster={cluster} key={cluster.id} user={this.props.user} />;
 			});
 
 		return (

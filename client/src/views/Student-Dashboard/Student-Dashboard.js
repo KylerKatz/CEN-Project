@@ -59,6 +59,7 @@ class StudentDashboard extends React.Component {
 		var trueScore;
 
 		console.log(this.props.user.achievementPoints);
+		console.log(this.props.user.savedClusters);
 
 		/* [QUIZ ENGINE] */
 		var quiz = {
