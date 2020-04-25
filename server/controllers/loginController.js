@@ -38,7 +38,7 @@ export const isLogged = (req, res) => {
                 
 	          }
     
-          })
+        });
         console.log('sending userc');
         res.send(userc);
 
