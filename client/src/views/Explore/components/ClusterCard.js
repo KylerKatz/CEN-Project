@@ -5,29 +5,9 @@ import CareerPage from '../../Career-Pages/CareerPage';
 import Explore from '../Explore';
 
 //import Background from './../ClusterCardPictures/Marketing.png'
-function dataURLtoFile(dataurl, filename) {
-	dataurl = toString(dataurl);
 
-	var arr = dataurl.split(',');
-	console.log(arr);
-
-	// mime = arr[0].match(/:(.*?);/)[1],
-	// bstr = atob(arr[1]),
-	// n = bstr.length,
-	// u8arr = new Uint8Array(n);
-	// while (n--) {
-	// 	u8arr[n] = bstr.charCodeAt(n);
-	// }
-	// return new File([u8arr], filename, { type: mime });
-}
 class ClusterCard extends React.Component {
-	constructor(props) {
-		super(props);
-		console.log(props);
-
-		this.Background = dataURLtoFile(this.props.cluster.icon, 'icon.png');
-		console.log(this.Background);
-	}
+	
 	async addCluster() {
 		console.log('hello');
 
