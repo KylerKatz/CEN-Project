@@ -30,6 +30,7 @@ export const isLogged = (req, res) => {
                 
                 console.log('found user in db');
                 console.log(success)
+                userc=success;
               }
               else{
                 console.log('DIDn\'t find user, VERY BAD');
