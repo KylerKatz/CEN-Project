@@ -54,7 +54,7 @@ class App extends React.Component {
 						<Route
 							exact
 							path="/Explore"
-							component={(props) => <Explore clusters={this.state.clusters} />}
+							component={(props) => <Explore clusters={this.state.clusters} user={this.state.user} />}
 						/>
 						<Route exact path="/Login" component={Login} />
 						<Route exact path="/Signup" component={Signup} />

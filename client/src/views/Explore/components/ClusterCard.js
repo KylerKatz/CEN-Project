@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 import CareerPage from '../../Career-Pages/CareerPage';
 import Explore from '../Explore';
 
@@ -9,12 +10,14 @@ class ClusterCard extends React.Component {
 
 	async addCluster() {
 		console.log('hello');
-	
-		const cluster = this.props.cluster.id; 
-		console.log(cluster); 
-		fetch('http://localhost:5000/api/Signup/Career',{
-			method:'post',
-			body: cluster,
+
+		const newObj = {
+			email: this.props.user.email,
+			cluster: this.props.cluster.id
+		}
+
+		axios.put('http://localhost:5000/api/Signup/Career', newObj).then((res) => {
+			console.log(res)
 		});
 	
 	}
@@ -22,6 +25,7 @@ class ClusterCard extends React.Component {
 	render() {
 		return (
 			<div className="career-card-main">
+				{this.props.user == false ? "" :
 				<img
 					className="add-icon-on-card"
 					src={'./plus-sign.png'}
@@ -30,7 +34,7 @@ class ClusterCard extends React.Component {
 					onClick={() => {
 						this.addCluster();
 					}}
-				/>
+				/>}
 
 				<NavLink
 					className="career-links"

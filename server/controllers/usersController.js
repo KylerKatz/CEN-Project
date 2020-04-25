@@ -50,7 +50,6 @@ export const savef = function (req, res, next){
 		isAdmin: req.body.isAdmin,
 		created: date,
 		achievementPoints: 0,
-		achievements: [],
 		savedClusters: []
 	});
 
@@ -116,14 +115,16 @@ export const saveCluster = (req,res) =>{
 	//is an array
 	//find clusterbyidandthensave
 
+	console.log(req.body)
+
 	var saveCluster = req.body.cluster;
 	console.log("completed");
 /*
 	Users.findOneAndUpdate({name: req.user.name}, 
 		{$push: {friends: friend}});
 };*/
-	Userd.findOneAndUpdate({email:req.body.email},
-							{$push:{clusters: saveCluster}},
+	User.findOneAndUpdate({email:req.body.email},
+							{$push:{savedClusters: saveCluster}},
 
 		(err,data)=>{
 			if (err) console.log("error");
