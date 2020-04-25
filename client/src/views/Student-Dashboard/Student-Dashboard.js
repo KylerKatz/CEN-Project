@@ -10,8 +10,7 @@ class StudentDashboard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			questions: [],
-			quizScore: 0,
+			questions: []
 		};
 	}
 
@@ -20,13 +19,32 @@ class StudentDashboard extends React.Component {
 			.get('http://localhost:5000/api/Quiz')
 			.then((response) => {
 				this.setState({
-					questions: response.data,
-					quizScore: this.state.quizScore,
+					questions: response.data
 				});
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
+	}
+
+	async updatePoints(score) {
+
+		console.log("Hello I m here")
+
+		var newInfo = {
+			email: this.props.user.email,
+			points: this.props.user.achievementPoints + score
+		}
+
+		await axios
+		.put('http://localhost:5000/api/Signup/Points', newInfo)
+		.then((response) => {
+			console.log(response)
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
+
 	}
 
 	render() {
@@ -39,6 +57,8 @@ class StudentDashboard extends React.Component {
 		var questions = selected;
 
 		console.log(questions);
+
+		var trueScore;
 
 		/* [QUIZ ENGINE] */
 		var quiz = {
@@ -136,8 +156,21 @@ class StudentDashboard extends React.Component {
 				document.getElementById('quiz-wrap').innerHTML = html;
 				document.getElementById('quiz-wrap').style.textAlign = 'center';
 				retakeQuizButton[0].style.display = 'block';
+
+				dealWithIt(score)
 			},
 		};
+
+		async function dealWithIt(score) {
+
+			trueScore = score
+			dealWithIt2()
+		}
+
+		function dealWithIt2()
+		{
+			console.log(trueScore)
+		}
 
 		/* [INIT] */
 		//window.addEventListener('click', quiz.draw);
@@ -217,14 +250,17 @@ class StudentDashboard extends React.Component {
 								<p>Take Quiz</p>
 							</div>
 
+							<span onClick={() => {
+									this.updatePoints(trueScore)
+								}}>>
 							<div
 								className="retake-quiz"
 								onClick={() => {
 									retakeQuiz();
-								}}
-							>
+								}}>
 								<p>Retake Quiz</p>
 							</div>
+							</span>
 
 							<div className="quiz-containter">
 								<form id="quiz-wrap"></form>

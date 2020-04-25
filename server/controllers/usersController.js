@@ -137,24 +137,22 @@ export const saveCluster = (req,res) =>{
 };
 
 export const updatePoints = function (req, res) {
-	if (!req.body.isAdmin) {
-		res.send(false);
-	} else {
-		//update
+
+	console.log(req.body)
+	
 		User.findOneAndUpdate(
 			{ email: req.body.email },
 			{ $set: { achievementPoints: req.body.points } },
 			function (err, data) {
 				if (err) throw err;
 				if (data) {
-					console.log(req.body.teacher, data);
+					console.log(req.body.points, data);
 					res.send(true);
 				} else {
 					res.send(false);
 				}
 			}
 		);
-	}
 };
 
 export const deleteu = function (req, res) {
