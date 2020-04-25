@@ -6,7 +6,7 @@ class AchievementBar extends React.Component {
 	render() {
 		return (
 			<div className="achivement-bar">
-				<h3>Achievement name</h3>{' '}
+				<h3>{this.props.name}</h3>{' '}
 			</div>
 		);
 	}
