@@ -44,6 +44,14 @@ class StudentDashboard extends React.Component {
 				console.log(error);
 			});
 	}
+	async clearClusters() {
+			var emmm = { email: this.props.user.email};
+			console.log('removing', emmm);
+			await axios.put('http://localhost:5000/api/Signup/Clear', emmm).then((res) => { 
+				console.log('cleared');
+				window.location.replace('./Student-DashBoard');
+			});
+	}
 
 	render() {
 		const shuffled = this.state.questions.sort(() => 0.5 - Math.random());
@@ -220,15 +228,9 @@ class StudentDashboard extends React.Component {
 		var imageLink1 = 'https://avatars.dicebear.com/v2/initials/';
 		var imageLink2 = imageLink1.concat(this.props.user.name);
 		var imageLink3 = imageLink2.concat('.svg');
-		var emmm = this.props.user.email;
 
-		function clearClusters() {
-			console.log('removing', emmm);
-			axios.put('http://localhost:5000/api/Signup/Clear', emmm).then((res) => { 
-				console.log('cleared');
-				window.location.replace('./Student-DashBoard');
-			});
-		}
+
+		
 
 		return (
 			<div className="background-explorepage-student-home">
@@ -335,7 +337,7 @@ class StudentDashboard extends React.Component {
 						<div
 							className="take-quiz"
 							onClick={() => {
-								clearClusters();
+								this.clearClusters();
 							}}
 						>
 							<p>Remove Clusters</p>

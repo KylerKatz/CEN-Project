@@ -142,18 +142,16 @@ export const clearCluster = (req,res) =>{
 	console.log(req.body)
 
 	var saveCluster = null;
-	console.log("completed");
+	console.log("starting clearing");
 /*
 	Users.findOneAndUpdate({name: req.user.name}, 
 		{$push: {friends: friend}});
 };*/
-	User.findOneAndUpdate({email:req.body.email},
-							{savedClusters: saveCluster},
-
-		(err,data)=>{
+	User.findOneAndUpdate({email:req.body.email}, {savedClusters: null}, {new: true}).exec( function (err,data) {
 			if (err) console.log("error");
 			else{
-				console.log(saveCluster);
+			console.log("completed clearing");
+				console.log(data);
 				res.send(data); 
 			}
 		});
