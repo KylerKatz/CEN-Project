@@ -221,7 +221,13 @@ class StudentDashboard extends React.Component {
 		var imageLink2 = imageLink1.concat(this.props.user.name);
 		var imageLink3 = imageLink2.concat('.svg');
 
-		function clearClusters() {}
+		function clearClusters() {
+			console.log('removing');
+			axios.put('http://localhost:5000/api/Signup/Clear', this.props.user.email).then((res) => { 
+				console.log('cleared');
+				window.location.replace('./Student-DashBoard');
+			});
+		}
 
 		return (
 			<div className="background-explorepage-student-home">

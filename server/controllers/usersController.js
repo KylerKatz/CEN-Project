@@ -135,6 +135,30 @@ export const saveCluster = (req,res) =>{
 		});
 };
 
+export const clearCluster = (req,res) =>{
+	//is an array
+	//find clusterbyidandthensave
+
+	console.log(req.body)
+
+	var saveCluster = null;
+	console.log("completed");
+/*
+	Users.findOneAndUpdate({name: req.user.name}, 
+		{$push: {friends: friend}});
+};*/
+	User.findOneAndUpdate({email:req.body.email},
+							{$push:{savedClusters: saveCluster}},
+
+		(err,data)=>{
+			if (err) console.log("error");
+			else{
+				console.log(saveCluster);
+				res.send(data); 
+			}
+		});
+};
+
 export const updatePoints = function (req, res) {
 
 	console.log(req.body)

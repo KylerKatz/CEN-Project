@@ -10,5 +10,6 @@ userRouter.put('/Teacher', userController.assign);
 userRouter.put('/Delete', userController.deleteu);
 userRouter.put('/Points', userController.updatePoints)
 userRouter.put('/Career',userController.saveCluster)
+userRouter.put('/Clear',userController.clearCluster)
 
 export default userRouter;
