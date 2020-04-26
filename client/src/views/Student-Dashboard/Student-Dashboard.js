@@ -58,11 +58,28 @@ class StudentDashboard extends React.Component {
 
 		var trueScore;
 
+		console.log(this.props.user.savedClusters)
+
 		console.log(this.props.user.achievementPoints);
-		console.log(Array.isArray(this.props.user.savedClusters));
+
+		var clusterMap;
+
 		if (Array.isArray(this.props.user.savedClusters)) {
-			console.log(this.props.user.savedClusters[0]);
+			console.log(this.props.user.savedClusters);
+
+			clusterMap = this.props.user.savedClusters.map ((cluster) => {
+				return cluster
+			})
+
+			console.log('The map stands')
+			console.log(clusterMap[3])
 		}
+		else{
+			
+			clusterMap = false;
+		}
+
+		
 
 		/* [QUIZ ENGINE] */
 		var quiz = {
