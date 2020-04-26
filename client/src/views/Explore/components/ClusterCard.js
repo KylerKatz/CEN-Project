@@ -40,7 +40,7 @@ class ClusterCard extends React.Component {
 		*/
 		return (
 			<div className="career-card-main">
-				{this.props.user == false ? (
+				{this.props.user == false || this.props.extra == true ? (
 					''
 				) : (
 					<img

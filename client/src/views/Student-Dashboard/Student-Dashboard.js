@@ -58,11 +58,33 @@ class StudentDashboard extends React.Component {
 
 		var trueScore;
 
+		console.log(this.props.user.savedClusters)
+
 		console.log(this.props.user.achievementPoints);
-		console.log(Array.isArray(this.props.user.savedClusters));
+
+		var clusters;
+
 		if (Array.isArray(this.props.user.savedClusters)) {
-			console.log(this.props.user.savedClusters[0]);
+
+			console.log(this.props.user.savedClusters);
+
+			const clusterMap = this.props.user.savedClusters
+
+			clusters = this.props.clusters
+			.filter((cluster) => {
+				return cluster.careers.length > 0 && clusterMap.includes(cluster.id);
+			})
+			.map((cluster) => {
+				return <ClusterCard cluster={cluster} key={cluster.id} user={this.props.user} extra={true} />;
+			});
+
 		}
+		else{
+
+			clusters = false;
+		}
+
+		
 
 		/* [QUIZ ENGINE] */
 		var quiz = {
@@ -303,58 +325,8 @@ class StudentDashboard extends React.Component {
 						<div className="student-dashboard-recmmmended-cards-div">
 							<div className="chatbot-cluster-cards">
 								{' '}
-								<NavLink
-									className="career-links"
-									onClick={() => window.scrollTo(0, 0)}
-									to={{
-										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
-									}}
-								>
-									<div className="career-card">Name</div>
-								</NavLink>
-								<NavLink
-									className="career-links"
-									onClick={() => window.scrollTo(0, 0)}
-									to={{
-										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
-									}}
-								>
-									<div className="career-card">Name</div>
-								</NavLink>
-								<NavLink
-									className="career-links"
-									onClick={() => window.scrollTo(0, 0)}
-									to={{
-										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
-									}}
-								>
-									<div className="career-card">Name</div>
-								</NavLink>
-								<NavLink
-									className="career-links"
-									onClick={() => window.scrollTo(0, 0)}
-									to={{
-										pathname: '/CareerPage/',
-										//component: CareerPage,
-										// state: {
-										// 	careers: this.props.cluster.careers,
-										// },
-									}}
-								>
-									<div className="career-card">Name</div>
-								</NavLink>
+								{clusters == false ? "" : clusters}
+								
 							</div>
 						</div>
 					</div>
@@ -365,3 +337,5 @@ class StudentDashboard extends React.Component {
 }
 
 export default StudentDashboard;
+
+
