@@ -220,10 +220,11 @@ class StudentDashboard extends React.Component {
 		var imageLink1 = 'https://avatars.dicebear.com/v2/initials/';
 		var imageLink2 = imageLink1.concat(this.props.user.name);
 		var imageLink3 = imageLink2.concat('.svg');
+		var emmm = this.props.user.email;
 
 		function clearClusters() {
-			console.log('removing');
-			axios.put('http://localhost:5000/api/Signup/Clear', this.props.user.email).then((res) => { 
+			console.log('removing', emmm);
+			axios.put('http://localhost:5000/api/Signup/Clear', emmm).then((res) => { 
 				console.log('cleared');
 				window.location.replace('./Student-DashBoard');
 			});
