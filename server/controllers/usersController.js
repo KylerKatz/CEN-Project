@@ -148,7 +148,7 @@ export const clearCluster = (req,res) =>{
 		{$push: {friends: friend}});
 };*/
 	User.findOneAndUpdate({email:req.body.email},
-							{$push:{savedClusters: saveCluster}},
+							{savedClusters: saveCluster},
 
 		(err,data)=>{
 			if (err) console.log("error");
