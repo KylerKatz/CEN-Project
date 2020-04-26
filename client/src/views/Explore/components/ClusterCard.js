@@ -4,10 +4,7 @@ import axios from 'axios';
 import CareerPage from '../../Career-Pages/CareerPage';
 import Explore from '../Explore';
 
-//import Background from './../ClusterCardPictures/Marketing.png'
-
 class ClusterCard extends React.Component {
-	
 	async addCluster() {
 		console.log('hello');
 
@@ -22,21 +19,24 @@ class ClusterCard extends React.Component {
 	}
 
 	render() {
-		
 		function dataURLtoFile(dataurl, filename) {
-			var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-				bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-			while(n--){
+			console.log(dataurl);
+
+			var arr = dataurl.split(','),
+				mime = arr[0].match(/:(.*?);/)[1],
+				bstr = atob(arr[1]),
+				n = bstr.length,
+				u8arr = new Uint8Array(n);
+			while (n--) {
 				u8arr[n] = bstr.charCodeAt(n);
 			}
-			return new File([u8arr], filename, {type:mime});
+			return new File([u8arr], filename, { type: mime });
 		}
 
-		var file = dataURLtoFile(this.props.cluster.icon.icon, 'a.png');
+		var file = dataURLtoFile(this.props.cluster.icon.icon, 'a.PNG');
 
-		
-		console.log(file)
-		
+		console.log(file);
+
 		return (
 			<div className="career-card-main">
 				{this.props.user == false ? (
@@ -53,15 +53,15 @@ class ClusterCard extends React.Component {
 					/>
 				)}
 
-				<img
+				{/* <img
 					className=""
-					src={this.Background}
+					src={this.props.cluster.icon.icon}
 					alt="add"
 					title="Add Cluster"
 					onClick={() => {
 						this.addCluster();
 					}}
-				/>
+				/> */}
 
 				<NavLink
 					className="career-links"
@@ -77,9 +77,9 @@ class ClusterCard extends React.Component {
 					<div className="career-card-in">
 						<div
 							className="cluster-image-container"
-							style={{ backgroundImage: `url(${file})` }}
-
-							
+							style={{
+								backgroundImage: `url(${this.props.cluster.icon.icon})`,
+							}}
 						>
 							<span className="cluster-card-text">
 								{this.props.cluster.name}{' '}
