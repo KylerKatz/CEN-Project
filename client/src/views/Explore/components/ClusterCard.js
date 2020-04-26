@@ -54,13 +54,7 @@ class ClusterCard extends React.Component {
 				)}
 
 				<img
-					className=""
-					src={this.Background}
-					alt="add"
-					title="Add Cluster"
-					onClick={() => {
-						this.addCluster();
-					}}
+					src={'a.png'}
 				/>
 
 				<NavLink
