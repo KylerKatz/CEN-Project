@@ -9,9 +9,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
-	background-image: url('./../Home/Backgroundv1.png');
-	background-size: 50%;
 }
 
 .center-background-2 {
@@ -61,7 +58,22 @@ body {
 .career-bubble:hover {
 	background-color: #2494b6;
 }
+.add-cluster-div-CP {
+	width: 100%;
+	min-height: 50px;
+	/* background-color: blue; */
+}
+.add-icon {
+	margin-top: 20px;
+	width: 80px;
+	height: 80px;
+	margin-left: 85%;
+}
 
+.add-icon:hover {
+	filter: invert(100%);
+	cursor: pointer;
+}
 .career-bubble h3 {
 	position: relative;
 	bottom: 10px;
@@ -91,9 +103,11 @@ body {
 
 .career-name {
 	margin-left: 50px;
+	margin-right: 50px;
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 	font-size: 55px;
+	margin-top: 0px;
 }
 
 .description-title {
@@ -282,9 +296,6 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		background-image: url('./../Home/Backgroundv1.png');
-		background-size: 50%;
 	}
 }
 
@@ -323,9 +334,6 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		background-image: url('./../Home/Backgroundv1.png');
-		background-size: 50%;
 	}
 }
 
@@ -372,9 +380,6 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		background-image: url('./../Home/Backgroundv1.png');
-		background-size: 50%;
 	}
 
 	.video-explore {
@@ -398,5 +403,10 @@ body {
 	}
 	.classes-title {
 		margin-left: 15%;
+	}
+	.add-icon {
+		width: 50px;
+		height: 50px;
+		margin-left: 80%;
 	}
 }

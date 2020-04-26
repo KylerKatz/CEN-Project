@@ -5,37 +5,23 @@ import passport from 'passport';
 const loginRouter = express.Router();
 
 //debug
-//loginRouter.get('/', loginController.isLogged);
+loginRouter.get('/', loginController.isLogged);
 
-loginRouter.get('/', loginController.isLogged2);
+//loginRouter.get('/', loginController.isLogged2);
 
 //loginRouter.post('/', loginController.loginreq, loginController.loginsuc);
 
 //authenticated useds 
 loginRouter.post('/', passport.authenticate('login',{
-    failureRedirect:'/Login', failureFlash: true
+    failureRedirect:'/LoginFailed'
 }), 
-(req, res) =>{// this is the same code as loginsuc
-    //console.log(typeof(userc.isAdmin));
-    console.log(req.flash('error'));
+(req, res) =>{
     console.log("made redirection of post");
     if(req.user.isAdmin===true){
         res.redirect('/Admin-Dashboard');  
     }
     else{
-        res.redirect('/Explore');
+        res.redirect('/Student-Dashboard');
     }
 });
-
-/*
-loginRouter.post('/', function(req, res, next) {
-    console.log(req.url);
-    passport.authenticate('local', function(err, user, info) {
-        console.log("authenticate");
-        console.log(err);
-        console.log(req.user.email);
-        console.log(info);
-    })(req, res, next);
-});
-*/
 export default loginRouter;

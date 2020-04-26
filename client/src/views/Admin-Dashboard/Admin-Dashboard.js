@@ -6,27 +6,45 @@ import ClusterCard from './../../views/Explore/components/ClusterCard';
 import CareerPage from '..//Career-Pages/CareerPage';
 import CareerBar from './CareerBar';
 import ClusterBar from './ClusterBar';
+import StudentBar from './StudentBar';
 
 class AdminDashboard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			clusters: []
+			clusters: [],
+			students: [],
 		};
 
-		this.createCluster = this.createCluster.bind(this)
+		this.createCluster = this.createCluster.bind(this);
 	}
 
 	async componentDidMount() {
-		axios.get('https://cen-group-2.herokuapp.com/api/clusters')
-            .then(response => {
-                this.setState({ clusters: response.data})
-            })
-            .catch(function (error){
-                console.log(error);
-			})			
-	}
+		axios
+			.get('https://cen-group-2.herokuapp.com/api/clusters')
+			.then((response) => {
+				this.setState({
+					clusters: response.data,
+					students: this.state.students,
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
 
+		axios
+			.get('https://cen-group-2.herokuapp.com/api/Signup')
+			.then((response) => {
+				console.log(response.data);
+				this.setState({
+					clusters: this.state.clusters,
+					students: response.data,
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
 
 	async createCluster() {
 		//let image = document.getElementsByClassName('add-image')[0].files[0];
@@ -40,40 +58,59 @@ class AdminDashboard extends React.Component {
 		}
 		*/
 
-		const clusterName = document.getElementsByClassName('add-cluster-form')[0].value;
-		const clusterJobNum = "2 million(default static value)"
-		const clusterId = this.state.clusters.length
-		const careersLastId = 0
+		const clusterName = document.getElementsByClassName('add-cluster-form')[0]
+			.value;
+		const clusterJobNum = '2 million(default static value)';
+		const clusterId = this.state.clusters.length;
+		const careersLastId = 0;
 
 		if (clusterName) {
-			
 			const newCluster = {
 				cluster_name: clusterName,
 				cluster_jobnum: clusterJobNum,
 				cluster_id: clusterId,
-				cluster_careersLastId: careersLastId
-			}
+				cluster_careersLastId: careersLastId,
+			};
 
-			axios.post('https://cen-group-2.herokuapp.com/api/clusters/addCluster', newCluster)
-			.then(res => {
-				console.log(res.data)
-				window.location = res.data.redirect
-			});
-
+			axios
+				.post('https://cen-group-2.herokuapp.com/api/clusters/addCluster', newCluster)
+				.then((res) => {
+					console.log(res.data);
+					window.location = res.data.redirect;
+				});
 
 			alert('Cluster Created');
-			window.location.replace('/Admin-DashBoard')
-
+			window.location.replace('/Admin-DashBoard');
 		} else {
-			alert('Please Enter A Cluster Name')
+			alert('Please Enter A Cluster Name');
 		}
 	}
 
 	render() {
-		const clusters = this.state.clusters.map(cluster => {
-			return <ClusterBar cluster={cluster} key={cluster.id} clusterslength={this.state.clusters.length} />;
+		const clusters = this.state.clusters.map((cluster) => {
+			return (
+				<ClusterBar
+					cluster={cluster}
+					key={cluster.id}
+					clusterslength={this.state.clusters.length}
+				/>
+			);
 		});
-		
+
+		const students = this.state.students
+			.filter((student) => {
+				return student.isAdmin == false;
+			})
+			.map((student) => {
+				return (
+					<StudentBar
+						key={student.email}
+						student={student}
+						user={this.props.user}
+					/>
+				);
+			});
+
 		function imagePreview() {
 			const image = document.getElementsByClassName('add-image')[0].files[0];
 			const previewContainer = document.getElementsByClassName('image-preview');
@@ -91,13 +128,32 @@ class AdminDashboard extends React.Component {
 				// previewDefaultText[0].style.display = 'block';
 				previewImage[0].style.display = 'block';
 
-				reader.addEventListener('load', function() {
+				reader.addEventListener('load', function () {
 					previewImage[0].setAttribute('src', this.result);
 				});
 
 				reader.readAsDataURL(image);
 			}
 		}
+
+		function allStudents() {
+			const studentList = document.getElementsByClassName('student-list');
+			const index = document.getElementsByClassName('index-section');
+			const deleteStudent = document.getElementsByClassName('delete-student');
+			const addStudent = document.getElementsByClassName('add-to-class');
+			const removeFromClass = document.getElementsByClassName(
+				'remove-student-class'
+			);
+
+			if (studentList[0].style.display == 'block') {
+				studentList[0].style.display = 'none';
+				index[0].style.display = 'none';
+			} else {
+				studentList[0].style.display = 'block';
+				index[0].style.display = 'block';
+			}
+		}
+
 		return (
 			<div className="background-explorepage-admin-home">
 				<div className="center-background-admin-home">
@@ -105,6 +161,34 @@ class AdminDashboard extends React.Component {
 						{/* The username can be replaced with the name of the account that is loged in */}
 						<h1 className="text1-admin">Welcome Back</h1>
 					</div>
+
+					<div className="admin-students-div">
+						<div className="top-buttons-admin">
+							<div
+								className="add-button-admin"
+								onClick={() => {
+									allStudents();
+								}}
+							>
+								<h3>All Students</h3>
+							</div>
+						</div>
+						<div className="index-section">
+							<div className="index">
+								<div className="index-name">
+									<span> Name</span>
+								</div>
+								<div className="index-email">
+									<span> Email</span>
+								</div>
+								<div className="index-password">
+									<span> Admin Controls</span>
+								</div>
+							</div>
+						</div>
+						<div className="student-list">{students}</div>
+					</div>
+
 					<div className="textbox-2-admin-home">
 						<h1 className="text2">
 							Make Changes To Any Cluster, Or Add A New One!

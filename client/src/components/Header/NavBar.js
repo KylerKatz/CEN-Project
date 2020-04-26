@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import NavItem from './NavItem.js';
 import './NavBar.css';
 
@@ -9,60 +10,99 @@ class NavBar extends React.Component {
 		this.state = {
 			Explore: false,
 			Login: false,
-			Signup: false
+			Signup: false,
+			DashBoard: false
 		};
 
 		this.highlightNav = this.highlightNav.bind(this);
 	}
 
 	highlightNav(item) {
-		if (item == 'Explore') {
-			this.setState({
-				Explore: true,
-				Login: false,
-				Signup: false
-			});
-		} else if (item == 'Login') {
-			this.setState({
-				Explore: false,
-				Login: true,
-				Signup: false
-			});
-		} else if (item == 'Signup') {
-			this.setState({
-				Explore: false,
-				Login: false,
-				Signup: true
-			});
-		} else {
-			this.setState({
-				Explore: false,
-				Login: false,
-				Signup: false
-			});
+		
+		if(this.props.user == false){
+
+			if (item == 'Explore') {
+				this.setState({
+					Explore: true,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			} else if (item == 'Login') {
+				this.setState({
+					Explore: false,
+					Login: true,
+					Signup: false,
+					DashBoard: false
+				});
+			} else if (item == 'Signup') {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: true,
+					DashBoard: false
+				});
+			} else {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			}
+		}
+		else {
+
+			if (item == 'Explore') {
+				this.setState({
+					Explore: true,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			} else if (item == 'Dashboard') {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: false,
+					DashBoard: true
+				});
+			} else {
+				this.setState({
+					Explore: false,
+					Login: false,
+					Signup: false,
+					DashBoard: false
+				});
+			}
+
 		}
 	}
 
-	render() {
-		function dashboard() {
-			// If admin go to admin dashbaord,
+	async logout() {
 
-			window.location.replace('/Admin-DashBoard');
+		// Do the logout process
 
-			// If student go to student dashbaord
-
-			//this.highlightNav('DashBoard')
-		}
-
-		function logout() {
-			
-			// Do the logout process
-			
-			
-			alert('You have been logged out');
-			// redirect
+		axios.get('http://localhost:5000/Logout')
+		.then(res => {
 			window.location.replace('/Home');
+		});
+
+		alert('You have been logged out');
+	}
+
+	async dashboard() {
+		if (this.props.user.isAdmin == true) {
+			window.location.replace('/Admin-DashBoard');
 		}
+		else {
+			window.location.replace('/Student-Dashboard')
+		}
+
+	}
+
+	render() {
+		
 		return (
 			<div className="header">
 				{/* Logo */}
@@ -81,27 +121,35 @@ class NavBar extends React.Component {
 
 				{/* Page Links */}
 				<div className="nav-items">
-					<span className="dashboard" onClick={() => dashboard()}>
+
+					{this.props.user == false ? '' :
+					<span className="dashboard" onClick={() => this.dashboard()}>
 						DashBoard
-						{/* <NavItem name={'DashBoard'} clicked={this.state.Explore} /> */}
 					</span>
+					}	
 
 					<span onClick={() => this.highlightNav('Explore')}>
 						<NavItem name={'Explore'} clicked={this.state.Explore} />
 					</span>
 
-					<span onClick={() => this.highlightNav('Login')}>
-						<NavItem name={'Login'} clicked={this.state.Login} />
-					</span>
+					{this.props.user == false ? 
+						<span>
+							<span onClick={() => this.highlightNav('Signup')}>
+								<NavItem name={'Signup'} clicked={this.state.Signup} />
+							</span>
 
-					<span className="dashboard" onClick={() => logout()}>
-						Logout
-						{/* <NavItem name={'DashBoard'} clicked={this.state.Explore} /> */}
-					</span>
+							<span onClick={() => this.highlightNav('Login')}>
+								<NavItem name={'Login'} clicked={this.state.Login} />
+							</span>
+						</span>
+						:
+						<span>
+							<span className="dashboard" onClick={() => this.logout()}>
+								Logout
+							</span>
+						</span>
+					}
 
-					<span onClick={() => this.highlightNav('Signup')}>
-						<NavItem name={'Signup'} clicked={this.state.Signup} />
-					</span>
 				</div>
 			</div>
 		);

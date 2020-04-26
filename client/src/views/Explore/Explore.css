@@ -9,11 +9,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
-
-	background-image: url('./../Home/Backgroundv1.png');
-	background-size: 50%;
-
 }
 
 .center-background-1 {
@@ -72,8 +67,7 @@ body {
 	margin: auto;
 	padding-bottom: 20px;
 }
-
-.career-card {
+.career-card-main {
 	display: inline-block;
 	position: relative;
 	width: 205px;
@@ -88,38 +82,126 @@ body {
 	margin-left: 2.5%;
 	margin-bottom: 2%;
 	text-align: center;
-	
+	overflow: hidden;
 }
 
-.career-card:hover {
+.career-card-main:hover {
 	box-shadow: 0px 10px 10px #000000;
 }
 
-.cluster-links{
+.career-card-in {
+	display: inline-block;
+	position: relative;
+	width: 205px;
+	height: 107px;
+	left: 0px;
+	background: #c4c4c4;
+	border-radius: 18px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	/* margin-left: 2%; */
+	margin-bottom: 2%;
+	text-align: center;
+	overflow: hidden;
+}
+.career-card:hover {
+	/* box-shadow: 0px 10px 10px #000000; */
+}
+
+.cluster-links {
 	position: relative;
 	color: black;
 	width: 100%;
 	height: 100%;
 	margin: 0;
 }
+.cluster-card-image {
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
 
+.cluster-image-container {
+	position: relative;
+	/* background-image: url('./ClusterCardPictures/Health-sciences.png'); */
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding: auto;
+}
 
+.testing {
+	display: inline;
+	width: 100%;
+	height: 100%;
+	background-color: grey;
+	text-align: center;
+}
 
+.cluster-card-text {
+	display: block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 
+	margin: 0;
+	font-size: 22px;
+	color: white;
+	text-decoration: none;
+	font-family: 'Fira Sans', sans-serif;
+	/* font-style: italic; */
+	font-weight: 700;
+
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+		1px 1px 0 #000;
+	padding: 2px 0;
+	text-align: center;
+
+	background-color: rgba(23, 22, 22, 0.46);
+	z-index: 3;
+
+	margin-left: -10px;
+}
+
+.add-icon-on-card {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 10px;
+	top: 3px;
+	z-index: 4;
+}
+
+.add-icon-on-card:hover {
+	filter: invert(100%);
+	cursor: pointer;
+}
 
 @media screen and (max-width: 1450px) {
+	.text1 {
+		font-size: 40px;
+	}
+
 	.center-background-1 {
 		position: absolute;
 		width: 800px;
 		/* height: 1050px; */
 	}
 
-	.career-card {
+	.career-card-main-main {
 		left: 35px;
 	}
 
 	.background-explorepage {
 		height: 150vh;
+	}
+
+	.row1 {
+		margin-left: 20px;
 	}
 }
 
@@ -130,8 +212,8 @@ body {
 		/* height: 1300px; */
 	}
 
-	.career-card {
-		left: 35px;
+	.career-card-main {
+		left: 20px;
 	}
 
 	.background-explorepage {
@@ -140,17 +222,29 @@ body {
 }
 
 @media screen and (max-width: 550px) {
+	.text1 {
+		font-size: 30px;
+	}
+
+	.text2 {
+		font-size: 20px;
+	}
+
 	.center-background-1 {
 		position: absolute;
 		width: 360px;
 		/* height: 2500px; */
 	}
 
-	.career-card {
-		left: 60px;
+	.career-card-main {
+		left: 15px;
 	}
 
 	.background-explorepage {
 		height: 300vh;
+	}
+
+	.row1 {
+		margin-left: 50px;
 	}
 }

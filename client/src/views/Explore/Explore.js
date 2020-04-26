@@ -1,16 +1,17 @@
+
 import React from 'react';
 import './Explore.css';
 import ClusterCard from './components/ClusterCard.js';
 
-
 class Explore extends React.Component {
 	render() {
-		const clusters = this.props.clusters.filter(cluster => {
-			return (cluster.careers.length > 0)
-
-		}).map(cluster => {
-			return <ClusterCard cluster={cluster} key={cluster.id} />;
-		});
+		const clusters = this.props.clusters
+			.filter((cluster) => {
+				return cluster.careers.length > 0;
+			})
+			.map((cluster) => {
+				return <ClusterCard cluster={cluster} key={cluster.id} user={this.props.user} extra={false} />;
+			});
 
 		return (
 			<div className="background-explorepage">

@@ -10,7 +10,8 @@ const clusterSchema = new mongoose.Schema({
   id: {type: mongoose.Number, required: true},
   jobnum: {type: String, required: true},
   careersLastId: {type: mongoose.Number, required: true},
-  careers: [mongoose.Schema.Types.Mixed]
+  careers: [mongoose.Schema.Types.Mixed],
+  icon: mongoose.Schema.Types.Mixed
   //careers: { type:array, [job: { "id": {type: mongoose.Number, required: true}, "name": {type: String, required: true}, "salary": {type: mongoose.Number, required: true}}]}
   
 });

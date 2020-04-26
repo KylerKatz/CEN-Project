@@ -11,15 +11,12 @@ html* {
 	position: relative;
 }
 
-.nav-logo:hover {
-}
-
 .nav-items {
 	position: absolute;
 	/* left: 68.36vw; */
 	right: 5.51vw;
 	top: 34.44%;
-	width: 30%;
+	min-width: 30%;
 	height: 70px;
 	/* background-color: red; */
 
@@ -32,11 +29,12 @@ html* {
 	padding: 14px 2%;
 	text-align: center;
 	text-decoration: none;
-	font-family: 'Bangers', cursive;
-	/* font-size: 200%; */
-	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
-		3px 3px 0 #000;
-	letter-spacing: 3px;
+	font-family: 'Fira Sans', sans-serif;
+	font-style: italic;
+	font-weight: 700;
+
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+		2px 2px 0 #000;
 	border-radius: 50px 20px;
 
 	font-size: calc(15px + 2vmin);
@@ -44,15 +42,16 @@ html* {
 
 .nav-link-clicked {
 	/* background-color: #09d3ac; */
-	color: rgb(182, 174, 174);
+	color: white;
 	padding: 14px 2%;
 	text-align: center;
 	text-decoration: none;
-	font-family: 'Bangers', cursive;
-	/* font-size: 200%; */
-	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
-		3px 3px 0 #000;
-	letter-spacing: 3px;
+	font-family: 'Fira Sans', sans-serif;
+	font-style: italic;
+	font-weight: 700;
+
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+		2px 2px 0 #000;
 	border-radius: 50px 20px;
 
 	font-size: calc(15px + 2vmin);
@@ -60,7 +59,13 @@ html* {
 
 .nav-link:hover {
 	background-color: grey;
-	font-size: 250%;
+	/* font-size: 180%; */
+	/* border-bottom: grey; */
+}
+
+.nav-link-clicked:hover {
+	background-color: grey;
+	/* font-size: 180%; */
 	/* border-bottom: grey; */
 }
 
@@ -78,12 +83,16 @@ html* {
 	text-align: center;
 	position: relative;
 	bottom: 12px;
-	padding: 14px 25px;
+	padding: 14px 15px;
 	color: white;
-	font-family: 'Bangers', cursive;
-	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
-		3px 3px 0 #000;
-	letter-spacing: 5px;
+
+	font-family: 'Fira Sans', sans-serif;
+	font-style: italic;
+	font-weight: 700;
+
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+		2px 2px 0 #000;
+	/* letter-spacing: 5px; */
 
 	font-size: 45px;
 }
@@ -98,24 +107,22 @@ html* {
 	text-decoration: none;
 }
 
-
-
-.dashboard{
+.dashboard {
 	/* background-color: #09d3ac; */
 	color: white;
 	padding: 14px 2%;
 	text-align: center;
 	text-decoration: none;
-	font-family: 'Bangers', cursive;
-	/* font-size: 200%; */
-	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
-		3px 3px 0 #000;
-	letter-spacing: 3px;
+	font-family: 'Fira Sans', sans-serif;
+	font-style: italic;
+	font-weight: 700;
+
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+		2px 2px 0 #000;
 	border-radius: 50px 20px;
 
 	font-size: calc(15px + 2vmin);
 }
-
 
 .dashboard-clicked {
 	/* background-color: #09d3ac; */
@@ -123,11 +130,12 @@ html* {
 	padding: 14px 2%;
 	text-align: center;
 	text-decoration: none;
-	font-family: 'Bangers', cursive;
-	/* font-size: 200%; */
-	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
-		3px 3px 0 #000;
-	letter-spacing: 3px;
+	font-family: 'Fira Sans', sans-serif;
+	font-style: italic;
+	font-weight: 700;
+
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+		2px 2px 0 #000;
 	border-radius: 50px 20px;
 
 	font-size: calc(15px + 2vmin);
@@ -135,12 +143,10 @@ html* {
 
 .dashboard:hover {
 	background-color: grey;
-	font-size: 250%;
+	/* font-size: 250%; */
 	cursor: pointer;
 	/* border-bottom: grey; */
 }
-
-
 
 /* Low end desktop */
 @media screen and (max-width: 1449px) {
@@ -155,7 +161,7 @@ html* {
 	}
 }
 /* Tablet */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
 	.nav-title {
 		width: 85%;
 		height: 100px;

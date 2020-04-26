@@ -11,7 +11,7 @@
 				"description": "Drive and control farm equipment to till soil and to plant, cultivate, and harvest crops. May perform tasks, such as crop baling or hay bucking. May operate stationary equipment to perform post-harvest tasks, such as husking, shelling, threshing, and ginning.",
 				"videolink": "https://www.youtube.com/watch?v=uSZVN7JaJmQ",
 				"celebrities": "Will Allen, Cesar Chavez",
-				"classes": "unknown at this time."
+				"classes": "FFA (Future Farmers of America), and Biology"
 			}, {
 				"id": 1,
 				"name": "Natural science managers",
@@ -19,7 +19,7 @@
 				"description": "Plan, direct, or coordinate activities in such fields as life sciences, physical sciences, mathematics, statistics, and research and development in these fields.",
 				"videolink": "https://www.youtube.com/watch?v=faXbaiNn2HM",
 				"celebrities": "Sir Alexander Fleming",
-				"classes": "unknown at this time."
+				"classes": "Astronomy, Physics, Chemistry, and Biology"
 			}]
 
 		},
@@ -35,7 +35,7 @@
 				"description": "Landscape or maintain grounds of property using hand or power tools or equipment. Workers typically perform a variety of tasks, which may include any combination of the following: sod laying, mowing, trimming, planting, watering, fertilizing, digging, raking, sprinkler installation, and installation of mortarless segmental concrete masonry wall units.",
 				"videolink": "https://www.youtube.com/watch?v=Gi146jnhzgQ",
 				"celebrities": "Thomas Church, René Pechère",
-				"classes": "unknown at this time."
+				"classes": "Art history, Gardening"
 			}, {
 				"id": 1,
 				"name": "Construction managers",
@@ -43,7 +43,7 @@
 				"description": "Plan, direct, or coordinate, usually through subordinate supervisory personnel, activities concerned with the construction and maintenance of structures, facilities, and systems. Participate in the conceptual development of a construction project and oversee its organization, scheduling, budgeting, and implementation. Includes managers in specialized construction fields, such as carpentry or plumbing.",
 				"videolink": "https://www.youtube.com/watch?v=SiamJadljrw",
 				"celebrities": "Abdelaziz Belherazem",
-				"classes": "unknown at this time."
+				"classes": "Business management, and Building construction"
 			}]
 		},
 		{
@@ -58,7 +58,7 @@
 				"description": "Design, cut, and arrange live, dried, or artificial flowers and foliage.",
 				"videolink": "https://www.youtube.com/watch?v=OF4-CWR2XE8",
 				"celebrities": "Pim van den Akker, Terence Conran" ,
-				"classes": "unknown at this time."
+				"classes": "Jewelry design, Art history, and Drawing"
 			}, {
 				"id": 1,
 				"name": "Art directors",
@@ -66,7 +66,7 @@
 				"description": "Formulate design concepts and presentation approaches for visual communications media, such as print, broadcasting, and advertising. Direct workers engaged in art work or layout design.",
 				"videolink": "https://www.youtube.com/watch?v=0xZz2t-Ex1I",
 				"celebrities": "Cedric Gibbons, Guy Hendrix Dyas" ,
-				"classes": "unknown at this time."
+				"classes": "Fashion and retail merchandising and Interior design"
 			}]
 		},
 		{
@@ -80,16 +80,16 @@
 				"salary": "$22,480",
 				"description": "Coordinate and expedite the flow of work and materials within or between departments of an establishment according to production schedule. Duties include reviewing and distributing production, work, and shipment schedules; conferring with department supervisors to determine progress of work and completion dates; and compiling reports on progress of work, inventory levels, costs, and production problems.",
 				"videolink": "https://www.youtube.com/watch?v=EvqriUvNeiY",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Kit Harington" ,
+				"classes": "Personal finance"
 			}, {
 				"id": 1,
 				"name": "Chief executives",
 				"salary": "$171,610",
 				"description": "Determine and formulate policies and provide overall direction of companies or private and public sector organizations within guidelines set up by a board of directors or similar governing body. Plan, direct, or coordinate operational activities at the highest level of management with the help of subordinate executives and staff managers.",
 				"videolink": "https://www.youtube.com/watch?v=YJI8hywItKE",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Tim Cook, Elon Musk, and Mary Barra" ,
+				"classes": "Business law, Business management, and Entrepreneurial skills"
 			}]
 		},
 		{
@@ -103,16 +103,16 @@
 				"salary": "$24,000",
 				"description": "Perform duties that are instructional in nature or deliver direct services to students or parents. Serve in a position for which a teacher has ultimate responsibility for the design and implementation of educational programs and services.",
 				"videolink": "https://www.youtube.com/watch?v=rDuhh_0d5XI",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Gene Simmons, J.K. Rowling, and George Orwell" ,
+				"classes": "Written and oral communication, Earth science, and Fundamentals of math"
 			}, {
 				"id": 1,
 				"name": "Postsecondary teachers",
 				"salary": "$105,080",
-				"description": "Unknown at this time",
+				"description": "Responsible for preparing course materials and teaching classes to graduate and undergraduate students. These courses may be in lecture, seminar, field study, or laboratory formats.",
 				"videolink": "https://www.youtube.com/watch?v=ISmxPVS5O2c",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Maya Angelou, David Brooks, and Paul Krugman " ,
+				"classes": "Personal finance, Written and oral communication, and Fundamentals of math"
 			}]
 		},
 		{
@@ -126,16 +126,16 @@
 				"salary": "$25,390",
 				"description": "Receive and pay out money. Keep records of money and negotiable instruments involved in a financial institution's various transactions.",
 				"videolink": "https://www.youtube.com/watch?v=pRj54JuKvxk",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Whoopi Goldberg, Ray Romano, and William Singe" ,
+				"classes": "Entrepreneurial skills, Business management, Personal finance"
 			}, {
 				"id": 1,
 				"name": "Financial managers",
 				"salary": "$112,700",
 				"description": "Plan, direct, or coordinate accounting, investing, banking, insurance, securities, and other financial activities of a branch, office, or department of an establishment.",
 				"videolink": "https://www.youtube.com/watch?v=8ATMziMJ1fw",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "George Soros, Ding Xuedong, and Yngve Slyngstad" ,
+				"classes": "Statistics, and Personal finance"
 			}]
 		},
 		{
@@ -149,16 +149,16 @@
 				"salary": "$20,620",
 				"description": "Develop, introduce or enact laws and statutes at the local, tribal, State, or Federal level. Includes only workers in elected positions.",
 				"videolink": "https://www.youtube.com/watch?v=H50czhsoeys",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Jack Brooks, Chaka Fattah, and Scott Walker" ,
+				"classes": "Political studies and Law"
 			}, {
 				"id": 1,
 				"name": "Financial examiners",
 				"salary": "$76,890",
 				"description": "Enforce or ensure compliance with laws and regulations governing financial and securities institutions and financial and real estate transactions. May examine, verify, or authenticate records.",
 				"videolink": "https://www.youtube.com/watch?v=pxrRR1mcth4",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Suze Orman and Robert Kiyosaki" ,
+				"classes": "Personal finance and Introduction to business"
 			}]
 		},
 		{
@@ -172,16 +172,16 @@
 				"salary": "$21,020",
 				"description": "Provide routine individualized healthcare such as changing bandages and dressing wounds, and applying topical medications to the elderly, convalescents, or persons with disabilities at the patient's home or in a care facility. Monitor or report changes in health status. May also provide personal care such as bathing, dressing, and grooming of patient.",
 				"videolink": "https://www.youtube.com/watch?v=PLxBuS8slYo",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Michelle Obama, Henry Jay Heimlich, and Barry Marshall" ,
+				"classes": "Biology and Chemistry"
 			}, {
 				"id": 1,
 				"name": "Surgeons",
 				"salary": "$187,200",
 				"description": "Physicians who treat diseases, injuries, and deformities by invasive, minimally-invasive, or non-invasive surgical methods, such as using instruments, appliances, or by manual manipulation.",
 				"videolink": "https://www.youtube.com/watch?v=vREihxXcR8g",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Henry Marsh, Anthony Atala, and Denton Cooley" ,
+				"classes": "Anatomy, Biology, and Chemistry"
 			}]
 		},
 		{
@@ -195,16 +195,16 @@
 				"salary": "$18,330",
 				"description": "Perform a variety of food preparation duties other than cooking, such as preparing cold foods and shellfish, slicing meat, and brewing coffee or tea.",
 				"videolink": "https://www.youtube.com/watch?v=DvUC7xCL6Pc",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Amy Adams, Barack Obama, and Andrew Garfield" ,
+				"classes": "Hospitality and tourism, and Refrigeration fundamentals"
 			}, {
 				"id": 1,
 				"name": "Gaming managers",
 				"salary": "$66,200",
 				"description": "Plan, direct, or coordinate gaming operations in a casino. May formulate house rules.",
 				"videolink": "https://www.youtube.com/watch?v=SUgx7ysF5ek",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Steve Wynn, and Frank Fertitta III" ,
+				"classes": "Media technology, and Video game development"
 			}]
 		},
 		{
@@ -218,16 +218,16 @@
 				"salary": "$18,510",
 				"description": "Shampoo and rinse customers' hair.",
 				"videolink": "https://www.youtube.com/watch?v=hhagn2mYYoE",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Ted Gibson, Sally Hershberger, and Kimberly Kimble" ,
+				"classes": "Ceramics, Jewelry design, and Cosmetology"
 			}, {
 				"id": 1,
 				"name": "Industrial-organizational psychologists",
 				"salary": "$80,330",
 				"description": "Apply principles of psychology to human resources, administration, management, sales, and marketing problems. Activities may include policy planning; employee testing and selection, training and development; and organizational development and analysis. May work with management to organize the work setting to improve worker productivity.",
 				"videolink": "https://www.youtube.com/watch?v=2Ie6AbQOpBM",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Anita Woolley, and Jay Van Bavel" ,
+				"classes": "Introduction to business, and Psychology"
 			}]
 		},
 		{
@@ -241,16 +241,16 @@
 				"salary": "$46,620",
 				"description": "Provide technical assistance to computer users. Answer questions or resolve computer problems for clients in person, or via telephone or electronically. May provide assistance concerning the use of computer hardware and software, including printing, installation, word processing, electronic mail, and operating systems.",
 				"videolink": "https://www.youtube.com/watch?v=hN3oo4tNFDE",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Larry Ellison" ,
+				"classes": "Basic Computer Operations, Information Technology, and Networking Foundations"
 			}, {
 				"id": 1,
 				"name": "Systems software developers",
 				"salary": "$101,410",
 				"description": "Develop, create, and modify general computer applications software or specialized utility programs. Analyze user needs and develop software solutions. Design software or customize software for client use with the aim of optimizing operational efficiency. May analyze and design databases within an application area, working individually or coordinating database development as part of a team. May supervise computer programmers.",
 				"videolink": "https://www.youtube.com/watch?v=_WQ_VV4pXPc",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Mark Zuckerberg, Bill Gates, and Sergey Brin" ,
+				"classes": "App development, Computer programming, and Web programming"
 			}]
 		},
 		{
@@ -264,16 +264,16 @@
 				"salary": "$19,040",
 				"description": "Monitor recreational areas, such as pools, beaches, or ski slopes to provide assistance and protection to participants.",
 				"videolink": "https://www.youtube.com/watch?v=-J22HUZ4siY",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Olivia Federici, and Romain Sassot" ,
+				"classes": "Aerobics, Swimming, and Lifeguard training"
 			}, {
 				"id": 1,
 				"name": "Judges, magistrate judges, and magistrates",
 				"salary": "$118,150",
 				"description": "Arbitrate, advise, adjudicate, or administer justice in a court of law. May sentence defendant in criminal cases according to government statutes or sentencing guidelines. May determine liability of defendant in civil cases. May perform wedding ceremonies.",
 				"videolink": "https://www.youtube.com/watch?v=mwrmzNHJL2E",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Ruth Bader Ginsburg, Thurgood Marshall, and Louis Brandeis" ,
+				"classes": "Law, and Political studies"
 			}]
 		},
 		{
@@ -287,8 +287,8 @@
 				"salary": "$21,490",
 				"description": "Operate or tend sewing machines to join, reinforce, decorate, or perform related sewing operations in the manufacture of garment or nongarment products.",
 				"videolink": "https://www.youtube.com/watch?v=opxYbPtl7fw",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Policarpa Salavarrieta, Hardy Amies, and Norman Hartnell" ,
+				"classes": "Production technology and Printmaking"
 
 			}, {
 				"id": 1,
@@ -296,8 +296,8 @@
 				"salary": "$78,350",
 				"description": "Operate or control nuclear reactors. Move control rods, start and stop equipment, monitor and adjust controls, and record data in logs. Implement emergency procedures when needed. May respond to abnormalities, determine cause, and recommend corrective action.",
 				"videolink": "https://www.youtube.com/watch?v=Ug9QtgaRplo",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "David Lochbaum and Leslie Dewan" ,
+				"classes": "Chemistry, Earth science, and Physics"
 			}]
 		},
 		{
@@ -311,16 +311,16 @@
 				"salary": "$18,960",
 				"description": "Receive and disburse money in establishments other than financial institutions. May use electronic scanners, cash registers, or related equipment. May process credit or debit card transactions and validate checks.",
 				"videolink": "https://www.youtube.com/watch?v=TG9l3U0Gq6o",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Madonna, and Fetty Wap " ,
+				"classes": "Personal finance"
 			}, {
 				"id": 1,
 				"name": "Marketing managers",
 				"salary": "$123,220",
 				"description": "Plan, direct, or coordinate marketing policies and programs, such as determining the demand for products and services offered by a firm and its competitors, and identify potential customers. Develop pricing strategies with the goal of maximizing the firm's profits or share of the market while ensuring the firm's customers are satisfied. Oversee product development or monitor trends that indicate the need for new products and services.",
 				"videolink": "https://www.youtube.com/watch?v=8r-nFPlKELc",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Seth Godin, Gary Vaynerchuk, and Jon Loomer" ,
+				"classes": "Marketing, and Consumer education"
 			}]
 		},
 		{
@@ -334,16 +334,16 @@
 				"salary": "$38,310",
 				"description": "Plan, develop, or conduct surveys. May analyze and interpret the meaning of survey data, determine survey objectives, or suggest or test question wording. Includes social scientists who primarily design questionnaires or supervise survey teams.",
 				"videolink": "https://www.youtube.com/watch?v=Dk4vhw0ia0s",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Karl Marx, Max Weber, and Auguste Comte" ,
+				"classes": "Statistics, and Psychology"
 			}, {
 				"id": 1,
 				"name": "Petroleum engineers",
 				"salary": "$132,320",
 				"description": "Devise methods to improve oil and gas extraction and production and determine the need for new or modified tool designs. Oversee drilling and offer technical advice.",
 				"videolink": "https://www.youtube.com/watch?v=U0gVbw2Ynwo",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Linda Cook, Yoshiaki Fujimori, and John E. Bethancourt" ,
+				"classes": "Algebra, Trigonometry, and Calculus"
 			}]
 		},
 		{
@@ -358,15 +358,15 @@
 				"description": "Park vehicles or issue tickets for customers in a parking lot or garage. May collect fee.",
 				"videolink": "https://www.youtube.com/watch?v=9c8KiMixwrU",
 				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"classes": "Driver education"
 			}, {
 				"id": 1,
 				"name": "Air Traffic Controller",
 				"salary": "$121,280",
 				"description": "Control air traffic on and within vicinity of airport and movement of air traffic between altitude sectors and control centers according to established procedures and policies. Authorize, regulate, and control commercial airline flights according to government or company regulations to expedite and ensure flight safety.",
 				"videolink": "https://www.youtube.com/watch?v=1ejKHvDr-vI",
-				"celebrities": "unknown at this time." ,
-				"classes": "unknown at this time."
+				"celebrities": "Kennedy Steve" ,
+				"classes": "Physics, Earth science, and Astronomy"
 			}]
 		}
 	]
