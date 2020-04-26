@@ -19,6 +19,7 @@ class ClusterCard extends React.Component {
 	}
 
 	render() {
+	/*
 		function dataURLtoFile(dataurl, filename) {
 			console.log(dataurl);
 
@@ -34,7 +35,7 @@ class ClusterCard extends React.Component {
 		}
 
 		var file = dataURLtoFile(this.props.cluster.icon.icon, 'a.PNG');
-
+		*/
 		console.log(file);
 
 		return (
