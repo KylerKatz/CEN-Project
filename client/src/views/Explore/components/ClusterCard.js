@@ -13,7 +13,7 @@ class ClusterCard extends React.Component {
 			cluster: this.props.cluster.id,
 		};
 
-		axios.put('http://localhost:5000/api/Signup/Career', newObj).then((res) => {
+		axios.put('https://cen-group-2.herokuapp.com/api/Signup/Career', newObj).then((res) => {
 			console.log(res);
 		});
 	}
