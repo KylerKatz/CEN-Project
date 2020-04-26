@@ -1,74 +1,82 @@
-## _**PLEASE READ THIS TO COMPLETION BEFORE ASKING ANY QUESTIONS!**_
+# Career Find 
+## Group 2
+## Luis Venereo, Ashley Adames, Noah Cline, Kyler Katz
 
-### _**IMPORTANT NOTES**_ - 
-This project does not have a mongoDB connection setup. Setup the connection based on the environments below.
-- local development: create a config file (make sure to name it config.js) in the config folder, which exports your db.uri connection. An example is provided, config/config.example.js. This file will be ignored by git so your db credentials will be kept safe when the app is deployed.
-- production: Since the config file is not pushed when you deploy your app, you must specifiy your db uri in heorku. Set the uri in heroku as specified in [this](https://devcenter.heroku.com/articles/config-vars) resource. Make sure you name the environement variable "DB_URI".
+# 1 Introduction 
+This is group 2’s final documentation for our CEN 3031 “Career Find” project. This document is meant to serve as a resource to guide anyone in the future with information about the features, such as the login process, and chatbot. In addition, a detailed walkthrough of how to perform CRUD operations from within the admin page is also included.
 
-This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
+Lastly, a more technical section is devoted within this documentation to help those who plan on deploying the web application in an environment of their choice. Heroku was initially used for the development and presentation phases, however, this section covers guidelines for using a different environment, and all of the necessary API keys, environmental variables, and log-in credentials to consider when doing so.      
 
-## Getting Started
-This repository aims to assist you in beginning work on a MERN stack application for heroku deployment with a solid file structure as a foundation. To get started make a copy of this template repo for your project teams by clicking the green "Use this template" button above.
+# 2.1 Description of Features 
 
-Since this project will hold both the client application and the server application there will be node modules in two different places. First run `npm install` from the root. After this you will run `npm run-script install-all` from the root. From now on run this command anytime you want to install all modules again. This is a script we have defined in package.json. Alternatively your group may choose to simplify this process by using yarn workspaces as specified [here](https://yarnpkg.com/lang/en/docs/workspaces/).
+The main features of this project are
 
-This app can be deployed directly to heroku since there is a script defined in package.json which will automatically handle building and deploying the app. For more information on deploying to heroku reference the extra resources at the bottom of this file. 
+A chatbot 
+An explore page
+User account creation 
+Student
+Teacher (Admin)
+Student progression
+     
 
+## 2.1.1 Chatbot 
 
-## Available Scripts
+The chatbot is located on every page on the bottom right, and allows students to have a conversation in order to determine a career that best suits them. This is done by gaining insight into what a student’s favorite class is, what things do they enjoy, etc . Once the conversation is complete, the student will be given a list of career clusters that we feel best fits them. 
 
-Please note that any time the server is run in these scripts `nodemon` is used in place of `node` for easier development. If you are interested in how this works follow the nodemon In the project directory, you can run:
+## 2.1.2 Explore Page  
+	
+The explore page is for students who want to see all of the available careers that the website contains. Careers are grouped into clusters which can be accessed by clicking on one of the cluster cards. From there, the student is redirected to the career page which will allow them to explore details about each career such as a description, a day in the life video, average salary, known celebrities, and relevant classes within the cluster they clicked on. 
 
-### `npm run-script dev`
+## 2.1.3 Account Creation 
+	
+Both students and teachers are able to create an account. Which will give them access to more features.
+Student 
+If a user is a student, this allows for them to have their own personalized dashboard displaying their recommended careers along with careers they have recently viewed from the career page.
 
-Runs both the client app and the server app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view the client in the browser.
+Teacher
+If the user happens to be a teacher, their dashboard will allow them to perform, create, read, update, and delete operations in order to tailor the website content to the needs of their students.     
 
-### `npm run-script client`
+## 2.1.4 Student Progression 
 
-Runs just the client app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view the client in the browser.
+In addition to students being able to have their previous data saved to their account, they will also be able to gain points and rewards for completing challenges on the site such as talking with the chatbot, and exploring every career in a given cluster, along with taking a quiz just to name a few.
 
-
-### `npm run-script server`
-
-Runs just the server in development mode.<br>
-
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-If deploying to heroku this does not need to be run since it is handled by the heroku-postbuild script<br>
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 2.1.5 APIs 
+In order to implement these features we used three APIs, a clusters API for retrieving information about each career cluster and for performing CRUD operations on the clusters. The second API is the signup API which is used to authenticate a new user signup and add them to the database. The last API is the login API which is used to verify that a user account matching the inputted credentials exists and what account type it is. This is then used to determine what kind of access a user has and what pages they can see on the website. 
 
 
-## File structure
-#### `client` - Holds the client application
-- #### `public` - This holds all of our static files
-- #### `src`
-    - #### `assets` - This folder holds assets such as images, docs, and fonts
-    - #### `components` - This folder holds all of the different components that will make up our views
-    - #### `views` - These represent a unique page on the website i.e. Home or About. These are still normal react components
-    - #### `App.js` - This is what renders all of our browser routes and different views
-    - #### `index.js` - This is what renders the react app by rendering App.js, should not change
-- #### `package.json` - Defines npm behaviors and packages for the client
-#### `server` - Holds the server application
-- #### `config` - This holds our configuration files, like mongoDB uri
-- #### `controllers` - These hold all of the callback functions that each route will call
-- #### `models` - This holds all of our data models
-- #### `routes` - This holds all of our HTTP to URL path associations for each unique url
-- #### `tests` - This holds all of our server tests that we have defined
-- #### `server.js` - Defines npm behaviors and packages for the client
-#### `package.json` - Defines npm behaviors like the scripts defined in the next section of the README
-#### `.gitignore` - Tells git which files to ignore
-#### `README` - This file!
+# 3 Technical Specifications 
+## 3.1 Technology Stack
+This webapp was created using the MERN stack. MongoDB is used to store all of our user data such as usernames, passwords (encrypted), emails, saved clusters, achievement points, ect… Express is used for all our API requests, such as getting the user data, and cluster information from the database. React is used on the front end for routing, displaying data, and keeping track of states. Lastly, the whole project runs on Node.js for performance.     
+## 3.2 System Requirements 
+3.2.1 List of API With Keys Step by Step
 
-## Learn More
-To learn how to setup a local MongoDB instance for testing, check out how to [connect to MongoDB](https://docs.mongodb.com/guides/server/drivers/).
+### Chatbot APIs 
+Diaglogflow API Key
+	Since the chatbot has already been created and trained to a certain extent. To use this bot and put it on the site you will need the Diaglogflow account key which we will provide and a Kommunicate account that you will need to create. 
+Create a Kommunicate accouunt
 
-To learn how to deploy a full-stack web app to heroku, check out [this great guide](https://daveceddia.com/deploy-react-express-app-heroku/).
+Once you navigate and sign in to the Kommunicate site, go to the section that says “Bot Integration” and select Diaglogflow.
+ Now, you have the option to upload the Service account private key file. To do this, you will need to upload the file located in server/config/speedy-solstice
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To put this bot on the site, go to the “Settings”, and look under the “Install” options and you should see one for Web. 
+Copy that code and paste it in the Chat.js file, replacing the code that looks nearly identical. 
+
+Please note that Kommunicate offers a free trial for a limited time, so for continued use, you will have to purchase a subscription. 
+
+### MongoDB API 
+Listed in the Environment Variables section, there are instructions there on how to change the key associated with MongoDB
+
+
+## 3.2.2 Environmental Variables
+In Config.js, the uri must be changed. To do so, you need a MongoDB account and you need to create a cluster. You will than be prompted with a Connect to Cluter box, click on "Choose a connection method." Than "Connect your application," copy your uri, past it into the config.js file for the uri variable, and change the <password> to your password.  
+        
+
+## 3.2.3 Log-in Credentials
+Needed Log-in Credentials to complete set up of site are: 
+
+Chatbot: Kommuncicate
+Database: MongoDB
+Web hosting: GoDaddy
+
+## 3.3 Project Handoff Guidelines
+	If you would like to have your own domain, and not use Heroku, you can use a hosting service like GoDaddy.  After creating an account and logging into GoDaddy, you can register a domain name. GoDaddy will give you a list of recommendations on what’s available. After registering a domain, navigate to your account page. There should be a section that says “Web Hosting” click Manage. On the hosting accounts page, select the domain name you want to upload the site to, and click “Manage”. This will bring you to the cPanel. Select “File Manager” and click Go. On the left, there is a section that says “public_html > Select File. Select “Choose File” and navigate to the zipped website folder. Once this is finished uploading, you will see the folder in File Manager. Select the folder and click “Extract” it, and now the website should be hosted onto the domain.  
