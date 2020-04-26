@@ -58,33 +58,34 @@ class StudentDashboard extends React.Component {
 
 		var trueScore;
 
-		console.log(this.props.user.savedClusters)
+		console.log(this.props.user.savedClusters);
 
 		console.log(this.props.user.achievementPoints);
 
 		var clusters;
 
 		if (Array.isArray(this.props.user.savedClusters)) {
-
 			console.log(this.props.user.savedClusters);
 
-			const clusterMap = this.props.user.savedClusters
+			const clusterMap = this.props.user.savedClusters;
 
 			clusters = this.props.clusters
-			.filter((cluster) => {
-				return cluster.careers.length > 0 && clusterMap.includes(cluster.id);
-			})
-			.map((cluster) => {
-				return <ClusterCard cluster={cluster} key={cluster.id} user={this.props.user} extra={true} />;
-			});
-
-		}
-		else{
-
+				.filter((cluster) => {
+					return cluster.careers.length > 0 && clusterMap.includes(cluster.id);
+				})
+				.map((cluster) => {
+					return (
+						<ClusterCard
+							cluster={cluster}
+							key={cluster.id}
+							user={this.props.user}
+							extra={true}
+						/>
+					);
+				});
+		} else {
 			clusters = false;
 		}
-
-		
 
 		/* [QUIZ ENGINE] */
 		var quiz = {
@@ -220,6 +221,8 @@ class StudentDashboard extends React.Component {
 		var imageLink2 = imageLink1.concat(this.props.user.name);
 		var imageLink3 = imageLink2.concat('.svg');
 
+		function clearClusters() {}
+
 		return (
 			<div className="background-explorepage-student-home">
 				<div className="center-background-student-home">
@@ -319,14 +322,22 @@ class StudentDashboard extends React.Component {
 					</div>
 					<div className="student-dashboard-lower-div">
 						<div className="student-dashboard-lower-div-text">
-							<h3> Chatbot Recommended Career Clusters</h3>
+							<h3> Saved Clusters</h3>
+						</div>
+
+						<div
+							className="take-quiz"
+							onClick={() => {
+								clearClusters();
+							}}
+						>
+							<p>Remove Clusters</p>
 						</div>
 
 						<div className="student-dashboard-recmmmended-cards-div">
 							<div className="chatbot-cluster-cards">
 								{' '}
-								{clusters == false ? "" : clusters}
-								
+								{clusters == false ? '' : clusters}
 							</div>
 						</div>
 					</div>
@@ -337,5 +348,3 @@ class StudentDashboard extends React.Component {
 }
 
 export default StudentDashboard;
-
-

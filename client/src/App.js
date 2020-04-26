@@ -54,7 +54,12 @@ class App extends React.Component {
 						<Route
 							exact
 							path="/Explore"
-							component={(props) => <Explore clusters={this.state.clusters} user={this.state.user} />}
+							component={(props) => (
+								<Explore
+									clusters={this.state.clusters}
+									user={this.state.user}
+								/>
+							)}
 						/>
 						<Route exact path="/Login" component={Login} />
 						<Route exact path="/Signup" component={Signup} />
@@ -82,7 +87,10 @@ class App extends React.Component {
 								exact
 								path="/Student-Dashboard"
 								component={(props) => (
-									<StudentDashboard clusters={this.state.clusters} user={this.state.user} />
+									<StudentDashboard
+										clusters={this.state.clusters}
+										user={this.state.user}
+									/>
 								)}
 							/>
 						)}
