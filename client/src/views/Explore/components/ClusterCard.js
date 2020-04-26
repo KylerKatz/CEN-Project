@@ -35,9 +35,9 @@ class ClusterCard extends React.Component {
 		}
 
 		var file = dataURLtoFile(this.props.cluster.icon.icon, 'a.PNG');
-		*/
+		
 		console.log(file);
-
+		*/
 		return (
 			<div className="career-card-main">
 				{this.props.user == false ? (
