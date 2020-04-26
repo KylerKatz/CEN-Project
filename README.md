@@ -48,7 +48,7 @@ In order to implement these features we used three APIs, a clusters API for retr
 ## 3.1 Technology Stack
 This webapp was created using the MERN stack. MongoDB is used to store all of our user data such as usernames, passwords (encrypted), emails, saved clusters, achievement points, ect… Express is used for all our API requests, such as getting the user data, and cluster information from the database. React is used on the front end for routing, displaying data, and keeping track of states. Lastly, the whole project runs on Node.js for performance.     
 ## 3.2 System Requirements 
-3.2.1 List of API With Keys Step by Step
+## 3.2.1 List of API With Keys Step by Step
 
 ### Chatbot APIs 
 Diaglogflow API Key
@@ -79,4 +79,4 @@ Database: MongoDB
 Web hosting: GoDaddy
 
 ## 3.3 Project Handoff Guidelines
-	If you would like to have your own domain, and not use Heroku, you can use a hosting service like GoDaddy.  After creating an account and logging into GoDaddy, you can register a domain name. GoDaddy will give you a list of recommendations on what’s available. After registering a domain, navigate to your account page. There should be a section that says “Web Hosting” click Manage. On the hosting accounts page, select the domain name you want to upload the site to, and click “Manage”. This will bring you to the cPanel. Select “File Manager” and click Go. On the left, there is a section that says “public_html > Select File. Select “Choose File” and navigate to the zipped website folder. Once this is finished uploading, you will see the folder in File Manager. Select the folder and click “Extract” it, and now the website should be hosted onto the domain.  
+If you would like to have your own domain, and not use Heroku, you can use a hosting service like GoDaddy.  After creating an account and logging into GoDaddy, you can register a domain name. GoDaddy will give you a list of recommendations on what’s available. After registering a domain, navigate to your account page. There should be a section that says “Web Hosting” click Manage. On the hosting accounts page, select the domain name you want to upload the site to, and click “Manage”. This will bring you to the cPanel. Select “File Manager” and click Go. On the left, there is a section that says “public_html > Select File. Select “Choose File” and navigate to the zipped website folder. Once this is finished uploading, you will see the folder in File Manager. Select the folder and click “Extract” it, and now the website should be hosted onto the domain.  
